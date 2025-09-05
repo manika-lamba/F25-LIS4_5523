@@ -720,16 +720,6 @@ systems in the later modules.
 :::
 
 
-
-## Scope of IR System
-
--   IRS and database systems merely find what already is there. It does
-    not invent anything new by itself
-
--   Whatever is there and whatever is already represented in a form, IR
-    system can retrieve it
-    
-    
 ## Types of IR Systems {.smaller}
 
 Based on the different types of services, IR can be categorized as:
