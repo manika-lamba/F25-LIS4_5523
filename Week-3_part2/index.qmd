@@ -1,5 +1,5 @@
 ---
-title: "Basic Concepts of Information Retrieval"
+title: "Representation Issues in IR Systems"
 subtitle: "LIS 4/5523: Online Information Retrieval"
 author: 
   - Dr. Manika Lamba
@@ -20,866 +20,956 @@ editor:
     wrap: 72
 ---
 
-## Introduction {.smaller}
-
--   Data and information generation in every discipline in the universe
-    of knowledge has seen staggering growth
-
--   Storing, managing, querying, & retrieval of huge amount of data &
-    information needs sophisticated procedures & advanced technologies
-
--   Nowadays, information collection is web-based and online which is
-    vast and growing at an exponential rate
-
-::::: columns
-::: {.column width="50%"}
-![](images/data.png){fig-align="center" width="700"}
-:::
-
-::: {.column width="50%"}
-![](images/data.jpg){fig-align="center" width="700"}
-:::
-:::::
+# Introduction
 
 ::: notes
-Hello everyone! This week's lecture provides you with a brief overview
-of information retrieval (IR) systems, users of IR systems, and the
-topics we will cover in this course.
+Welcome to the second lecture of Week 3, Representation Issues in IR
+Systems.
 
-In this class we will learn about online information retrieval. The
-first part of class will focus on the **HOW** of information retrieval
-systems: how they work, how they are structured, different IR models and
-technologies, and the role that users play when designing an information
-retrieval system.
-
-The second part of class will introduce you to searching strategies that
-will make you a better searcher in many different systems.
-
-Lastly, in the third part of class you will use your new search skills
-in various databases and on the Web.
-
-Knowing how systems work, the decisions made while developing them, and
-how they are structured will make you a better searcher. Understanding
-yourself as a searcher will also help you identify areas you need to
-strengthen as you use online systems for your own work but also to help
-others conduct searches.
-
-So, let's get started!
-
-The idea of doing information retrieval is driven by one fundamental
-fact, and that is the digital revolution.The digital revolution happened
-extremely quickly and profoundly. For example, the figures shown on the
-slide is taken from [Hilbert and Lopez
-(2011)](https://www.science.org/doi/10.1126/science.1200970) paper which
-showed that the in the late '80s, 99% of the information in the world
-was stored in analogue form, for example on papers. Then, the digital
-part of information grew but then after the year 2000, it just exploded.
-They estimated that in the year 2002, for the first time, the world was
-able to store more digital than analog information. We still have papers
-around but by now, digital information counts for more than 99% of all
-the information.
-
-So in the year 2014, when they last updated the data, they found that
-the world was able to store five zettabytes. How far is five zettabytes?
-If you would take all this information that you have on your hard disk
-and your cell phones and microchips on the back of your credit card, and
-you would put this in books, and you would make a pile, how high do you
-think the pile would reach? Would reach to the moon? Or to the sun?
-
-It will reach 4,500 times to the sun!! So there will be 4,500 piles from
-the Earth to the sun with books. So, in 2014, we had 4,500 piles of
-books. That's all we were able to accumulate during human history, and
-now we're doubling it ever since.
-
-So, we restore as much new information as all the information we were
-ever able to, there's a lot of information to dig into and all the time
-you're producing a lot more and it's in digital format. That means then
-we need a system to compute it and use some system in order to retrieve
-it.
-
-We live in a time where we’re constantly generating new information and
-not just a little, but as much as we’ve ever been able to capture. Every
-day, more knowledge is being produced, and now it’s all in digital form.
-That’s powerful, because digital information can be stored and preserved
-almost endlessly.
-
-But here’s the challenge: with so much of it out there, we can’t rely on
-memory or manual systems anymore. We need computational systems to make
-sense of it --- to process, organize, and connect it. And just as
-important, we need retrieval systems so that when we ask a question, we
-can actually pull the right piece of knowledge out of that vast ocean of
-data.
-
-So, it’s not just about storing information, it’s about creating the
-ability to use it --- instantly, effectively, and intelligently.
+One of the most important aspects of being a good searcher is choosing
+appropriate search terms. Understanding more about how the terms used in
+the records of the system are chosen, the sources of terms, and the
+impact on retrieval can help you utilize the features of the system to
+the fullest extent.
 :::
 
-## Information Retrieval {.smaller}
+## Recap
+
+-   In Part 1, we looked at information systems and database structures.
+    We also addressed representation and indexing from the data modeling
+    and technical side
+
+-   In this lecture, Part 2, we are going to look at representation and
+    indexing from the human/creator and retrieval side
+
+    -   Indexing as process and effects related to human indexing
+    -   Effects of indexing decisions on retrieval
+
+::: notes
+In Part 1, we learned about systems from a systems analysis perspective.
+We also defined some essential terms for understanding databases and
+systems and worked through the process of data modeling. We addressed
+representation from the system/technical side and discussed how inverted
+indexes work within a database. We also examined the system structure in
+some common systems you may use.
+
+In Part 2, we are going to address representation and indexing from the
+human and retrieval side. We will discuss the process of subject
+analysis and choosing index terms to represent subjects in catalog or
+database records. We will also discuss some human factors that have an
+impact on retrieval.
+:::
+
+## Information Retrieval
+
+-   The central problem of IR is how to represent documents for
+    retrieval
+-   To be more successful, document representation must be used in ways
+    similar to the ways ordinary language is used
+    -   document representations should take context into account
+    -   document representations should take users into account
+
+::: notes
+Let’s begin by looking at how IR and representation are linked. The
+central problem of IR is, as you have seen from the models we have
+examined in the last two lectures, how to represent documents for
+retrieval. We can also think about IR from the system’s side of how
+documents are represented by human agencies as well as computerized
+agency within the system itself.
+
+To be more successful, we’ve found in the research, document
+representation must be used in ways similar to the way that ordinary
+language is used, which, again, presents some problems. We’ll talk later
+in this class about the natural language processing model of IR and some
+of the issues associated with the NLP method of information retrieval.
+Document representation should also take context into account, the
+domain of the system into account, as well as the users of that system.
+The combination of these factors can make representation quite a complex
+problem.
+:::
+
+## In Library IR Systems {.smaller}
+
+-   `Descriptive Data`
+    -   We use MARC records and MARC record encoding standard to hold
+        the bibliographic indexing of the objects
+    -   We use RDA (Resource Description and Access) content standard
+-   `Subject Representation`
+    -   We use 6XX fields in the MARC record structure
+    -   We use subject headings list, thesauri (controlled vocabularies)
+        to construct subject indexing
+    -   We use classification systems (eg. Library of Congress
+        Classification, Dewey Decimal Classification) to assign
+        classification codes
+
+::: notes
+In library IR systems, and really in any system representing a
+collection of information objects, whether it be a physical collection,
+one that is online, or even one comprised of humans, contains two
+“buckets” that are represented in the record of the database the
+container and the content buckets as we discussed in Part 1.
+
+In library systems the records include descriptive data (container
+oriented) and subject data or representations (such as subject
+headings). In the library catalogs we use MARC records and the structure
+of MARC to hold the bibliographic data that represents the items in the
+collection. We use the RDA content standard to form the entries in each
+field of the MARC record.
+
+For subject representation, we use another standard or a list of subject
+terms, or what we call headings, to represent subjects. There are many
+different controlled vocabularies a library may use. The most common in
+public and academic libraries is the Library of Congress Subject
+Headings (LCSH), while Sears may be used in school libraries, or LC’s
+Subject Headings for Children might also be in use.
+
+We also represent subject (content aspects) of the items in the
+collection using classification schemes such as Dewey Decimal
+Classification or LoC classification. If you have taken 5043 you were
+introduced to RDA, subject headings lists, and classification schemes.
+
+In databases such as Ebsco or Proquest , they do not necessarily follow
+the same standards for creating records in the database. An indexer may
+use a controlled vocabulary, such as LCSH but depending on the
+domain/discipline of the database a different controlled vocabulary may
+be in use. Also, some database companies develop their own controlled
+vocabularies that are shown to the user through the Thesaurus feature in
+the system.
+
+So, there are several standards, or sets of rules, that are used when
+creating representations in either library catalogs or in a specialized
+proprietary database. Oftentimes the user does not know which standards
+are used in the system unless there is a feature that allows the user to
+view the controlled vocabulary or list of subject terms or facets used
+in the system. As noted earlier, this feature is often called the
+Thesaurus.
+:::
+
+## Other IR Systems
+
+-   Digital libraries/institutional repositories
+    -   Use metadata schemes like Dublin Core, Darwin Core, MODS, METS,
+        etc
+-   Online databases
+    -   Follow ANSI/NISO standards for field structures in databases
+    -   Follow ANSI/NISO standards for content standards--related to
+        controlled vocabulary use in databases
+-   Web??
+
+::: notes
+There are a host of other IR systems that you use all the time such as
+digital libraries/collections, institutional repositories, such as OU’s
+ShareOK system, and online databases of many varieties. We will use many
+of these systems later in the semester when we get into the searching
+portion of class. Each of these different systems has a metadata scheme
+or database scheme in use to create the representations or records of
+the objects. For example, digital libraries or institutional
+repositories might use a metadata standard such as Dublin Core, MODS, or
+METS to describe the objects in the collection. In archives MODS is
+frequently used but also a standard called EAD (Encoded Archival
+Description).
+
+Online databases such as Proquest or Ebsco , use standards developed by
+national standards organizations (ANSI/NISO) to determine both the data
+schema and the controlled vocabulary to use in the system.
+
+What does the Web use? Does the Web use any standards or controlled
+vocabularies? In intranets, the systems within corporations or
+businesses, they may have developed an ontology to represent the items
+in their organization. Ontologies can include both the database scheme
+and a specialized controlled vocabulary or categorization developed
+specifically for that organization.
+
+Online retails sites, such as JC Penney, for example, have specialized
+ontologies to represent their retail collections. Many of these
+ontologies online serve both to represent the physical and subject
+aspects of objects, through providing descriptions of the objects but
+also categorizing the items into faceted categories for retrieval. Take
+a closer look at Amazon sometime to see how it is structured and the
+categories used in the system.
+
+What about search engines? Search engines do not use any predetermined
+standards like we use in libraries or other information organizations.
+As the creators of webpages and sites may be companies or individuals,
+no standards are imposed when they set up a system or online database.
+There are sets of best practices that are used in interface design and
+techniques for making the website more accessible, such as search engine
+optimization, but little is known about what big companies like Google
+follow.
+:::
+
+## Representation
 
 `Definition`
 
-> A process in which sets of records or documents are searched to find
-> items which may help to satisfy an information need
+> A system for choosing or highlighting some characteristics
+> (attributes), together with a specification of the rules for selection
+> (code)
 
-![](images/1.png){fig-align="center" width="344"}
-
-::: footer
-[Lamba and Madhusudhan. (2022). Ch-1 The Computational
-Library](https://doi.org/10.1007/978-3-030-85085-2_1)
-:::
+> This implies a tradeoff -- if some characteristics are highlighted,
+> other characteristics are left behind
 
 ::: notes
-Now, let's define Information Retrieval (IR). It is a process of
-matching a particular document with a set of other relevant documents.
-Suppose you have an extensive collection of documents and you want to
-find a relevant document. This text mining task retrieves the relevant
-documents based on the best matches of input document with the
-collection of documents based on a similarity measure.
+Next, let’s define ‘representation’ within the broader context so we can
+talk about the process of representation. We talked about representation
+in Part 1 from the system side, but let’s look even more specifically
+about some of the issues related to representation within IR systems.
 
-In other words, IR is about bridging the gap between the user’s question
-and the vast universe of available information.
+Representation can be thought of as a system for choosing or
+highlighting some characteristics, or attributes that are general
+characteristics, together with the specification of the rules for
+selection and the code, meaning that we should understand a little bit
+about how the system is structured and how data exists within the
+system’s records.
+
+This selection (or surrogation ) process implies a trade off of some
+kind. If some characteristics are highlighted, then we have to assume
+that other characteristics are left behind.
+
+In the data modeling process the database developer decides what to
+highlight and what not to include in the system.
+
+So, for example, in library catalogs we made decisions on what
+attributes of the information objects in the collection were important
+to describe in the records for users.
+
+In early catalog records these attributes included, Title, Author,
+Subject, and Classification. In order to create those representations,
+the card catalog records, we had to decide which characteristics to
+highlight and which to leave behind.
 :::
 
-## Information Retrieval {.smaller}
+## More Definitions
 
-Information Retrieval includes:
-
-::::: columns
-::: {.column width="50%"}
--   [x] Representation
-
--   [x] Storage
-
--   [x] Organization
-
--   [x] Document Clustering
-
--   [x] Classification of Documents
-
--   [x] System Architecture
-:::
-
-::: {.column width="50%"}
--   [x] Information & Data Visualization
-
--   [x] Allied Services
-
--   [x] Ranking of Documents
-
--   [x] Semantic Linking
-
--   [x] Filtering
-
--   [x] Others
-:::
-:::::
-
--   [Search engines]{style="color: blue;"} have been developed based on
-    the concepts, principles, and techniques developed by IR
+-   `ENTITIES`: objects or concepts
+-   `ATTRIBUTES`: characteristics of entities
+-   `DIACHRONIC Attribute`: stable across time
+-   `SYNCHRONIC Attribute`: changes across time
 
 ::: notes
-Now, what does that actually involve? As you see on this slide, IR is
-not just about search in the narrow sense. It encompasses several key
-components:
+Okay, let’s also look at some other definitions that we need to
+consider. In terms of representations, we have to consider the term of
+‘entities.’ Entities are those objects, or even concepts, that we’re
+going to represent.
 
-On the left side, we have the foundational activities —-- things like
-representation, which is how we describe documents; storage and
-organization, which ensure information can be managed at scale; and
-techniques such as document clustering and classification, which group
-or categorize information meaningfully. And of course, all of this
-requires careful consideration of system architecture, the technical
-backbone of IR.
+‘Attributes.’ And we talked about these earlier as the general
+characteristics of information objects. So, we can also think of them as
+characteristics of the entities that we’re representing.
 
-On the right side, we move into more advanced or applied aspects --—
-information and data visualization, which helps users interpret results;
-allied services, which extend retrieval into related tasks; ranking of
-documents, which determines which results appear most relevant; semantic
-linking, which connects related pieces of knowledge; and filtering,
-which helps reduce noise and personalize outputs. These ensure that IR
-is not just functional, but also efficient and user-centered.
-
-Finally, it’s worth emphasizing that search engines, which we all use
-daily, are the most visible application of these IR principles. The
-concepts and techniques you see here form the foundation of systems like
-Google, Bing, and countless specialized retrieval platforms.
+There are different types of attributes; there are both ‘diachronic’ and
+‘synchronic’ attributes. Diachronic attributes are those that remain
+stable across time. In other words, they do not change, and their
+meanings and uses also do not change. And then there are synchronic
+attributes, and those are attributes that change across time. And that
+could be as simple as the use of a particular term or concept within a
+specific language.
 :::
 
-## Brief History of Information Retrieval
+## Diachronic Attributes
 
-![](images/clipboard-1579569194.png){fig-align="center"}
-
-::: footer
-[Lamba and Madhusudhan. (2022). Ch-1 The Computational
-Library](https://doi.org/10.1007/978-3-030-85085-2_1)
-:::
+![](images/clipboard-202238583.png){fig-align="center"}
 
 ::: notes
-*`{Zoom-in to see the figure or Right-click to save it!}`*
-
-Information retrieval systems today are based on techniques that were
-introduced in the 1960s and while the abilities of systems and the
-algorithms used have been refined, the process of retrieval remains the
-same.
-
-IR is primarily text-based, meaning that we retrieve documents, those
-documents may be textual, we use queries that are text, and we search
-representations that are text. There are definitely other forms of IR
-and other formats of documents that are retrieved but regardless the
-process remains the same.
-
-In database systems, whether a flat file system or relational database,
-each field that is indexed (meaning it is searchable by users) produces
-what is called an inverted index of index terms. It is this index that
-is searched.
-
-Even web search engines like Google use inverted indexes and when you
-search the engine, you are searching the index of terms. Of course there
-are other systems that provide full text searching or even full document
-searching, but there are also limits to what is searched in each.
-
-We will talk more about IR models and how they work in systems later in
-the course.
-
-IR is no longer just a problem for libraries. IR systems are used
-everywhere and by anyone who has an Internet connection via their
-computer, smart phone, tablet or other mobile device.
+To illustrate the concepts of diachronic and synchronic attributes let’s
+use the example of a portrait pained by John Singer Sargent in 1883 or
+1884. The model is Virginie Gautreau and the painting was displayed in
+the Paris Salon in 1884. The diachronic attributes include: the
+painter’s name, the model’s name, and the date of creation. Provenance
+of where it was displayed is another example of a diachronic attribute.
 :::
 
-## Brief History of Information Retrieval
+## Synchronic Attributes
 
-::::: columns
-::: {.column width="50%"}
--   System for the Mechanical Analysis and Retrieval of Text (SMART) was
-    developed by Gerard Salton in Cornell University in 1960s. This
-    system incorporated many important concepts like [vector space
-    model]{style="color: blue;"}, relevance feedback, and Rocchio
-    Classification
-:::
-
-::: {.column width="50%"}
-![](images/clipboard-1563999917.png){fig-align="center"}
-:::
-:::::
+![](images/clipboard-1548418686.png){fig-align="center"}
 
 ::: notes
-The SMART system, or System for the Mechanical Analysis and Retrieval of
-Text, was one of the earliest and most influential projects in
-Information Retrieval. It was developed in the 1960s at Cornell
-University by Gerard Salton, who is often considered the father of IR.
+Apparently the painting was quite the scandal in Paris at the time due
+to the “lack of clothing” on the model and the fact that more than just
+the head, neck and shoulders were shown. Gautreaus’s mother was outraged
+and wanted Sargent arrested. This action severely crippled his career as
+a portrait painter but then just a few years later when the scandal died
+down he was admired for his technique, ground breaking subject matter,
+and became the most sought after painter in Britain and the US. If you
+were to describe the subject of this painting in 1884 versus a few years
+later, the subject terms would be different due to the stigma associated
+with it at the time it was painted.
 
-What made SMART so important is that it wasn’t just a system, it was a
-research platform. It introduced and tested many of the core ideas that
-modern search engines still rely on. For example, SMART gave us the
-**vector space model**, representing documents and queries
-mathematically so that we could measure similarity. It also introduced
-**term weighting methods** like TF-IDF, which balance how frequent a
-word is within a document against how rare it is across the collection.
-
-Another innovation was **relevance feedback**, the idea that the system
-can improve results by learning from what the user marks as relevant or
-irrelevant. And just as importantly, it also developed **evaluation
-methods**, such as precision and recall, to measure retrieval
-effectiveness in a systematic way.
-
-While the SMART system itself no longer exists, its principles form the
-foundation of everything from academic IR research to commercial search
-engines like Google today.
+This is just one example of synchronic attributes. The human language
+changes constantly and terms to represent subjects fall out of favor or
+take on new meaning. Take for example the lowly pound sign on a phone or
+keyboard, It has now been elevated to be the symbol for hashtags. Terms
+also can become politically incorrect, such as the term Indian, to
+represent Native American, which now is also represented by American
+Indian or Indigenous People.
 :::
 
-## Brief History of Information Retrieval
+## Human Indexing
 
-::::: columns
-::: {.column width="50%"}
--   J.W. Sammon (1969) gave the idea of [visualization interface
-    integrated to an IR system]{style="color: blue;"} in his famous
-    paper "A nonlinear mapping for data structure analysis"
-
--   [First online systems]{style="color: blue;"}--NLM's AIM-TWX,
-    MEDLINE; Lockheed's Dialog; SDC's ORBIT
-:::
-
-::: {.column width="50%"}
-![](images/clipboard-1874551088.png){fig-align="center"}
-
--   During 1966-67, F.W. Lancaster evaluated the [MEDLARS (Medical
-    Literature Analysis and Retrieval System)]{style="color: blue;"}
-:::
-:::::
+-   Diachronic attributes (don't change)
+    -   `author, title, publisher, number of pages`
+-   Synchronic attributes (change with time, context)
+    -   eg. meaning/uses of words over time
+-   Rules not evident to users
 
 ::: notes
-In the late 1960s, researchers began thinking about how information
-retrieval systems could move beyond simple text search. One key idea
-came from J.W. Sammon in 1969, who proposed a visualization interface
-integrated into IR systems. In his influential paper, A Nonlinear
-Mapping for Data Structure Analysis, he laid the groundwork for
-techniques that help us see patterns in data, something that’s become
-critical in modern IR with clustering and visualization tools.
+The problem here is that there are several factors related to human
+indexing of particular documents within collections. As I’ve said, we
+have diachronic attributes, and those are the ones that don’t change.
+They’re always the same when representing something in the system.
+Examples of diachronic attributes would be author, title, publisher,
+number of pages.
 
-Around the same time, the first online IR systems were emerging.
-Examples include the National Library of Medicine’s AIM-TWX and MEDLINE,
-Lockheed’s Dialog, and SDC’s ORBIT. These systems were groundbreaking
-because they provided searchable access to specialized literature,
-especially in science and medicine, long before the web existed.
+The problem is that oftentimes representation systems have only the most
+general thought about the users. We’re designing this system for
+retrieval, and the different agencies have different specifications for
+how or what they want to be retrievable within their system. But we’re
+oftentimes unaware of how the users actually use those particular
+systems or how they actually search for items within the systems.
 
-And during 1966–67, F.W. Lancaster conducted a major evaluation of
-MEDLARS, the Medical Literature Analysis and Retrieval System. His
-studies were among the first systematic evaluations of an IR system,
-focusing on how effective it was in retrieving relevant documents. This
-was crucial, because it marked the beginning of formal evaluation
-practices in IR, something that still defines the field today.
+Another problem that comes up with human indexing is that the rules in
+which we create representations are not evident to the users. How many
+times have you used a library catalog, only to have results come back to
+you that are really confusing with abbreviations you don’t understand or
+no information on how to access the resources?
+
+So, again, there are different aspects of representation that are not
+evident to users or are confusing to the users.
+
+Brian O’Connor, likes to say that when we’re thinking about
+representation and the different factors from a human side that impact
+retrieval, “there’s a great vagueness and generality resting on a
+foundation of shifting quicksand.”
+
+Because if you think back to the IR/representation model that we looked
+at earlier, users are only concerned with one side of the model; they’re
+concerned with how they actually input their information need or their
+query into the system.
+
+As the person who is creating the representation, we have to be
+concerned with both sides. We have to know the rules for creating the
+representation, including the structure of the system, but we also have
+to understand how the users are interacting with and/ or searching
+within that particular system . As a searcher you have to also be
+concerned with both sides you have to understand how the representations
+may be structured in the system but also have a good understanding of
+the information need so that a match can occur between the two
+representations.
 :::
 
-## Brief History of Information Retrieval
+## What is Subject Analysis?
 
--   [AM SIGIR Conference]{style="color: blue;"} started in 1978 which
-    subsequently emerged as the apex conference in IR systems
+Definition
 
--   Belkin, Oddy, and Brooks gave the concept of [*Anomalous State of
-    Knowledge (ASK)*](https://doi.org/10.1108/eb026722) for information
-    retrieval in 1982
+> Determining intellectual content or subject content or aboutness
 
--   [OKAPI model]{style="color: blue;"} was formulated in 1982-88 which
-    is a set-oriented ranked output design for probabilistic type
-    retrieval of textual material using inverted index
+Types
 
--   Major breakthrough was in 1989 when Tim Berners-Lee proposed [World
-    Wide Web]{style="color: blue;"} in CERN Laboratory
+-   `Document Analysis`: information professional (cataloger, indexer)
+    studies document to determine document surrogate for system
 
--   [TREC conference]{style="color: blue;"} started as part of TIPSTER
-    text program in 1992 and it was sponsored by US Defense and National
-    Institute of Standards and Technology (NIST)
+-   `Query Analysis`: information professional (intermediary) or
+    end-user studies user request to determine search terms
 
 ::: notes
-Next in 1978, the ACM SIGIR Conference began. Over time, it became the
-leading international conference on IR systems, what we often call the
-‘apex’ conference in the IR field.
+When a cataloger/indexer decides on how to represent the subject of the
+item in the system, they go through a process called subject analysis.
+This process is defined as “determining the intellectual content or
+subject content or aboutness of the object”.
 
-Then, in 1982, Belkin, Oddy, and Brooks introduced the concept of the
-Anomalous State of Knowledge, or ASK. This was a very important
-theoretical model because it framed retrieval as a process of resolving
-a gap in the user’s knowledge, not just matching keywords.
+There are various types of subject analysis such as document analysis
+that the cataloger/indexer conducts to determine the subject(s) of a
+book or journal article.
 
-Around the same period, from 1982 to 1988, the OKAPI model was
-developed. This was a probabilistic retrieval model that produced ranked
-outputs based on an inverted index. It laid the groundwork for what
-later became BM25, still one of the most widely used ranking functions
-today.
-
-A major turning point came in 1989, when Tim Berners-Lee, working at
-CERN, proposed the World Wide Web. This changed the context of IR
-completely, shifting from specialized databases to a global, open
-information space.
-
-In 1992, the TREC conference was launched as part of the TIPSTER text
-program, sponsored by the U.S. Department of Defense and NIST. TREC
-provided standardized test collections and evaluation frameworks, which
-accelerated research and allowed fair comparisons between different
-retrieval methods.
+A web developer might also conduct document analysis when determining
+categories for an online retail site. The second type of subject
+analysis is query analysis that an information professional conducts
+prior to conducting a search. We will learn more about query analysis in
+a later module.
 :::
 
-## Brief History of Information Retrieval {.smaller}
+## Purpose of Subject Analysis
 
-::::: columns
-::: {.column width="50%"}
--   [PageRank algorithm]{style="color: blue;"} was developed at Stanford
-    University by Larry Page and Sergey Brin in 1996
-
--   In 1997, [Google Inc.]{style="color: blue;"} was born which has now
-    ruling dominantly in searching engine domain
-
--   Google personalized search started in 2005
-
--   Multimedia IR (Smeulders, Lew, Sebe) integrates into search in 2010
-
--   Semantic models came first in 2013-2014 such as Word2Vec, GloVe
-
--   Google introduces BERT in 2018
-
--   Conversational IR in assistants were introduced in 2020-2021 such as
-    Alexa, Siri
-
--   Retrieval Augmented Genreration in 2022-2023
-:::
-
-::: {.column width="50%"}
-![](images/clipboard-2203373772.png){fig-align="center"}
-
--   LSI gained huge popularity in WWW and was hugely used in Search
-    Engine Optimization (SEO)
-
--   [Latent Dirichlet allocation (LDA)]{style="color: blue;"}, a
-    generative/topic model in NLP was developed by David Blei, Andrew
-    NG, and Michael Jordan in 2003
-:::
-:::::
+-   Clarify and organize subjects of docs and queries
+-   Express subjects precisely
+-   Achieve consistency between document and search terms
 
 ::: notes
-Several key developments mark the evolution of modern information
-retrieval systems. Some of the selected ones are as follows:
-
-In 1996, at Stanford University, Larry Page and Sergey Brin developed
-the PageRank algorithm, a seminal contribution that ranked web pages
-based on link structure rather than just keyword frequency. This
-innovation became the foundation of Google’s search engine and
-transformed large-scale web retrieval.
-
-Latent Semantic Indexing, or LSI, gained significant popularity with the
-growth of the World Wide Web. The method, originally introduced in the
-late 1980s, was designed to capture hidden semantic structures in text
-by reducing dimensionality through singular value decomposition. In the
-context of the web, LSI was quickly adopted in Search Engine
-Optimization (SEO) practices. The reasoning was that by modeling the
-semantic relationships among terms, web pages could be optimized not
-only for exact keywords, but also for related concepts and variations.
-This marked an early move from simple keyword matching toward a more
-semantically aware retrieval process.
-
-Although later models like probabilistic topic models and neural
-embeddings surpassed LSI in accuracy and scalability, its role was
-historically important -- it bridged the gap between traditional
-keyword-based retrieval and more advanced semantic methods.
-
-In 2003, David Blei, Andrew Ng, and Michael Jordan introduced Latent
-Dirichlet Allocation (LDA), a probabilistic generative model that
-enabled documents to be represented as mixtures of latent topics. LDA
-marked an important theoretical and practical advance in modeling text
-corpora and topic-driven retrieval.
-
-By 2005, Google introduced personalized search, adapting retrieval
-results to individual user histories and profiles. This was a shift from
-universal rankings toward user-centered retrieval models.
-
-In 2010, the field saw the integration of multimedia information
-retrieval, with researchers such as Smeulders, Lew, and Sebe working on
-retrieval methods for images, video, and audio. This expanded the scope
-of IR beyond text into multimodal domains.
-
-The years 2013–2014 introduced the first widely adopted semantic models,
-particularly Word2Vec (Mikolov et al.) and GloVe (Pennington, Socher,
-Manning). These embedding models captured semantic relationships in
-continuous vector spaces and significantly improved retrieval quality.
-
-In 2018, Google introduced BERT (Devlin, Chang, Lee, Toutanova), a deep
-contextual language model that revolutionized semantic search and
-natural language understanding within IR systems.
-
-By 2020–2021, conversational IR emerged in mainstream use, integrated
-into voice assistants such as Alexa, Siri, and Google Assistant,
-enabling multi-turn, interactive retrieval.
-
-Most recently, in 2022–2023, the rise of Retrieval-Augmented Generation
-(RAG) has combined neural retrieval with large language models, enabling
-systems not only to retrieve relevant documents but also to generate
-coherent, contextually enriched answers. This represents the convergence
-of IR with generative AI, defining the current frontier of the field.
+There are several purposes for subject analysis as listed on this slide.
+The primary purpose is, of course, to determine the subject(s) of an
+item and to choose appropriate terms to use to represent the subject(s)
+within the record. A very important aspect of this process is to
+represent subjects consistently using the same term throughout the
+system when describing a specific subject.
 :::
 
-## Who are the Users?
+## The **How** of Subject Analysis
 
-> A user is a person who uses information and/or information systems in
-> some meaningful way
+1.  `Familiarization`: Acquainting oneself with general content of
+    document and query
 
-A user can be:
+2.  `Extraction`: Identifying pulling out significant concepts and
+    natural- langugage terms
 
--   End-user: seeks, evaluates, uses information for personal question
-    or problem
--   System-user: end user who exploits information systems at some level
--   Information professional: facilitates end-user information seeking
-    and use
--   Computerized system, software program
+3.  `Translation`: Converting extracted terms into controlled vocabulary
+    of system
+
+4.  `Formalization`: Applying rules for exact format, spelling,
+    punctuation, codes, etc. for input to system
 
 ::: notes
-Everyone is an information user and exploits information systems at some
-level. The literature uses many terms to describe users, such as end
-users, system users, and information professionals. They are all users
-of IR systems, right? End users and system users are basically the same.
-The term end user comes from a time in libraries when users could not
-access the library catalog and the librarian conducted the searching for
-them in a closed stack environment. When libraries became automated in
-the 1970s and 80s the term system users began being used to describe
-both the end users but also the information professionals who now had
-access to online resources using dumb terminals (not connected to an
-external server) and to a small set of subject specific databases. Your
-readings provide you will more of this history.
+There are either 4 or 5 steps to subject analysis, depending on what
+source you are referring to. The approach shown on the slide is
+preferred.
 
-Computerized systems like bots on the web are also users of our systems,
-right? The bots access our OPACs to index our collections and make them
-accessible through search engines.
+1.  The indexer/cataloger familiarizes themselves with the content of
+    the document or if we are talking about searching, with the content
+    of the query or information need.
+
+2.  They would then identify or extract terms that are used within the
+    document by the author. These are called natural language or derived
+    terms. A searcher would identify a set of terms that might be used
+    to represent the query of the user.
+
+3.  In the third stage, the translation stage, the cataloger/indexer
+    would translate the terms they extracted in step 2 into controlled
+    vocabulary terms used by the system but consulting the subject
+    heading list or controlled vocabulary. A searcher would conduct the
+    same step but would translate the query terms into system terms by
+    using the Thesaurus feature of the system, if one is available.
+
+4.  In the last step the cataloger/indexer would use the rules of the
+    system (such as a cataloging standard or code) to form the subject
+    heading. A searcher, would consult the help screens to determine how
+    to enter the terms into the system or if using a thesaurus feature,
+    they would follow the screen prompts to enter the terms.
 :::
 
-## User's Information Needs
+## The How of Subject Analysis
 
-Users are motivated to seek information in a given situation to:
+Subject analysis is a dance....
 
--   answer a question
--   solve a problem
--   complete a task
--   learn about a subject
--   verify a fact
--   just for fun
+-   based on `literary warrant` (information objects/author's
+    intentions) and on `user warrant` (user needs)
+
+-   requiring evaluation and verification at every stage in a
+    continuous, iterative process
 
 ::: notes
-Whether you are a system designer, reference librarian, or just want to
-become a better searcher, it is important to understand more about WHY
-and HOW people search for information. Information scientists have long
-studied what is called Information Behavior (how people find and use
-information to various purposes) and a subset of information behavior
-called information seeking, which focuses on the process, tools, and
-decisions associated with seeking for information.
+I like to think of subject analysis as a dance between the user and the
+author and the record creator. The searcher/indexer has to take into
+account the literary warrant of the author (the author’s intention) for
+the content of the document along with user warrant (the user’s needs
+for the document).
 
-Generally we know that users are motivated to seek information as part
-of a situational context to answer a question, solve a problem, complete
-a task, to learn more or verify a fact. What we know less about is how
-they seek information for fun or entertainment. There are some very
-interesting studies about information seeking for hobbyists, within
-social media, or just to surf for fun. But we need to learn more.
+In searching this dance requires evaluation and verification at every
+stage in an iterative process as searches are constructed and conducted
+choosing appropriate search terms that meet the user’s idea of what they
+need and how the author and indexer may have represented the document in
+the system. The dance then requires the searcher to think about the
+types of document within a system, how the author(s) may have
+represented the content, and how the indexer/cataloger may have
+represented the document in the records.
 :::
 
-## User's Information Needs
+## The When of Subject Analyis
 
-Typical user questions:
+-   During production of primary document
 
--   What
--   When
--   Where
--   Why
--   How
+    ```         
+    Author's abstract and/or index
+
+    Indexing commissioned by publisher
+
+    Cataloging in publication (CIP)
+    ```
+
+-   Prior to storage for retrieval
+
+    ```         
+    Cataloging or indexing by bibliographic utility
+
+    Cataloging or indexing by individual library
+    ```
+
+-   During information retrieval
+
+    ```         
+    Problem statement or question from user
+
+    Query formulation by intermediary or user
+    ```
 
 ::: notes
-When helping users search or use different IR systems we can expect
-specific kinds of questions, such as WHAT, WHEN, WHERE, WHY and HOW.
-Drawing out a user’s actual information need, however, is often
-challenging as they may not know how to ask the question, how to enter a
-query into the system, or to use the functions of the system to find
-what they are looking for. In libraries, we conduct “reference
-interviews” but in other contexts the conversation you have with users,
-or that users have with a computer, is designed to extract more
-information about their information need, right?
+This dance, and the process of subject analysis takes place
 
-Later in the course, we will talk more about how to refine an
-information need to conform with system parameters.
+1)  during production of the document,
+
+2)  prior to storage for retrieval when the cataloger/indexer creates
+    the record, and
+
+3)  during the information retrieval process.
 :::
 
-## Information Needs
+## Indexing
 
-Two broad categories of searches:
+`Indexing`
 
--   Known item search
--   Subject or topic search
+> Process of creating index for purpose of representing and providing
+> access to information objects
+
+May be performed by humans or computers
+
+`Index Entry`
+
+> Any pointer or indicator included in an index
 
 ::: notes
-Research has also shown that there are two broad categories of searches
-that users conduct:
+This indexing process is conducted by either a library cataloger
+creating MARC records in a library catalog or by a database indexer
+describing articles in a database like Proquest. The indexing process
+also is conducted by website developers or content managers of online
+retail or other online sites.
 
-1.  Known item searches – where the user knows something about the item
-    they are seeking such as title or author
+Indexing can be performed by humans or by computers. The Chowdhury
+readings discuss computerized indexing in more depth than we will go
+into now but we will address computerized indexing and abstracting in
+later module.
 
-2.  Subject or topic searches – the user knows some aspect of the
-    subject or topic that they need to learn more about or that they
-    need to find specific information about.
-
-This is not quite as simple as it sounds. Very often a user will not
-know how to express their precise information need or how to implement
-it within a given system. They also may not remember correctly the
-author or title they think they know. In modern systems depending on the
-IR technique of the system or its capabilities to match partial search
-information, the user can still find useful information. We will talk
-more about this topic throughout the semester.
+What is produced by the indexing process is a pointer or indicator,
+usually a record that includes the physical description and subject
+representation of one object, whether a book, journal article, website,
+etc.
 :::
 
-## Information Retrieval Systems {.smaller}
+## Index Entry and Term
 
-> A specialized system for the description, storage, and retrieval of
-> information representations: primarily information objects (text,
-> images) and their surrogates (metadata, records). Operates by matching
-> queries (representations of information need) with data
-> (representations of information objects)
+`Index Term`
 
-![](images/clipboard-1371401673.png){fig-align="center"}
+> Any word/phrase used for physical or subject description
+
+> Any word/phrase used to search for and retrieve document
+
+May describe any attribute of document (author, title, year, subject,
+etc.)
 
 ::: notes
-In this class, we will also learn more specifics about the IR process
-and IR systems. As this slide notes, IR systems are specialized systems
-that are used for the description, storage and retrieval of information
-representations (or the information objects). These objects can take
-many forms.
-
-Users access the records of the objects or the objects by matching
-search terms or queries to data or representations about the objects
-within the system. IR systems are set up to use algorithms that provide
-the “matching” function. Older systems primarily were exact match
-systems, meaning that the query terms and terms in the representation
-and/or inverted index had to match exactly.
-
-The most significant change in IR systems is that MOST are no longer
-exact match systems but will match on part of the query terms.
-Artificial intelligence (AI) and machine learning are also changing
-expectations of users and how they think search engines and databases to
-work.
+Within the record or index entry is the index term or terms used to
+represent the document.
 :::
 
-## Components of IR systems
+## Guessing Game
 
-::::: columns
-::: {.column width="50%"}
-Knowledge system into which an IR system is implanted generally consists
-of three main components:
-
-a)  [people in their role as
-    information-processors]{style="color: blue;"}
-
-b)  [documents in their role as carriers of
-    information]{style="color: blue;"}
-
-c)  [topics as representations]{style="color: blue;"}
-:::
-
-::: {.column width="50%"}
-![](images/2.png){fig-align="center" width="500"}
-:::
-:::::
+![](images/clipboard-213947410.png){fig-align="center"}
 
 ::: notes
-Let us now consider the basic conceptual framework of information
-retrieval systems.
+So, the dance begins between the indexer and the user. The indexer
+describes the document, where the user is trying to predict the document
+that they need that will help them resolve an information need. The
+indexer predicts use of the particular items that they’re representing.
+The user, on the other hand, has to somehow describe how they’re going
+to use the document or the object in your collection to satisfy their
+information need. They describe this use through search or query terms
+they input into the system.
 
-An IR system is not an isolated tool, but rather one that is implanted
-within a broader knowledge system.
-
-This system can be thought of as consisting of three interrelated
-components:
-
-1.  People, in their role as information processors and seekers of
-    knowledge.
-
-2.  Documents, in their role as carriers and representations of
-    information.
-
-3.  Topics, which function as abstract representations of knowledge
-    domains and link users to the documents they seek.
-
-This slide illustrates a “basic” model of how IR works. On the left side
-are the documents and representations that are stored by the system. On
-the right side are the user interactions with the system. The center
-section shows the matching function and the output or results of the
-search. Of course in a computer there is much more to it, but this gives
-us the basic idea of how IR works.
-
-As Lancaster observed, the purpose of an IR system is not to directly
-inform the user on the subject of their inquiry. Instead, its role is
-more precise: to inform the user of the existence, non-existence, and
-whereabouts of documents relevant to their request. In its early
-conception, therefore, IR was fundamentally about retrieval of
-documents, not retrieval of information.
-
-This notion shifted significantly with the advent of full-text
-availability in bibliographic databases. No longer constrained to
-indexes and metadata, IR systems could now operate directly on the
-content of documents. Originally, IR meant text retrieval systems,
-reflecting the textual nature of the collections.
-
-However, modern IR systems increasingly handle multimedia information —
-not only text, but also images, audio, and video. This transition has
-required the development of new tools, methods, and techniques capable
-of supporting retrieval across multiple modalities. It represents one of
-the major conceptual and technological expansions in the field.
+So, if you look at it from this perspective, you can see that there are
+a lot of places where retrieval will break down. If the indexer and the
+user do not correspond in terms of how the document is described and how
+they’ll use the documents or how the indexer believes the document will
+be used versus how the user is actually describing their use, then there
+can be problems in retrieving documents from the collection.
 :::
 
-## Model of IR System
+## Indexing Factors Affecting IR Performance {.smaller}
 
-![](images/3.png){fig-align="center"}
++---------------------+---------------------+
+| Indexing            | Consistency         |
+|                     |                     |
+|                     | Subject expertise   |
+|                     |                     |
+|                     | Indexing experience |
++---------------------+---------------------+
+| Types of Knowledge  | Search Experience   |
+|                     |                     |
+|                     | System Knowledge    |
+|                     |                     |
+|                     | Domain Knowledge    |
++---------------------+---------------------+
+| Affective/Cognitive | Motivation Level    |
+|                     |                     |
+|                     | Emotional State     |
++---------------------+---------------------+
 
 ::: notes
-The Chowdhury reading, Chapter 1, provides a much more complete picture,
-expanding each of the functions of the Blair model on the last slide.
-The actors of each side are also included, such as on the left side,
-they include content creators, producers of the documents but also the
-catalogers who provide the descriptions or the metadata associated with
-each object.
+We should also consider human factors, which can be associated with the
+indexing itself, such as the human indexer’s types and levels of
+knowledge, as well as affective and cognitive variables that affect
+humans on a daily basis.
 
-This slide also shows a range of types of documents that might be
-accessible in a system. Chowdhury’s model also shows the outcomes of the
-representation process, by the human indexer as well as the computer
-processing the representations or documents, as well as the standards
-and tools that are used in the representation process.
+We can also discuss the measure of inter-indexer consistency and
+inter-indexer inconsistency. The research has shown that there’s really
+at the highest level about 30% of consistency between any two indexers
+that are creating subject terms for the same document. So, consistency
+can be an issue. Also, subject expertise and indexing experience play
+into whether or not the index terms chosen are appropriate, accurate,
+and complete. If a person has a high degree of subject expertise, or
+domain knowledge, in a particular area, such as chemistry or
+ethnobotany, then they’re probably going to know the literature of the
+field and they’re going to know the appropriate levels of specificity
+and exhaustivity when they’re indexing.
 
-In the middle is the search interface and IR technique that provide the
-matching function. On the right are the users within a societal context,
-which affects what they know and what types of knowledge they bring when
-they use an IR system.
+There are also, as I said, types of knowledge, for example, I just
+mentioned domain knowledge and the indexer’s understanding of the domain
+itself, but also their search experience. Generally people that have a
+lot of experience with different search systems and have looked at the
+different structures within them and also use different techniques for
+searching are better indexers because they understand the effects that
+their decisions play on retrieval.
 
-At the bottom of this model are other factors, such as national,
-technological, etc. that affect the context in which an IR system
-exists. This is one of my favorite models for understanding the
-complexity of an IR system because it incorporates contextual factors
-into the model which have direct influence on the IR system and how it
-is used.
-
-We will learn more about IR systems, models and how to evaluate IR
-systems in the later modules.
+There are also factors related to motivation or emotional state.
+Research has looked at motivation level of indexers and some of the
+errors they make if they’re unhappy in their job, or the emotional state
+of individuals and how that might impact their indexing as well. There
+are not any recent studies in this area, but we do know that motivation
+and emotional state do have an effect on indexing. So, these human
+factors and the decisions an indexer makes when choosing terms to
+represent a subject of a document can potentially impact retrieval.
 :::
 
+## Indexing Factors Affecting IR Performance {.smaller}
 
-## Types of IR Systems {.smaller}
+`System Factors`
 
-Based on the different types of services, IR can be categorized as:
-
-::::: columns
-::: {.column width="50%"}
--   [x] Pre-Coordinate Systems
-
-    -   Printed indexes and catalogs
-    -   OPACs
-
--   [x] Post-Coordinate Systems
-
--   [x] Web Search
-
--   [x] Personalized IR
-
--   [x] Enterprise/Institutional IR
-
--   [x] Domain-Specific IR
-:::
-
-::: {.column width="50%"}
--   [x] Web Based IR System
-
--   [x] Digital Libraries
-
--   [x] Multimedia IR System
-
--   [x] Distributed IR System
-
--   [x] Conversational IR System
-
-    -   ChatGPT
-:::
-:::::
++---------------------+-----------------------------+
+| Index Language      | Specificity                 |
+|                     |                             |
+|                     | Level of coordination       |
++---------------------+-----------------------------+
+| Indexing Assignment | Exhaustivity                |
+|                     |                             |
+|                     | Specificity of term         |
+|                     |                             |
+|                     | Accuracy                    |
++---------------------+-----------------------------+
 
 ::: notes
-Now that we’ve looked at the definition and scope of Information
-Retrieval, let’s consider the different categories of services that IR
-supports.
+We had talked in an earlier lecture about some of the indexing factors
+that affect information retrieval performance. These are also evaluation
+measures or metrics that we use when we evaluate information retrieval
+systems. Some of those system factors are related to, say, index
+language and the indexing assignment within the system itself.
 
-On the left, we see types that focus on **context and users**:
+So, when we discuss system factors related to the index language, one
+aspect we evaluate is if the indexer is choosing the appropriate
+vocabulary to use within that system. And then also have you chosen the
+appropriate levels of specificity in terms that you’re using to assign
+subject terms to particular documents. Also, is the level of
+coordination of terms within the system accurate? Do you have similar
+concepts being represented with the same subject terms, for example? Or
+is the specificity level consistent throughout the system? And is it
+also consistent with the users who are interacting with the system?
 
-**Web Search**, the most familiar to all of us, where IR powers
-large-scale search engines across the open internet.
+In terms of indexing assignment, we evaluate if the level of
+exhaustivity is appropriate. For example, how are we representing the
+items within the system itself? Are we representing a broad, overall
+subject, or are we representing multiple topics and subtopics for each
+document? Also, how many different terms are used to represent the
+subjects within documents. Specificity is also part of this. Are we
+using the accurate level of specificity in the terms that meets the
+level of specificity in the documents themselves? Are accurate terms
+being assigned to represent those subjects? Are we representing the
+subjects themselves accurately and completely within the document?
 
-**Personalized IR**, which adapts results to individual user preferences
-and past behaviors.
+These factors all require a very good understanding of the documents in
+the collection and the potential users who will use the system. For
+example, would it be appropriate to use LCSH as the controlled
+vocabulary for the system when its users are very young children? What
+would your level of specificity be when representing books for children?
 
-**Enterprise or Institutional IR**, which focuses on retrieving
-information within organizations — for example, searching across company
-documents or academic repositories.
-
-And **Domain-Specific IR**, which is specialized for a particular field
-such as medicine, law, or engineering, where terminology and relevance
-criteria are unique.
-
-On the right, we have **system-based services**:
-
-**Web-Based IR Systems**, which deliver retrieval through online
-interfaces.
-
-**Digital Libraries**, which apply IR to structured, curated collections
-of academic and cultural material.
-
-**Multimedia IR Systems**, which extend beyond text to include images,
-audio, and video retrieval.
-
-And finally, **Distributed IR Systems**, which work across multiple,
-separate data sources — for example, federated search across libraries,
-or even across multiple company systems.
-
-The important takeaway here is that IR isn’t one-size-fits-all.
-Different contexts whether public web search, personalized
-recommendation, or specialized domains, demand different architectures
-and retrieval strategies.
+As a searcher, it is important to understand these factors when
+constructing queries within the system.
 :::
 
-## What Information Can You Find Online?
+## Considerations when Choosing Terms
 
--   Bibliographic citations
--   Full-text documents
--   Directory of reference sources
--   Numeric data
--   Images
--   Multimedia files
+-   Attributes of documents and users
+-   Record field that will contain the data
+    -   out of several potential kinds of subject fields
+-   Domain
+-   Scope
+-   Specificity
+-   Exhaustivity
 
 ::: notes
-Not to be flippant, but did you laugh the first time you heard someone
-say that you can find everything online?
+There are other considerations catalogers/indexers have to make when
+choosing terms to represent subjects. And that searchers should consider
+when choosing terms for their queries. We will discuss each of these in
+turn.
 
-It is very common misconception of users that they can access everything
-online. While the availability of content and what you can find online
-has definitely improved, not everything can be found online.
+For example, the attributes of the documents and the attributes of the
+users and their queries can impact the choices we make regarding choice
+of subject terms. Knowing about your users types/levels of knowledge
+will help you determine age-appropriate, subject-specific terms to use
+in subject description.
 
-What is also key to remember is that you need to know which systems hold
-specific types of information, so you choose an appropriate system.
+The field within the record that will contain the data also has bearing
+on which term(s) to choose.
 
-For example, if you are looking for a book to purchase you might use the
-Web and Amazon or Barnes and Noble. If you just want to borrow a book
-you would search for it in the library catalog and may find it easily
-accessible or the library may have to order it for you. (As I type this
-I realize this has also changed. With Amazon services you can now rent
-books and return them.)
+Domain, Scope, Specificity and Exhaustivity are also terms we need to
+discuss when talking about considerations catalogers make when choosing
+subject terms.
 
-To locate scholarly articles, like those usually required for research
-papers in your classes, you would use OU Libraries subject/discipline
-specific databases.
+**Domain** refers to the specific subject area or discipline of the
+subject. It would also include an understanding of how a specific
+discipline is organized, what terms are used in the discipline, what
+subjects are studied, who the main authors are, etc.
 
-You can, in some instances, use Google Scholar, but often you end up
-with a citation that requires payment to access the actual article. AND
-Google Scholar is not as heavily indexed so you may miss relevant
-articles if you use different terms than what is in the Google Scholar
-index.
-
-The point here is that choosing the correct system is critical in
-finding the useful information you need. We will talk about this more
-later in the course.
+**Scope** refers to the limits of the discipline within the specific
+collection. In other words, what is included in the discipline or
+collection and what is NOT included.
 :::
 
-## Issues to Consider
+## Domain and Scope
 
-How is access to the Internet changing our user's ................?
+`Domain`: overall subject, topic, discipline, or theme
 
--   Expectations
+`Scope`: Extent or limitations of domain
 
--   Ways of engaging with information
+Considerations
 
--   Brains
-
--   Information needs/seeking activities and behaviors
-
--   Other thoughts?
+-   Breadth and complexity of subject area/discipline
+-   Users' vocabulary level
+-   Terminology used in documents
 
 ::: notes
-Other issues to consider that we will explore together are, for example,
+Domain is particularly important for searchers. One of the first
+decisions you will make when beginning a search is to choose the
+appropriate resource to use, such as a library catalog, subject specific
+database or repository. Knowing the domain of the topic will help in
+this decision. Also, knowing the domain will help you determine terms to
+enter into the system that would be in use within the documents and by
+the authors (literary warrant).
 
-1.  How have users expectations changed now that almost ubiquitous
-    access to the Web is possible?
-2.  Has our way of engaging with information also changed?
-3.  Is there any effect on our brains due to the way we interact with
-    online systems today?
-4.  Are there new sets of information behaviors that information
-    professionals need to take into account? For example, how have using
-    smart phones affected IR?
-5.  Other thoughts?
+Scope helps you determine if the system includes not just the topic you
+are interested in but also the extent of the database, such as the years
+covered, whether there is complete coverage of the topic area and date
+range that will be useful for your query.
 
-We will explore these issues and others together.
+Other considerations of domain and scope are listed on the slide, such
+as the breadth and complexity of the subject area, This will give you an
+idea of the level of language used by the authors that might be
+appropriate search terms.
 :::
 
-# Putting It All Together
+## Specificity and Exhaustivity {.smaller}
+
+`Specificity`: extent to which index terms precisely represent the
+subject of the document. Can be general or more specific.
+
+`Exhaustivity`: extent to which indexing represents all concepts in a
+document.
+
+Considerations
+
+► Level and complexity of terms in subject area/ discipline
+
+► Users' vocabulary level
+
+► Terminology used in documents
+
+Example
+
+► Specificity is high if detailed math topics covered, e.g., set
+operations
+
+► Exhaustivity is high if all math operations in textbook covered
 
 ::: notes
-This class focuses on all aspects of IR from understanding more about
-users and their information needs, to system structures and IR
-techniques, to how to capitalize on these understandings to improve your
-own search abilities. It is also important to understand your own search
-process and where you might need to improve. This semester provides you
-will the opportunity to play with many different systems and to test out
-their features as you become a more proficient searcher and as you learn
-more about how IR works. My hope is that you enjoy the entire process!!
+Other considerations include specificity and exhaustivity levels that we
+represent a subject at within the records.
+
+**Specificity** is the extent to which index terms precisely represent
+the subject of the document. Can be general or more specific.
+
+**Exhaustivity** is the extent to which indexing represents all concepts
+in a document. The exhaustivity level may vary from one of Summarization
+(overall concept represented) to Exhaustive (all concepts represented)
+
+We need to consider:
+
+-   Level and complexity of terms in subject area/discipline
+-   Users’ vocabulary level
+-   Terminology used in documents
+
+Each of these must be considered so that we can choose ageappropriate,
+subject-specific terms to represent the concept or concepts of the
+document or when searching within the system.
+
+Here is an example. We have a collection in a middle school which
+consists of mathrelated objects. It is limited to only those required by
+the state’s curriculum standards, so only subjects on those topics would
+be included. Specificity is high if detailed math topics covered, e.g.,
+set operations, Boolean logic, etc. and exhaustivity is high if all math
+operations in textbook covered.
+:::
+
+## A closer look: Exhaustivity
+
+![](images/clipboard-954889716.png){fig-align="center"}
+
+::: notes
+Specificity and exhaustivity can really be thought of as a continuum. On
+one side, we have Summarization where we represent ONLY the overall
+subject of the object with few terms (usually 1-5 subject headings). On
+the other side, we represent the overall subject but also any other
+subtopics we deem necessary using MANY terms. Usually we are close to
+the middle ground in subject representation, describing the overall
+subject and a few subtopics with a moderate amount of terms.
+:::
+
+## Recall
+
+`RECALL= Relevant Documents in a IR Set/All relevant documents in the
+database`
+
+-   A measure of how good a system is at retrieving all the relevant
+    documents
+
+-   Inversely related to precision
+- Dependent upon the users expectations and
+objectives
+- Difficult to estimate. Need to know the number
+of relevant documents in the entire collection
+
+:::notes
+
+Domain, scope, specificity and exhaustivity can affect the results of the search.
+Two measures used in IR are recall and precision. We will address each briefly
+here and come back to them in Modules 4 and 5.
+
+Recall is the measure of how good a system is at retrieving all the relevant
+documents that are part of that system’s collection. The equation used to
+evaluate recall is included on the slide for you. We do know that in most cases
+and in most retrieval systems, recall is inversely related to precision. So, if you
+have a high level of recall, you have a low level of precision.
+
+:::
+
+## Precision
+
+`PRECISION = Relevant documents in a retrieved set/All documents in the retrieved set`
+
+- Measures how good the system is at "not"
+retrieving non-relevant documents
+- Dependent upon user's expectations and
+objectives
+
+:::notes
+Precision, then, measures how good the system is at not retrieving those nonrelevant
+documents–in other words, bringing back documents that are only
+related to your query and nothing that’s irrelevant. This again, is a
+measurement that is dependent upon users’ expectations and objectives. The
+user is the only one that can really evaluate whether or not a document is
+useful to them. And again, it’s difficult to measure precision because we have
+to know how many documents in the collection are on particular topics or
+related to particular topics in a database.
+
+Some of the largescale studies run precision and recall measures by setting out
+document sets in which they know every topic that’s included in that document
+set. And then they run queries that have been developed for those document
+sets against the collection using different kinds of search tools and different
+algorithms that they’ve developed in order to test precision and recall.
+
+The
+TREC studies are still conducted today. Researchers compete developing and
+using new algorithms to test the precision and recall of their system. They also
+share information with each other about how to improve retrieval metrics, such
+as precision and recall in the IR systems. There are a lot of different TREC
+studies you can read online. And TREC deals not just with English language; it
+does also do some cross language retrieval as well, which is called CLIR, cross
+language information retrieval. There is an entire community for just CLIR and competitions related to CLIR as well. TREC itself includes user studies and
+competitions for not just text based documents, but also for images and multimedia
+and blogs and social networks and all kinds of different information retrieval systems.
+It is really interesting to see the problems and the issues that they trying to resolve by
+developing better retrieval mechanisms.
+
+
+:::
+
+
+## Effects on Precision/Recall
+
+- Higher specificity means higher P or R? and
+lower P or R?
+
+- Higher exhaustivity means higher P or R? and
+lower P or R?
+
+- How do users information needs/expectations
+fit in?
+
+
+:::notes
+A further consideration a searcher will make is related to specificity of the
+terms they choose. For example, if the system you are searching in has very
+specific terminology in the documents and in the indexing, how will using a
+higher level of specificity affect your search? Likely you would have more
+precise searches, right, but lower recall. What about exhaustivity? If the
+indexer represents all of the subjects in the document using many terms, this
+may assure a higher degree of precision, right? But what about recall? Would
+recall be higher if the searcher uses more terms to represent many subjects
+within the query or will recall suffer as a result of higher precision. Remember,
+recall and precision have an inverse relationship in the system; if one is high
+the other is low.
+
+As a searcher you will need to determine which is important to your search
+results, finding everything that might mention your topic OR finding fewer
+documents that are more precisely on topic. It is also good practice to use the
+same level of specificity as the author(s) in the system if possible.
+
+:::
+
+
+## Putting it all together {.smaller}
+
+- Subject representation must take into
+account:
+  - Users and their information seeking/needs
+  - Understanding of the changing nature of language
+    - DIACHRONIC, SYNCHRONIC ATTRIBUTES
+    - CULTURAL/GENDER ISSUES
+    - NEW WORDS IN CURRENT USE
+  - Author's intentions
+    - Subject(s) covered
+    - Biases? Perspectives? Place within larger body of
+knowledge
+  - Standards for creation of indexes/abstracts
+  - Tools for term selection
+  - Indexer's experience/domain/system knowledge
+
+:::notes
+
+Putting it all together, it is easy to see that subject representation, well
+document representation as a whole, is a very complex process. Many different
+factors such as those listed on the slide must be taken into account. Of primary
+importance to searching are an understanding of the user’s information need,
+being able to express this need (or helping them express this need) in terms
+that might be used by the author, the indexer, the controlled vocabulary of the
+system, and knowing how best to implement the terms in the system. 
+
+The
+domain of the query is also important as it will ensure that the searcher
+chooses the appropriate resource(s) in which to conduct the search but perhaps
+also the level of specificity of the terms used by the author/indexer.
+Understanding how the document may be represented within the system
+structure helps the searcher choose fields that might include the terms they feel
+the author or indexer used to represent the content of the documents they need
+to find. An indexer/searcher’s knowledge of the domain, their search
+experience, and understanding of the system structure all come into play when
+retrieving documents in the system.
+
+The user’s expectations for retrieval are also important and can affect the
+choice of terms and level of specificity and exhaustivity of terms when
+conducting a search. In a few weeks we will look at controlled vocabulary
+searching which takes advantage of the domain’s terms and the controlled vocabulary feature of the system as one method to increase the precision and/or recall
+of a search.
 :::
