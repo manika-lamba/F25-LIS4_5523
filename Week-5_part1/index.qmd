@@ -23,6 +23,7 @@ editor:
 # Introduction
 
 ::: notes
+This week, 
 :::
 
 ## What is User Experience or UX?
@@ -343,6 +344,14 @@ and directly shape how usable and accessible a digital product becomes.
 
 ![](images/19.png){fig-align="center"}
 
+:::notes
+Here I use a house blueprint as an analogy for your website. 
+
+Just as a house needs a solid architectural plan before you start building, a website needs a clear information structure. The blueprint represents the underlying design that determines how visitors will move through and experience your site. 
+
+Without a plan, even a visually attractive site can be confusing and hard to use.
+:::
+
 ## Navigation and Labeling
 
 ::::: columns
@@ -355,6 +364,16 @@ and directly shape how usable and accessible a digital product becomes.
 :::
 :::::
 
+:::notes
+These floor‑plan diagrams illustrate the importance of navigation and labeling. 
+
+Just like labels on rooms help you find the kitchen or bedroom, clear labels on a website guide visitors to the right section.
+
+The labeling must be intuitive and consistent; if someone has to guess what a label means, they’re likely to get lost. 
+
+Good navigation is about both naming things well and organizing them in a way that feels natural.
+:::
+
 ## Questions
 
 -   Why did we put the living room in the middle?
@@ -364,9 +383,23 @@ and directly shape how usable and accessible a digital product becomes.
 
 ![](images/22.png){fig-align="center"}
 
+:::notes
+This slide poses a series of questions about why certain rooms are placed where they are. 
+
+Use it to encourage critical thinking about layout decisions — for example, why put the kitchen near the dining room or bedrooms upstairs? Then introduce the twist: ‘Grandma has a bad back and can’t do stairs.’ 
+
+Understand that real users have specific needs, and that architects and information architects must accommodate those needs.
+:::
+
 ## Revising -- Navigation and Labeling
 
 ![](images/23.png){fig-align="center"}
+
+:::notes
+Here we see a revised floor plan with Grandma’s room moved to the first floor. 
+
+IA is iterative -- once you learn about user constraints, you adjust the layout. This mirrors the process of redesigning a website’s navigation when you discover accessibility issues or changing user requirements. The lesson is to be flexible and user‑centered.
+:::
 
 ## Content Organisation
 
@@ -374,25 +407,227 @@ and directly shape how usable and accessible a digital product becomes.
 
 ![](images/24.png){fig-align="center"}
 
+:::notes
+This slide represents the idea of Content Organisation. Just like in a house, where each room has a clear purpose and every item has its rightful place, information systems need to be organized so that everything -- both now and in the future -- has a designated location.
+
+Think about it: the living room holds the sofa, TV, and coffee table; the bathroom has the sink, shower, and toilet; the kitchen is for cooking equipment; and the dining room is for meals. The structure ensures we always know where to look for something, and it reduces confusion.
+
+In the same way, when designing digital spaces or websites, we must create logical categories and hierarchies where all current content fits and where future additions can also be placed seamlessly. Good content organization makes navigation intuitive and sustainable over time.
+:::
+
 ## Information Storage & Retrieval
 
 Where does eating utensils go?
 
 ![](images/25.png){fig-align="center"}
 
+:::notes
+This slide highlights the concept of Information Storage & Retrieval in Information Architecture. 
+
+The question here is simple but powerful: Where do eating utensils go? Should they be stored in the kitchen with the stove and cooking utensils, or in the dining room with the table and chairs?
+
+This is the exact challenge IA faces. It’s not just about organizing content -- it’s about putting things where users expect to find them. If someone is looking for utensils, their mental model will guide whether they search the kitchen or the dining room.
+
+The takeaway is that storage decisions must align with user expectations, not just what seems logical from the creator’s perspective. A well-architected website, like a well-designed house, makes information easy to retrieve by placing it where users naturally look for it.
+:::
+
 # ![](images/26.png){fig-align="center"}
+
+:::notes
+Now that we’ve covered the basic concept of Information Architecture — what it is and why it matters — the next big question is: **how do we actually put it into practice?**
+
+It’s one thing to understand IA as the art and science of organizing and structuring information, but implementation requires concrete methods, tools, and processes. 
+
+On the upcoming slides, we’ll walk through practical strategies from organizing content and defining navigation to labeling systems and retrieval methods.
+:::
 
 ## IA Output: Sitemap
 
 ![](images/27.png){fig-align="center"}
 
+:::notes
+A sitemap is essentially the blueprint of a digital product, laying out how all the content is structured and connected. Here, you can see how the site is divided into clear sections -- the header and utility navigation, the main navigation, and the footer links.
+
+For example, under ‘Our Products,’ users can drill down into specific categories like Stay Fresh, Oil, or Pimples. Under ‘Skin Facts & Fiction,’ we see subcategories like acne, skin tips, and skin types — all organized logically.
+
+The sitemap makes sure users know where to find what they’re looking for, and it helps designers and developers build consistent navigation. In short, it ensures that everything has its place, and users can get there efficiently.
+
+**This output is critical before moving into wireframes or design**, because it aligns everyone on the content structure and user pathways.
+:::
+
 ## IA Output: Sitemap (Cont.)
 
 ![](images/28.png){fig-align="center"}
 
+:::notes
+This slide expands on the sitemap we saw earlier by showing a more detailed breakdown of content types and page templates.
+
+Notice how each section now includes not just the navigation structure but also the content type and purpose of the page. 
+
+For example, under ‘Our Products,’ we see a product category landing page that leads to specific product detail pages. Under ‘Skin Facts & Fiction,’ each topic like ‘Acne & Pimples’ or ‘Skin Types’ is identified as an article detail page.
+
+Similarly, in ‘Real Faces, Real Stories,’ the site includes personal sections such as ‘Girls Like Me’ or ‘My Skin Routine.’ And in ‘Spotlight,’ we find promotional or topical content like product buzz and chatter.
+
+The footer and header remain consistent, giving users easy access to utility pages such as Contact, About, Privacy Policy, and Sitemap.
+
+This level of detail helps not just in organizing the navigation but also in aligning with the content strategy -- making sure every page has a clear role, whether it’s a landing page, an article detail, or a product page. Ultimately, it ensures the user journey is intuitive and complete.
+:::
+
+# ![](images/34.png){fig-align="center"}
+
+:::notes
+This slide explains how conceptual design bridges the gap between research and the first draft of a product. 
+
+Conceptual design is where ideas begin to take shape. It’s a creative but structured process. Inputs come from user research, such as personas, as well as broader research insights, the designer’s creativity, and sometimes even direct user involvement through co-design workshops.
+
+Within this phase, teams use methods like scenarios, design probes, sketching, brainstorming, and workshops to explore different directions. 
+
+The output is not yet the final product, but rather a product draft -- a concrete starting point that can be refined and tested. This stage is about turning abstract needs into tangible concepts that can later be evaluated and iterated.
+:::
+
+## Draft Product
+
+![](images/35.png){fig-align="center"}
+
+:::notes
+Here we see what the product draft can look like in practice. This stage is about giving form to ideas so that they can be shared, tested, and refined.
+
+The draft can take several different forms depending on the fidelity needed:
+
+- **Sketches** are quick, low-cost representations of ideas that help visualize early concepts.
+
+- **Storyboards** go a step further, showing user interactions or scenarios in sequence.
+
+- **Wireframes** map out the structure of a page or screen, focusing on layout rather than visuals.
+
+- **Mockups** add detail, color, and branding, making the design look closer to the final product.
+
+- Finally, **Prototypes** bring in interactivity, allowing users and stakeholders to test flows and functionality.
+
+Each of these is not a finished product but a way to communicate, explore, and validate design decisions before committing to development.
+:::
+
+## Sketches 
+
+![](images/36.png){fig-align="center"}
+
+:::notes
+Here we see how sketches play an important role in UX design. Sketches are not about creating art -- they are rough, quick ways to generate and explore ideas.
+
+There are two main types shown here:
+
+1. **Thumbnail sketches**: These are small, fast drawings that allow us to generate many different concepts very quickly. They’re about volume and variety, helping us brainstorm multiple directions without investing too much time.
+
+2. **Screen sketches**: These go deeper by exploring the content, layout, and functionality of a screen. They’re closer to what the interface might look like, but still loose enough to encourage iteration.
+
+Sketches are a UX designer’s fundamental creativity tool. They help teams document and communicate ideas early on, without the pressure of being perfect. At this stage, the goal is exploration, not refinement.
+:::
+
+## Storyboards Made Out of Hand Sketches
+
+![](images/37.png){fig-align="center"}
+
+:::notes
+Now, let’s talk about storyboards in UX design.
+
+Unlike individual sketches, storyboards link together a sequence of screens to show how an interaction will actually flow. The idea is to map out not just what a single page looks like, but how the user moves from one step to another.
+
+For example, in this storyboard we see a job search application:
+
+- The user starts by entering a profession and location.
+
+- Then they see search results and can save, apply, or view a job on the map.
+
+- From there, they can dive deeper into details or move into the application process.
+
+This chain of connected sketches helps us explore narratives of user interaction. It allows us to ask: 
+
+- Does the flow make sense? 
+- Are there any unnecessary steps? 
+- Where might users get stuck?
+
+Storyboards are especially valuable because they simulate real use cases in a simple, visual way. They’re not about visual polish, but about telling a story of how the product works in practice. In other words, they help designers and stakeholders see the big picture of the user journey before investing in high-fidelity designs.
+:::
+
+## Wireframe
+
+![](images/38.png){fig-align="center"}
+
+:::notes
+This slide introduces us to **wireframes**, which are one of the most important tools in UX design.
+
+Wireframes are essentially **blueprints of a digital product**. They are more precise than sketches and storyboards—sizes are often close to pixel-perfect. While they can still be hand-drawn, most wireframes today are created with design tools to show layout, structure, and interactivity.
+
+What’s important to note here is that wireframes **focus on functionality and usability** rather than aesthetics. There’s no color, branding, or typography. Instead, placeholders for images, menus, and links show how different components fit together.
+
+On the left side, you can see a sample wireframe of an e-commerce homepage. It outlines:
+
+- The logo and search bar at the top
+- Navigation menus on the left and top
+- Featured content like seasonal items in the center
+- Links to promotions, offers, or registries
+- Footer information at the bottom
+
+On the right, there’s a table that describes each element in detail -- its type and function. This documentation ensures that developers and designers are aligned on what each component is supposed to do.
+
+Therefore, **wireframes strip away visual distraction**, allowing us to test **usability and flow first**. 
+
+It’s about asking
+
+- Does this structure make sense to the user? 
+- Can they find what they’re looking for? 
+
+Only once we’re confident in the flow do we move into adding colors, typography, and branding.
+:::
+
+## Mockup
+
+![](images/39.png){fig-align="center"}
+
+:::notes
+This slide shows how we move from **wireframes** to **mockups**.
+
+A wireframe, as we just discussed, gives us the structure: layout, content placement, functionality, and interactions. But wireframes are deliberately plain and don’t include any visual design elements.
+
+To turn a wireframe into something more realistic, we add a **graphic design layer**. This includes the **color scheme**, **typography**, branding elements, and sometimes images. Once we combine the functionality of wireframes with the aesthetics of graphic design, we get **mockups**.
+
+Mockups are useful because they help us and our stakeholders **envision what the final product will look like**. They communicate the brand identity and style while staying true to the structure defined in the wireframe.
+
+In other words, wireframes answer the question: *How will it work?*
+Mockups answer the question: *How will it look?*
+:::
+
+## Prototype
+
+![](images/40.png){fig-align="center"}
+
+:::notes
+This slide introduces us to **prototypes**, which are where our ideas start to come alive.
+
+A prototype is essentially a set of screens, whether sketches, wireframes, or mockups, that are **linked together to simulate interaction**. They can be as simple as paper sketches that you flip through, or as advanced as clickable digital versions made with prototyping tools like Axure or Sketch.
+
+The key point is that prototypes give us a way to **test and envision how a product will work before investing time and resources in coding**. By making interactions tangible early on, we can validate whether the flow makes sense, identify usability issues, and gather user feedback quickly.
+
+Prototypes don’t need to be perfect, they can be rough or refined, but their power lies in allowing us to **try things out and iterate** before moving to development.
+
+In short, prototypes bridge the gap between concept and reality.
+:::
+
 ## Why do we need IA?
 
 ![](images/29.png){fig-align="center"}
+
+:::notes
+This slide highlights three essential aspects of how users find and interact with our digital content.
+
+First, SEO (Search Engine Optimization) ensures that users can actually find our website in the first place. If we don’t show up in search results, users may never even reach us.
+
+Second, once users are on the site, findability becomes critical. This is about helping users locate the specific piece of information they came for whether that’s a product, a fact, or a service. A well-structured site makes information easy to locate.
+
+Finally, navigation ensures users always know where they are within the site and how to move around. Clear labeling, consistent menus, and logical pathways prevent confusion and frustration.
+
+Together, these three -- SEO, findability, and navigation -- form the backbone of a successful information architecture, guiding users seamlessly from discovery to content.
+:::
 
 ## Findability \~ Information Scent {.smaller}
 
@@ -411,7 +646,17 @@ Where does eating utensils go?
 ::: {.column width="50%"}
 ![](images/30.png){fig-align="center"}
 :::
-:::::
+:::
+
+:::notes
+Now, let me introduce the concept of information scent, a powerful analogy in UX. Just like animals follow a scent trail to find food, users follow ‘information scents’ to find what they need on a website.
+
+Information scent is essentially the cues we give users -- things like page titles, menu labels, and link text -- that help them predict what lies ahead. If the scent is strong and matches their expectations, they’ll keep moving forward confidently.
+
+But if the cues are vague, misleading, or don’t match the actual content, users will feel tricked or frustrated. This often leads them to leave the site altogether.
+
+So, when designing, we need to make sure every link, label, or heading gives a clear idea of what users will find, and that the payoff matches their expectations. Strong information scent makes navigation intuitive and builds trust in the experience.
+:::
 
 ## Information Scent {.smaller}
 
@@ -423,6 +668,16 @@ Where does eating utensils go?
 
 ![](images/31.png){fig-align="center" width="2000"}
 
+:::notes
+The information scent can guide users as they navigate through a site. When users feel that every step is taking them closer to what they’re searching for, it reinforces their confidence and keeps them engaged.
+
+Think of it like following a trail: if the labels, headings, or categories they encounter match their expectations, users feel reassured that they’re on the right path. 
+
+For example, in this diagram, if someone wants to learn about the beliefs of Scientology, they’ll see clear paths like Beliefs on Marriage or Beliefs on Paradise. Each of these reinforces that they’re moving closer to the specific information they want.
+
+In other words, strong information scent tells users, ‘You’re getting warmer, keep going!’, making your site feel like fertile hunting grounds where their effort will pay off.
+:::
+
 ## IA Impacts Heavily on Search Engine’s View of Your Site {.smaller}
 
 - Search engines index (scan) your site hierarchically
@@ -432,6 +687,15 @@ Where does eating utensils go?
 
 ![](images/32.png){fig-align="center" width="2000"}
 
+:::notes
+Now, let's see how information architecture impacts search engines and, ultimately, your site’s visibility. 
+
+Search engines scan your website hierarchically, meaning that pages higher up in the hierarchy, like the homepage or top-level categories, carry more weight in search rankings.
+
+As we move down into subcategories or deeper pages, the weight decreases. That’s why structuring your site properly is so important because search engines not only read content, but also evaluate how information is grouped into silos and how different sections are related.
+
+A well-architected site not only helps users find what they’re looking for, but it also helps search engines understand and trust your content. This increases your chances of ranking higher and being more discoverable. Thus, good IA boosts both usability and SEO.
+:::
 
 ## Sitemaps and Menus that Reflect IA Leads to Greater Findability {.smaller}
 
@@ -441,3 +705,17 @@ Where does eating utensils go?
 - Give users a reference point
 
 ![](images/33.png){fig-align="center" width="2000"}
+
+:::notes
+Finally, let's look at how visual cues in sitemaps and menus can greatly improve findability. 
+
+When your navigation reflects a clear information architecture, users can easily understand what’s available and where to go to find what they’re looking for.
+
+Notice in the example:
+
+- The active view in the menu shows the user exactly which section they’re in
+- A large, clear heading like Apple Store reinforces context
+- And breadcrumbs provide a step-by-step trail so users know where they are in the hierarchy and how to navigate back
+
+These cues don’t just orient users, they also teach them how to use your site by quickly communicating its structure and features. In other words, they give users a reference point, reducing confusion and making the experience more intuitive and efficient.
+:::
