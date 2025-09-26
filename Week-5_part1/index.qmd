@@ -1,5 +1,5 @@
 ---
-title: "UX Design and Information Architechture"
+title: "UX Design and Information Architecture"
 subtitle: "LIS 4/5523: Online Information Retrieval"
 author: 
   - Dr. Manika Lamba
