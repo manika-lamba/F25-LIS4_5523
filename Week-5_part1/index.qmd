@@ -23,7 +23,13 @@ editor:
 # Introduction
 
 ::: notes
-This week, 
+In this lecture, we will begin by delving into the concept of user experience, commonly referred to as UX. We will explore its significance in the design process and discuss the fundamental principles that guide effective UX design. This includes understanding user needs, ensuring usability, and creating intuitive, engaging interfaces.
+
+Following our discussion of UX fundamentals, we will introduce the concept of information architecture (IA). We will explain what IA entails and its critical role in organizing and structuring content to enhance user navigation and interaction. To provide practical insights, we will cover various methods for implementing IA. These methods include creating sketches to visualize ideas, developing storyboards to map user journeys, designing wireframes to outline the structure of pages, crafting mockups to showcase visual design elements, and building prototypes to simulate user interactions.
+
+Lastly, we will examine the impact of information architecture on search engine searchability. This segment will highlight how well-structured IA can improve a website’s visibility in search engine results, thereby enhancing its accessibility to target audiences. We will discuss best practices for optimizing IA to ensure content is easily discoverable by both users and search engines.
+
+By the end of this lecture, you will have a comprehensive understanding of UX principles, the implementation of IA, and the ways in which IA contributes to improved search engine performance.
 :::
 
 ## What is User Experience or UX?
