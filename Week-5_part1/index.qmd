@@ -357,10 +357,10 @@ and directly shape how usable and accessible a digital product becomes.
 
 ## Questions
 
-- Why did we put the living room in the middle?
-- Why is the kitchen near the dining room?
-- Why did we put the family bedrooms upstairs?
-- Why is the playroom downstairs?
+-   Why did we put the living room in the middle?
+-   Why is the kitchen near the dining room?
+-   Why did we put the family bedrooms upstairs?
+-   Why is the playroom downstairs?
 
 ![](images/22.png){fig-align="center"}
 
@@ -386,4 +386,58 @@ Where does eating utensils go?
 
 ![](images/27.png){fig-align="center"}
 
+## IA Output: Sitemap (Cont.)
 
+![](images/28.png){fig-align="center"}
+
+## Why do we need IA?
+
+![](images/29.png){fig-align="center"}
+
+## Findability \~ Information Scent {.smaller}
+
+`Is an analogy that compares how humans seek information with animals seeking food`
+
+::::: columns
+::: {.column width="50%"}
+-   Refers to the extent to which users can predict what’s ahead (in a
+    link or in an article)
+-   Information scents includes titles and links that helps visitors
+    find what they are looking for
+-   Users will feel duped if they don’t get suﬃcient payoﬀ from going
+    down a path
+:::
+
+::: {.column width="50%"}
+![](images/30.png){fig-align="center"}
+:::
+:::::
+
+## Information Scent {.smaller}
+
+> When Information scent says to the user -- `YOU’RE GETTING CLOSER!`
+
+> It helps visitors know that your site is fertile hunting grounds for the things they are looking for
+
+
+
+![](images/31.png){fig-align="center" width="2000"}
+
+## IA Impacts Heavily on Search Engine’s View of Your Site {.smaller}
+
+- Search engines index (scan) your site hierarchically
+- Pages higher in the hierarchy are given more weight
+- SEO also make note of silos of info and relationships
+- Well architected site makes information more findable
+
+![](images/32.png){fig-align="center" width="2000"}
+
+
+## Sitemaps and Menus that Reflect IA Leads to Greater Findability {.smaller}
+
+- Help users know what’s available and find what they are looking for
+- Tell users where they are within the site
+- Tell users how to use the site by quickly communicating features
+- Give users a reference point
+
+![](images/33.png){fig-align="center" width="2000"}
