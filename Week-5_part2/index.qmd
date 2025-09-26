@@ -1,0 +1,316 @@
+---
+title: "Usability First"
+subtitle: "LIS 4/5523: Online Information Retrieval"
+author: 
+  - Dr. Manika Lamba
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      theme: whiteboard
+      buttons: true
+    preview-links: true
+    controls: true
+    progress: true
+    show-notes: separate-page
+    logo: images/ou.png
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+# ![](images/1.png){fig-align="center"}
+
+::: notes
+It’s really important to pause here and make a distinction: usability is
+not the same thing as user experience.
+
+Usability is a component of UX -- it’s about whether people can use the
+product effectively, efficiently, and without unnecessary struggle.
+
+But user experience goes much further. UX also includes the usefulness
+of the product, the emotional response it creates, the aesthetics, and
+ultimately, the overall perception of the brand.
+
+Think about it this way: a product can be very usable—clear, simple,
+functional but if it’s not useful, engaging, or aligned with user needs,
+it won’t create a positive experience. For example, a well-designed
+remote control may be highly usable, but if it only works with a single
+outdated device, the overall user experience is poor.
+
+So while usability is essential, it is only one part of the larger
+picture. Focusing only on usability risks producing products that work
+smoothly but don’t resonate, delight, or add real value to people’s
+lives.
+:::
+
+## Usability
+
+- It is about `task-based interactions`
+- It is the measure of a user's ability to use a product `intuitively` and `easily`
+- It is also about increasing efficiency and removing any obstacle or pain point the users might encounter while using the product
+
+:::notes
+When we talk about usability, we’re focusing specifically on task-based interactions. Usability asks -- **can a user complete their tasks with ease, efficiency, and minimal frustration?**
+
+It’s essentially the measure of how intuitive and straightforward a product is to use. A usable product doesn’t force the user to stop and think about how to operate it—it feels natural, like the product ‘just works.’
+
+At the same time, usability is about reducing friction. That means identifying and removing obstacles or pain points that might slow users down or cause errors. For example, simplifying navigation, reducing the number of clicks in a checkout process, or providing clear feedback when a task is completed.
+
+In short, usability is the foundation of smooth interaction. It ensures that users can not only achieve their goals but do so with confidence and efficiency.
+:::
+
+## 5 Principles of Usability
+
+
+![](images/2.png){fig-align="center"}
+
+:::notes
+Now let’s break usability down into its key dimensions. Usability isn’t a single thing, it’s made up of several factors that together determine how smooth and effective the user’s interaction with a product will be.
+
+First, **Intuitive Design**. This is about how easily a user can understand the architecture and navigation of a site or product. A well-designed interface feels natural -- users don’t need instructions, they just know how to move through it.
+
+Second, **Learnability**. This measures how quickly a first-time user can get started and accomplish basic tasks. If someone new to the system struggles for too long, the usability is weak.
+
+Third, **Efficiency of Use**. For experienced users, the question becomes: how fast and effectively can they perform tasks once they’re familiar with the system? Great products scale well for both beginners and experts.
+
+Fourth, **Memorability**. After stepping away from the system, can users return and still remember how to use it? This is especially important for tools that aren’t used daily -- if people have to relearn it every time, usability suffers.
+
+Finally, **Error Frequency**. How often do users make mistakes? How serious are those mistakes? And crucially, how easy is it to recover? The best designs don’t just prevent errors—they also make recovery simple and forgiving.
+
+Together, these five factors give us a practical way to evaluate usability in real systems.
+:::
+
+## How do we achieve those 5 things? {.smaller}
+
+![](images/3.png){fig-align="center"}
+
+:::notes
+And how can we achieve those 5 things?
+
+Well, we can start by using the USABILITY CHECKLIST!
+:::
+
+## Recognition Over Recall
+
+![](images/4.png){fig-align="center"}
+
+
+:::notes
+One of the core principles of usability is recognition over recall. This means we should design systems in a way that minimizes the need for users to remember things as they move through a task. Instead, information should be visible and accessible at the moment it’s needed.
+
+In this example from JetBlue’s seat map, the interface provides a clear legend showing which seats are good, bad, blocked, or premium. The details are right there on the page, so the user doesn’t need to memorize what each color means or flip back and forth between instructions.
+
+This makes the interaction more intuitive and less cognitively demanding. Users can focus on making a decision like picking the best seat rather than recalling what a certain color or label represents.
+
+When we force users to rely on memory, we increase frustration and the chance of error. By prioritizing recognition, we reduce effort, improve efficiency, and create a smoother experience.
+:::
+
+## Recognition Over Recall (Cont.)
+
+![](images/5.png){fig-align="center"}
+
+:::notes
+Here’s an example of **what not to do** when it comes to recognition over recall.
+
+On this registration page, notice the placement of the unsubscribe option. It’s not only confusing, but it also forces the user to remember and interpret what to do in a situation where the primary task should be signing up for a webinar. This placement creates unnecessary cognitive load because users have to stop and think: Am I registering? Am I unsubscribing? Why is this option here?
+
+This violates the principle of recognition over recall. Instead of making the action clear and contextual, like a simple ‘Register’ button placed prominently on the page, the design introduces distraction and possible error.
+
+The takeaway here is that items should always be placed where and when users need them, directly supporting the task at hand. Anything that forces people to pause, interpret, or remember increases friction and damages the user experience.
+:::
+
+## Match Between System and Real Life
+
+![](images/6.png){fig-align="center"}
+
+:::notes
+The next usability principle is match between system and real life. This means the product should use concepts, terms, and language that feel natural and familiar to the user, rather than technical or business-oriented jargon.
+
+Here’s a great example from Zipcar. Notice how the website says things like ‘touch down, zip off’ and ‘skip the counter and grab a car at the airport.’ These phrases speak directly to the real-world experience of traveling -- they’re conversational, relatable, and instantly understandable.
+
+By using the user’s own language, Zipcar reduces the cognitive effort required to interpret what’s being offered. There’s no confusion, no translation needed. The mental model of the system matches the user’s real-life context, arriving at the airport and needing a quick, easy way to get a car.
+
+The key takeaway here is whenever possible, design should ‘speak human.’ If we mirror the way people already think and talk about their tasks, the experience feels intuitive and effortless.
+:::
+
+## Match Between System and Real Life (Cont.)
+
+![](images/7.png){fig-align="center"}
+
+:::notes
+This is a poor example of the principle match between system and real life.
+
+Here we see an email confirmation message filled with technical jargon: phrases like ‘your command,’ ‘SIGNOFF ACM-WEBINAR,’ and instructions to type codes like D4700A5B. None of this language is intuitive or familiar to a typical user.
+
+Instead of speaking in human terms, like ‘Click here to confirm your webinar registration, the system uses system-oriented, business-oriented language that forces users to interpret technical instructions. This creates confusion, increases the risk of mistakes, and adds unnecessary friction to what should be a very simple process.
+
+The big takeaway is this is when systems speak their own internal language instead of the user’s language, the burden shifts to the user. And that’s the opposite of good UX. We should always aim to mirror real-world terms, phrases, and concepts so the interaction feels natural and effortless.
+:::
+
+## Standard & Best Practices
+![](images/9.png){fig-align="center"}
+
+:::notes
+
+Here we see the use of the hamburger menu icon, the three stacked lines, to indicate navigation. By now, this has become a widely recognized convention across mobile interfaces. Users immediately know what it does without explanation, because they’ve seen it used consistently in countless other apps and websites.
+
+This is the power of sticking with standards: it taps into existing user knowledge and creates a smoother, more predictable experience. Instead of introducing new or confusing icons, we align with patterns that people already trust and understand.
+
+Of course, standards evolve over time, and not every convention is perfect. But adhering to familiar patterns reduces the learning curve, minimizes errors, and helps users feel more confident in the system. In short, don’t make your users learn a new language when a universal one already exists.
+:::
+
+## Standard & Best Practices (Cont.)
+![](images/8.png){fig-align="center"}
+
+
+:::notes
+This example highlights a violation of standards and best practices.
+
+Users arrive at your interface with a lifetime of experience using other digital products. They’ve seen patterns, icons, and layouts hundreds of times, and they bring those expectations with them. That’s why standards matter—they reduce the cognitive load and let users focus on their goals instead of figuring out how your system works.
+
+Here, the interface uses an icon that looks like an open book. But what does it mean? Is it a reading list? A library? Help content? This breaks with standard, widely recognized iconography. Instead of tapping into familiar patterns, it forces users to pause, think, and guess. And if users guess wrong, their trust and confidence in the system can quickly erode.
+
+The lesson here is: don’t reinvent the wheel for the sake of being different. Consistency and adherence to best practices create a sense of familiarity and predictability, which is essential for usability and, ultimately, user experience
+:::
+
+## Error Prevention
+
+![](images/10.png){fig-align="center"}
+
+:::notes
+
+This is a great example of error prevention, which is one of the most important usability heuristics.
+
+The best way to handle errors isn’t to fix them after they happen -- it’s to prevent them from happening in the first place! That means designing forms, workflows, and interactions in ways that guide users, limit mistakes, and make it clear what’s expected.
+
+On this HealthCare.gov page, you can see how the design leads users step by step. Instead of making them type answers that could be vague or inconsistent, it provides multiple-choice options like ‘Health’ or ‘Dental’ for coverage type, and drop-down menus for state and county. This reduces the chance of typos, misunderstandings, or invalid inputs.
+
+There’s also helpful guidance provided along the way -- clear labels and supporting text that set expectations, so users aren’t surprised later in the process.
+
+The key point is: smart, proactive design prevents frustration. When we anticipate user needs and build safeguards into the system, we reduce errors and make the experience smoother, faster, and less stressful.
+:::
+
+
+## Error Prevention (Cont.)
+
+
+![](images/11.png){fig-align="center"}
+
+:::notes
+
+Here we see a marketing consent form from Royal Mail. Notice how the instructions are long, wordy, and use tricky phrasing like ‘If you do not wish to receive such communications, please tick the relevant box.’ 
+
+That double negative makes it unclear: should I tick the box if I want the emails, or if I don’t want them? This forces users to slow down, reread, and second-guess themselves -- exactly the kind of cognitive friction that leads to mistakes.
+
+On top of that, there are two nearly identical sets of checkboxes with slightly different instructions -- one for Royal Mail and one for third parties. This creates confusion, and the likelihood that users will select the wrong option, or worse, abandon the form entirely.
+
+The key takeaway here is error prevention means writing clear, simple instructions, avoiding confusing patterns like double negatives, and structuring forms in a way that makes the desired action obvious. 
+
+Good UX guides users naturally; bad UX makes them feel like they’re taking a test.
+:::
+
+
+## Error Recognition 
+
+
+![](images/12.png){fig-align="center"}
+
+:::notes
+Even with the best design, errors or near-errors are inevitable. The goal isn’t to eliminate all mistakes, but to make them easy to recognize, diagnose, and recover from. And that means clear communication in plain language.
+
+Here’s a great example: when a user taps to call 911 from within the app, the system immediately asks for confirmation -- ‘Are you sure you want to call 911?’ 
+
+This is simple, direct, and unambiguous. It prevents accidental emergency calls, while still making it easy to proceed if that’s what the user intended.
+
+Notice what makes this effective is that the message is clear and written in everyday language, not technical jargon. It explicitly states the action about to be taken. It gives users two clear choices: Cancel or Call 911.
+
+This kind of design keeps users in control and reduces stress. Instead of leaving them confused or stuck, it provides the right feedback at the right moment, allowing them to make an informed decision.
+:::
+
+## Error Recognition (Cont.)
+
+
+![](images/13.png){fig-align="center"}
+
+:::notes
+This slide shows what happens when error recognition fails.
+
+Here we see a login form from SpectraAV. Imagine you’ve entered your username and password incorrectly. Instead of giving clear feedback, the system simply reloads the page or worse, just refuses access without telling you what went wrong. Was it the username? Was it the password? Did you forget to fill in one of the required fields? The user is left guessing.
+
+This is a classic example of poor error communication:
+
+- No clear message is shown
+- The system doesn’t explain the problem
+- There are no constructive suggestions for how to fix it
+
+For the user, this creates frustration and wasted effort. Instead of helping them recover, the system places the burden on them to troubleshoot.
+
+Compare this with the good example we saw earlier -- the system should provide plain, actionable guidance. For instance: ‘Your password is incorrect. Please try again or reset your password.’ 
+
+That kind of clarity prevents users from feeling lost or stuck, and it builds trust in the system.
+:::
+
+## Visibility of System Status
+
+
+![](images/14.png){fig-align="center"}
+
+:::notes
+This slide illustrates the importance of keeping users informed about what the system is doing.
+
+Here, the app Diptic is processing photos. Instead of leaving the user guessing whether the app is frozen or working in the background, it displays a clear message: ‘Making photos pop...’ along with a loading indicator.
+
+This kind of feedback is critical for user trust. Imagine if the screen just went blank -- users might assume the app crashed or their action failed. But by showing progress, even in a simple form, the system reassures users that it’s actively working and that they just need to wait.
+
+The principle here is simple -- always keep the user in the loop. Provide timely, visible feedback so users know their input was received and the system is responding. This reduces anxiety, prevents confusion, and makes the experience feel smoother and more reliable.
+:::
+
+## Visibility of System Status (Cont.)
+
+
+![](images/15.png){fig-align="center"}
+
+:::notes
+This slide highlights a poor example of system feedback.
+
+Here, the user taps on ‘Incidents’ to see traffic updates. But instead of seeing any confirmation, a loading indicator, or even a message saying ‘no incidents reported,’ the screen just goes blank.
+
+This lack of communication leaves the user confused. Did the system freeze? Is the data unavailable? Did the user do something wrong? The system isn’t giving any indication of what’s happening.
+
+The key principle here is that users should never be left in the dark. Even if there’s no data to show, the system should explicitly say so -- something like ‘No incidents found’ would be much clearer.
+
+Without visibility into what’s happening, trust breaks down, frustration builds, and users may abandon the system entirely.
+:::
+
+## You are Here
+
+![](images/16.png){fig-align="center"}
+
+:::notes
+This slide demonstrates how interfaces should always help users understand where they are within the system.
+
+Here, the navigation clearly highlights the active section
+—- *Projects > Architecture*. The breadcrumb, like structure and filtering tags, such as *photoshop* provide immediate context, letting users know exactly what they’re looking at and how they got there.
+
+This is a strong example of orienting the user. They don’t have to guess or backtrack to figure out their current position in the system. Instead, the design provides reassurance that they are on the right page and in the right context.
+
+The principle here is simple: users should never feel lost. A well-designed interface should always answer the questions ‘Where am I now?’ and ‘What are my options next?’ This builds confidence, reduces cognitive load, and makes navigation feel effortless.
+:::
+
+## You are Here (Cont.)
+
+![](images/17.png){fig-align="center"}
+
+
+:::notes
+This slide shows a poor example of navigation and orientation. The interface here is cluttered with many links, categories, and options, but it fails to clearly indicate where the user is within the site structure.
+
+Although the left-hand menu highlights 'Courses & Programs,' the overall page lacks a strong visual cue that reassures the user about their location. There’s no breadcrumb trail, no progress indicator, and no clear hierarchy that answers the question ‘Where am I now, and what comes next?’
+
+This creates confusion and forces the user to guess or backtrack, which breaks their flow. Good design should always ground the user in context—helping them understand their current position, how they got there, and how to move forward.
+
+This example reminds us that providing orientation cues, whether through highlighted navigation, breadcrumbs, or step indicators, is critical for usability and for reducing cognitive load.
+:::

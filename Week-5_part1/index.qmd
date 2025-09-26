@@ -1,0 +1,389 @@
+---
+title: "UX Design and Information Architechture"
+subtitle: "LIS 4/5523: Online Information Retrieval"
+author: 
+  - Dr. Manika Lamba
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      theme: whiteboard
+      buttons: true
+    preview-links: true
+    controls: true
+    progress: true
+    show-notes: separate-page
+    logo: images/ou.png
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Introduction
+
+::: notes
+:::
+
+## What is User Experience or UX?
+
+*Simply put, user experience is how person feels when they are
+interacting with your system or product*
+
+::::: columns
+::: {.column width="50%"}
+![](images/2.png){fig-align="center" width="1000"}
+:::
+
+::: {.column width="50%"}
+![](images/1.png){fig-align="center" width="400"}
+:::
+:::::
+
+::: notes
+Let’s begin by unpacking what we mean when we talk about User
+Experience, often abbreviated as UX.
+
+At its core, user experience is about how a person feels when
+interacting with a system, product, or service. That includes their
+emotions, their perceptions, and even their level of satisfaction. It’s
+not just about whether the system works correctly, it’s about whether it
+works well for the human using it.
+
+Think of UX as the bridge between technology and people. A product might
+have all the right features, but if it’s confusing, frustrating, or
+overwhelming to use, the experience will be negative. On the other hand,
+even a very simple product can deliver a great user experience if it
+feels intuitive, seamless, and even delightful.
+
+So as we move forward in this lecture, keep in mind: **UX is less about
+the system itself, and more about the relationship a human has with that
+system in practice**. This human-centered perspective is the foundation
+of both UX design and information architecture
+:::
+
+# ![](images/3.png){fig-align="center"}
+
+::: notes
+Now this brings us to an important question: **if user experience is
+ultimately about a feeling, how can we possibly design for it?**
+
+The key here is that while we cannot directly design someone’s feelings,
+we can design the conditions and interactions that shape those feelings.
+In other words, we design the inputs, the interface, the content
+structure, the interactions, the flow, and those inputs influence the
+outputs, which are the user’s emotions and perceptions.
+
+For example, if a checkout process is confusing, users will likely feel
+frustrated. But if it’s streamlined and transparent, they’ll feel more
+confident and satisfied. We don’t design the emotion itself, but we
+design the path that leads to it.
+
+So as UX designers and information architects, our role is to be
+intentional about crafting the environment, structures, and interactions
+that guide people toward positive, meaningful, and effective
+experiences. This is why research, usability testing, and empathy are so
+critical, they help us anticipate how design decisions translate into
+user feelings.
+:::
+
+## Fundamentals of UX
+
+We need to understand a few basic rules:
+
+![](images/4.png){fig-align="center"}
+
+::: notes
+To design meaningful user experiences, we need to ground ourselves in a
+few basic rules. And the very first one is **usefulness**.
+
+No matter how beautiful, intuitive, or engaging a product is, if it
+doesn’t meet the user’s needs, it fails at the most fundamental level.
+Think of it this way: people don’t come to a product for the aesthetics
+alone, they come because they have a problem to solve, a task to
+complete, or a goal to reach.
+
+So when we say UX design starts by being useful, we mean that the
+product must deliver utility. **It must provide something of value that
+directly helps the user.** For example, a note-taking app that doesn’t
+let you organize or find your notes isn’t really useful, no matter how
+polished it looks.
+
+Usefulness is the core of UX, it’s the center of the concentric circles
+you see here. Everything else we’ll talk about in terms of user
+experience -- ease of use, desirability, brand experience -— builds
+outward from this foundation. If the product isn’t useful, nothing else
+really matters.
+:::
+
+## Fundamentals of UX (Cont.)
+
+![](images/5.png){fig-align="center"}
+
+::: notes
+Once a product is useful, the next question is: **Can people actually
+use it?** This is where usability comes in.
+
+A product can provide real value, but if it’s too complicated,
+confusing, or frustrating to operate, users won’t stick with it.
+Usability is about removing friction—it’s making sure people can
+accomplish their goals smoothly and without unnecessary effort.
+
+Think of it like this: a smart thermostat may be incredibly useful in
+helping you save energy, but if programming it feels like solving a
+puzzle, most people will give up and just set it manually. That means
+the value is lost, not because the product lacks utility, but because
+the usability fails.
+
+So at this stage of UX, our focus is on clarity, simplicity, and
+intuitiveness. We want users to feel, ‘I am able to use this product
+easily.’ Usability builds on usefulness—it takes that core utility and
+makes it accessible to real people in real contexts.
+:::
+
+## Fundamentals of UX (Cont.)
+
+![](images/6.png){fig-align="center"}
+
+::: notes
+After usefulness and usability, the next layer of user experience is
+**desirability**. This is where aesthetics and emotional design come
+into play -- the way a product looks, feels, and even sounds.
+
+At this level, users aren’t just saying, ‘I can use this product,’
+they’re saying, ‘I enjoy using this product.’ Visual design, typography,
+colors, animations, and even micro-interactions all contribute to
+creating a sense of delight and emotional connection.
+
+For example, think about why people line up for the latest smartphone.
+It’s not just about utility or usability, they already know the phone
+will work and meet their needs. **What draws them in is the design, the
+look and feel, the brand identity, and the emotional satisfaction that
+comes from owning and using it**.
+
+So desirability is about creating a positive emotional response. When
+users say things like, ‘I love the design, the colors are great, this
+product makes me feel happy,’ that’s when we know desirability is at
+work. Importantly, though, desirability must build on top of utility and
+usability, it can’t compensate for them if they’re missing.
+:::
+
+## Fundamentals of UX (Cont.)
+
+![](images/7.png){fig-align="center"}
+
+::: notes
+Finally, when usefulness, usability, and desirability all come together,
+they contribute to something even bigger: the **overall brand
+experience**.
+
+At this stage, users aren’t just judging the product, they’re forming
+lasting impressions of the brand behind it. A seamless, enjoyable
+experience creates trust and loyalty. People begin to associate positive
+feelings with the brand itself, not just the individual interaction.
+
+For example, think about companies like Apple or Starbucks. People don’t
+just use their products, they feel connected to the brand. That
+connection is shaped by consistent, well-designed experiences that make
+them say, ‘My overall feelings about this brand are good. I love this
+brand.’
+
+The important point here is that user experience is brand experience.
+Every click, every interaction, every frustration or delight becomes
+part of how people perceive the brand. Which means good UX design isn’t
+just a design choice, it’s a strategic business choice.
+:::
+
+# ![](images/9.png){fig-align="center"}
+
+::: notes
+So far, we’ve talked about what makes up a great user experience. But
+the question we have to ask next is: **how do we actually achieve that
+in practice?**
+
+This is where **design principles, research, and strategy** come into
+play. Creating great UX doesn’t happen by accident. It’s the result of
+deliberate choices -- understanding users, structuring information
+clearly, designing intuitive interactions, and continually testing and
+refining.
+
+We’ll start to explore the methods and tools we use to move from theory
+into practice, and this is where information architecture becomes
+absolutely central.
+:::
+
+## Well, Definitely Not This Way!
+
+::::: columns
+::: {.column width="50%"}
+![](images/10.png){fig-align="center" width="1000"}
+:::
+
+::: {.column width="50%"}
+![](images/11.png){fig-align="center" width="3000"}
+:::
+:::::
+
+::: notes
+Now that we’ve asked how we achieve great user experience, it’s
+important to first be clear about **what not to do**.
+
+Too often, design decisions are made based on assumptions, gut feelings,
+or what the client likes.
+
+This approach is risky because it relies on speculation rather than
+evidence. And if the only validation step is ‘does the client like it?’,
+we’re missing the entire point of UX, which is designing for users, not
+just stakeholders.
+
+When we work this way, we fall into endless cycles of revisions, chasing
+preferences instead of solving real problems. It might get a project
+‘done,’ but it rarely creates a product that’s meaningful, effective, or
+delightful for the people who actually use it.
+:::
+
+## User-Centered Design (UCD) {.smaller}
+
+UCD is a multi-stage problem-solving process that not only requires
+designers to analyse and foresee how users are likely to use a product,
+but also to test the validity of their assumptions
+
+![](images/13.png){fig-align="center"}
+
+::: notes
+This brings us to the right way of approaching UX through User-Centered
+Design.
+
+User-Centered Design is not about guessing what users want or simply
+pleasing stakeholders, it’s a structured, multi-stage problem-solving
+process that keeps the user at the center from start to finish.
+
+It begins with **Discovery**, where we research and observe users to
+understand their needs, pain points, and goals. Then we **Define** the
+problem clearly because solving the wrong problem is just as bad as no
+solution at all.
+
+Next, we **Design** solutions, but instead of assuming they’ll work, we
+**Validate** them through testing, prototyping, user feedback, and
+usability studies. This ensures we’re not relying on assumptions. After
+validation, we **Develop** the solution, and the process loops back
+because user needs evolve, and so should the design.
+
+The key idea here is that designers don’t just create interfaces, they
+analyze, anticipate, and most importantly, test how real users are
+likely to use a product. By doing this, we’re not designing based on gut
+feelings, we’re designing based on evidence.
+:::
+
+## What is Information Architecture (IA)? {.smaller}
+
+Commonly known as IA, it is the art and science of developing structures
+and organization to present data & information
+
+![](images/15.png){fig-align="center"}
+
+::: notes
+Now, lets understand the role of Information Architecture or IA, in the
+broader context of information system's design.
+
+At the core, IA is about structuring and organizing information so that
+users can easily find what they need. Think of it as the blueprint of a
+digital product -- the way content is grouped, labeled, and navigated.
+
+IA directly impacts usability because a well-structured system reduces
+confusion, helps users complete tasks faster, and ensures they don’t get
+lost. But it also ties into the larger picture of user experience.
+
+While UX encompasses the overall feeling and satisfaction a user gets,
+IA ensures that the underlying foundation -- the pathways, categories,
+and hierarchies -- is clear and logical.
+
+In short, IA is the art and science of turning data and information into
+meaningful structures. Without it, even the most visually appealing
+designs can feel overwhelming or unusable.
+:::
+
+## If UX is the terrain
+
+![](images/16.png){fig-align="center"}
+
+## Then IA is the map
+
+![](images/17.png){fig-align="center"}
+
+## 3 Focus of IA
+
+![](images/18.png){fig-align="center"}
+
+::: notes
+This slide breaks down the three key pillars of Information
+Architecture.
+
+First, **Navigation and Labeling**: This is about creating clear
+signposts for users so they know where they are and where they can go.
+Just like road signs, navigation and labels need to be intuitive and
+consistent so people don’t get lost.
+
+Second, **Content Organisation**: This involves structuring information
+logically. Whether it’s grouping related content, creating hierarchies,
+or deciding what belongs where — good organisation ensures users can
+find what they need quickly, without unnecessary searching or confusion.
+
+Finally, **Information Storage and Retrieval**: This is about how data
+is stored behind the scenes and how easily it can be retrieved when
+needed. Think of it like a well-organized filing system — if the system
+is structured properly, both the product and the users can quickly pull
+out the right information at the right time.
+
+Together, these elements form the backbone of Information Architecture
+and directly shape how usable and accessible a digital product becomes.
+:::
+
+## This is Your Website
+
+![](images/19.png){fig-align="center"}
+
+## Navigation and Labeling
+
+::::: columns
+::: {.column width="50%"}
+![](images/20.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/21.png){width="2000"}
+:::
+:::::
+
+## Questions
+
+- Why did we put the living room in the middle?
+- Why is the kitchen near the dining room?
+- Why did we put the family bedrooms upstairs?
+- Why is the playroom downstairs?
+
+![](images/22.png){fig-align="center"}
+
+## Revising -- Navigation and Labeling
+
+![](images/23.png){fig-align="center"}
+
+## Content Organisation
+
+`Everything (now/future) has a place`
+
+![](images/24.png){fig-align="center"}
+
+## Information Storage & Retrieval
+
+Where does eating utensils go?
+
+![](images/25.png){fig-align="center"}
+
+# ![](images/26.png){fig-align="center"}
+
+## IA Output: Sitemap
+
+![](images/27.png){fig-align="center"}
+
+
