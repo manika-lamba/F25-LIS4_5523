@@ -9,5 +9,6 @@
   - [UX Design and Information Architecture](https://manika-lamba.github.io/F25-LIS4_5523/Week-5_part1/#/title-slide)
   - [Usability First](https://manika-lamba.github.io/F25-LIS4_5523/Week-5_part2/#/title-slide)
 - [Week 6: Information Retrieval Evaluation](https://manika-lamba.github.io/F25-LIS4_5523/Week-6/#/title-slide)
+- [Week 7: Information Retrieval Models](https://manika-lamba.github.io/F25-LIS4_5523/Week-7/#/title-slide)
 
     
