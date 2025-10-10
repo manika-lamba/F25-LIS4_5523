@@ -1385,38 +1385,38 @@ searchable fields for our users.
 
 ## Types of IR Systems {.smaller}
 
-- Pre-Coordinate systems
-  - printed indexes and catalogs
-  - OPACs
-  
-- Post-Coordinate systems
-- Computer retrieval systems (Databases)
-- Online retrieval systems (Internet and Web)
-- Smart phones
-- Tablet, computers
-- Others you use? Can we consider Social Media an IR system? Can we consider all Chatbots as IR system or just the modern ones powered by LLMs?
+-   Pre-Coordinate systems
+    -   printed indexes and catalogs
+    -   OPACs
+-   Post-Coordinate systems
+-   Computer retrieval systems (Databases)
+-   Online retrieval systems (Internet and Web)
+-   Smart phones
+-   Tablet, computers
+-   Others you use? Can we consider Social Media an IR system? Can we
+    consider all Chatbots as IR system or just the modern ones powered
+    by LLMs?
 
-:::notes
-I have listed a few types of IR systems that we will address this semester. Today, users access information from MANY different
-devices and expect them all to work basically the same way. They want quick, easy,
-effective, ubiquitous access 24/7. 
+::: notes
+I have listed a few types of IR systems that we will address this
+semester. Today, users access information from MANY different devices
+and expect them all to work basically the same way. They want quick,
+easy, effective, ubiquitous access 24/7.
 
-How do these expectations affect what users want
-from IR systems? We will come back to this point later throughout the
-semester.
+How do these expectations affect what users want from IR systems? We
+will come back to this point later throughout the semester.
 
-As you use different IR systems every day, think about how these different systems
-employ different IR methods and models.
+As you use different IR systems every day, think about how these
+different systems employ different IR methods and models.
 
-- How is the system structured? 
-- What aspects of the system are hidden from the user? 
+-   How is the system structured?
+-   What aspects of the system are hidden from the user?
 
-Try to determine the structure of the
-system and how you retrieve information by examining the interface features, such as
-a drop down options or field lists in an online database, or features designed to
-enable fielded searching in your online catalogs. For example, what fields are
-searchable? Can you conduct Boolean searches.
-
+Try to determine the structure of the system and how you retrieve
+information by examining the interface features, such as a drop down
+options or field lists in an online database, or features designed to
+enable fielded searching in your online catalogs. For example, what
+fields are searchable? Can you conduct Boolean searches.
 :::
 
 ## Cautions
@@ -1467,6 +1467,6 @@ In the next topic we’re going to dig deeper and talk about some
 different search strategies and features you can use to make searching
 even more precise.
 
-Next week, we will discuss strategies and
-techniques to use while searching and delve deeper into the reference interview process.
+Next week, we will discuss strategies and techniques to use while
+searching and delve deeper into the reference interview process.
 :::
