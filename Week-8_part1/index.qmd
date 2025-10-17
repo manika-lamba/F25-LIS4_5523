@@ -1,0 +1,685 @@
+---
+title: "Search Techniques and Strategies"
+subtitle: "LIS 4/5523: Online Information Retrieval"
+author: 
+  - Dr. Manika Lamba
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      theme: whiteboard
+      buttons: true
+    preview-links: true
+    controls: true
+    progress: true
+    show-notes: separate-page
+    logo: images/ou.png
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Why Search Strategy is Important?
+
+::: notes
+You probably think you're pretty good at searching online, right? I
+mean, we all do it every day. But, you know, there's a huge difference
+between just typing a few words into Google and actually having the
+power to find the exact thing you need right when you need it. As you
+know we live in an era of infodemic. In this absolute avalanche of
+information, how can you find that one valuable piece of information in
+all of that deafening noise?
+
+This and next week, we’ll delve into various search techniques and
+strategies to enhance your searching skills in both search engines and
+databases. Ultimately, these strategies will empower you to find the
+information you seek.
+:::
+
+## Before you Start Searching
+
+`Focusing your Question`
+
+-   What am I looking for exactly? Question before you search!
+-   Test search to find out how much information is available
+    -   If you are finding little information - broaden the question
+    -   If you are finding lots of information - narrow the question
+
+`Define Your Need`
+
+-   How much information do I need?
+-   What kind of information do I need?
+
+::: notes
+When starting any project, the first and most important step is to focus
+your question. Before you even begin searching, take a moment to ask
+yourself, “What exactly am I looking for?” Defining your question early
+helps guide your search and keeps you from getting lost in the huge
+amount of information that’s out there. A good strategy is to start with
+a test search. This means doing a quick preliminary search to see how
+much information is available on your topic. If you’re finding very
+little, that’s a sign your question might be too narrow, and you’ll need
+to broaden it. On the other hand, if you’re finding too much
+information, your question is probably too broad, and you should narrow
+your focus to make it more manageable. The goal is to find a question
+that’s specific enough to give direction but not so limited that you
+can’t find enough material.
+
+Once you’ve focused your question, the next step is to define your need.
+Ask yourself, “How much information do I actually need?” and “What kind
+of information am I looking for?” Depending on your assignment or
+project, you might need just a few key facts, or you might need
+detailed, scholarly research. Think about whether you need background
+information, data, case studies, or peer-reviewed articles. Being clear
+about your information needs will save you time and help you select the
+right sources later on. By carefully focusing your question and defining
+your needs, you’ll set a strong foundation for an efficient and
+successful research process.
+:::
+
+## Developing a Search Strategy
+
+![](images/2.png){fig-align="center"}
+
+::: notes
+The slide shows you a ten step process for developing a search strategy
+to find the right information efficiently and effectively -- beginning
+with defining your question and ending with applying what you’ve
+learned. Each step helps you refine your focus, improve the quality of
+your search results, and ensure that the information you gather is
+credible and useful.
+
+The first step is to `ask`. Start by turning your topic into a question
+to focus your search. For example, instead of just saying “climate
+change,” you might ask, “What are the main causes of climate change in
+urban areas?” At this stage, you should also ask yourself if your
+question is too broad or too narrow. A clear, focused question sets the
+direction for everything that follows.
+
+Next, you move to `define your need`. Here, you think about what sort of
+information you’re looking for and how much detail you’ll need. Are you
+looking for a brief overview, a scholarly analysis, or detailed data?
+Knowing this helps you target the right sources and saves you from
+collecting unnecessary information.
+
+In the third step, you `identify concepts`. Break your question into its
+key ideas or main concepts. For example, in the question about climate
+change in urban areas, the key concepts are “climate change” and “urban
+areas.” This step helps you decide which terms to focus on during your
+search.
+
+Once you’ve identified the main concepts, you move on to
+`selecting terms`. This means choosing the specific words and phrases
+you’ll use in your search. Think about synonyms, alternate spellings,
+and related terms that authors might use. You can also use
+discipline-specific thesauri or keyword lists to expand your options.
+This step ensures that you don’t miss important information just because
+of word choice.
+
+The fifth step is to `select your sources`. Not all sources are created
+equal, so it’s important to decide whether you’ll use primary,
+secondary, or tertiary sources. Ask yourself which databases, journals,
+or websites are most appropriate for your topic. Choosing the right
+starting point helps you gather reliable and relevant information.
+
+Now you’re ready to `search`. This step involves constructing your
+actual search using the commands or tools provided by your chosen
+system. You might use Boolean operators like “AND,” “OR,” and “NOT” to
+narrow or broaden your results. The key question here is, “Am I
+searching efficiently?”
+
+After you’ve started searching, you’ll likely need to `revise`.
+Searching is an iterative process, meaning you’ll refine your terms and
+strategies as you go. If you’re not finding enough relevant information,
+you might need to broaden your terms. If you’re finding too much, you
+might need to narrow your focus. The goal is to retrieve all the
+information you need without being overwhelmed.
+
+Once you have results, it’s time to `manage` them. This includes saving,
+organizing, printing, or citing the material you’ve found. You should
+also think about how to access full-text versions and how you’ll use
+this information later. Managing your results well makes it easier to
+revisit and use them for writing or projects.
+
+Next, you need to `evaluate` what you’ve found. Not all information is
+equally reliable, so take time to determine whether your sources are
+trustworthy. Check if the author is credible, if the article is
+peer-reviewed, and if it’s highly cited. This step ensures that your
+final work is based on solid, reputable information.
+
+Finally, the tenth step is to `apply` what you’ve learned. Use your
+findings to answer your original question. Reflect on whether you’ve
+fully answered it or if more information is needed. This is where you
+pull everything together and turn your research into meaningful
+conclusions.
+
+Remember that your question drives the entire search strategy. There
+isn’t just one “right” way to search. It’s an ongoing, flexible process
+that often requires revisiting earlier steps. Avoid relying on a single
+source or a single search and instead, approach it as a cycle of
+questioning, searching, evaluating, and refining to get the best
+results.
+:::
+
+## Example
+
+1.  Ask: What `health` problems are associated with `water pollution`?
+2.  Main Concepts: health, water, pollution
+3.  Select terms:
+
+-   Synonyms: `health`, illness, disease, etc. `water`, rivers, lakes,
+    sea, domestic water, etc. `pollution`, ‘oil spills’, chemical,
+    biological, toxicity, etc
+-   Plurals: river(s), lake(s), disease(s)
+-   Capitals: e.g. name of a specific lake, disease, region
+
+::: notes
+In this example, you will see numerous options for this search. Some of
+these options will enable you to broaden the search while others will
+limit it.
+:::
+
+## Types of Searching
+
+| `Semantic Search`              | `Keyword Search`    |
+|--------------------------------|---------------------|
+| Understands intent and context | Matches exact terms |
+| Interprets meaning             | Literal matching    |
+| Considers synonyms             | No content analysis |
+| Learns from patterns           | Fast processing     |
+| Delivers relevant insights     | Precise results     |
+
+::: notes
+Semantic search in data analytics focuses on understanding the intent
+behind queries rather than just matching exact words. It interprets
+query context and relationships between data points to provide more
+accurate insights. Unlike keyword search, which retrieves literal
+matches, semantic search considers synonyms, entity relationships, and
+historical patterns. For example, when querying "customer churn
+prediction," semantic search identifies factors contributing to churn,
+even if the exact term isn’t used in the data.
+
+Keyword search is a method that matches the exact words or phrases you
+type into a search bar. It focuses on identifying specific terms without
+considering their context or your intent. This approach works well when
+you know the exact words related to what you are looking for. For
+example, if you search for "best coding tools for developers," keyword
+search will look for pages containing those exact terms. It does not
+analyze the relationships between the words or their deeper meaning.
+
+This type of search is widely used in industries where precision is
+essential. For instance, cloud-based project management software often
+relies on keyword search to help users find specific tasks or documents.
+Similarly, developers use keyword search to locate tools that improve
+productivity, such as those offering code completion or debugging
+features.
+:::
+
+## How Semantic Search Works
+
+-   Natural Language Processing (NLP): Understands language nuances and
+    context
+
+-   Machine Learning (ML): Enhances accuracy through pattern recognition
+    and user feedback
+
+-   Knowledge Graphs: Link related data entities for enriched insights
+
+::: notes
+Semantic search employs advanced technologies like NLP and ML to process
+queries effectively. For instance, in data platforms like Google
+BigQuery, semantic search enables analysts to retrieve related datasets
+even if the query phrasing differs. NLP helps understand query
+semantics, ML refines accuracy over time, and knowledge graphs
+contextualize results.
+
+Semantic search offers several key features that set it apart from
+keyword-based methods:
+
+-   Contextual Understanding: It interprets the meaning of your query by
+    considering context, synonyms, and related terms.
+
+-   User Intent Recognition: It focuses on what you want to achieve
+    rather than just the words you use.
+
+-   Dynamic Learning: Machine learning continuously improves search
+    accuracy based on user behavior.
+
+-   Enhanced Relevance: It delivers results that align with your needs,
+    even if the exact keywords aren't present.
+
+-   Improved User Experience: By understanding natural language, it
+    makes searching more intuitive and satisfying.
+
+These features make semantic search a powerful tool for improving search
+accuracy and user satisfaction. Platforms like Google and e-commerce
+sites leverage these capabilities to provide better results and enhance
+product discovery.
+:::
+
+## How Keyword Search Works
+
+-   Term Breaking: Breaks queries into individual words
+-   Exact Matching: Searches database for exact matches
+-   No Context Analysis: Does not analyze relationships between terms
+
+::: notes
+Keyword search processes your query by breaking it into individual
+terms. Each word is treated separately, and the system looks for matches
+in its database. It does not try to understand the intent behind your
+query. Instead, it focuses on literal matches. This can sometimes lead
+to irrelevant results if the exact terms do not align with what you
+mean.
+
+For example, if you search for "Apple," the system might return results
+about the fruit instead of the company, depending on the context of the
+database. Unlike semantic search, keyword search does not analyze
+relationships between terms or consider synonyms. It simply retrieves
+results based on the words you provide.
+
+Keyword search offers several features that make it effective in certain
+scenarios:
+
+-   Precision: It retrieves results that match your exact query, making
+    it ideal for specific searches.
+
+-   Simplicity: It is easy to use and does not require complex
+    algorithms.
+
+-   Speed: It processes queries quickly because it does not analyze
+    context or intent.
+
+Wide Application: It works well in industries like software development
+and project management, where users often search for specific terms.
+
+However, keyword search has limitations. It lacks the ability to
+understand your intent or the context of your query. This can result in
+irrelevant results, especially for complex or ambiguous searches.
+Despite these drawbacks, keyword search remains a valuable tool for
+straightforward queries where precision matters most.
+:::
+
+## Selecting a Source
+
+![](images/4.png){fig-align="center"}
+
+::: notes
+It’s important to understand that not all information sources are the
+same. They can generally be grouped into three categories -- primary,
+secondary, and tertiary sources -- based on how close they are to the
+original research or information. No single type of source gives you
+everything you need, so an effective search strategy often involves
+using a combination of all three.
+
+Let’s start with primary sources. These are the original materials that
+present first-hand evidence or direct results of research. Examples
+include conference papers, journal articles reporting original studies,
+case reports, dissertations, and clinical trial protocols. When you read
+a primary source, you’re getting information straight from the
+researcher -- it hasn’t yet been interpreted or summarized by someone
+else.
+
+Next, we have secondary sources. These take primary research and
+interpret, analyze, or summarize it. They’re one step removed from the
+original work. Examples include review articles, bibliographies,
+abstracting and indexing services like PubMed, and meta-analyses.
+Secondary sources are especially useful when you want to understand
+trends, compare findings, or get an overview of research on a specific
+topic without reading every individual study.
+
+Finally, there are tertiary sources, which provide summaries or
+collections of general information that are often compiled from both
+primary and secondary sources. These include encyclopedias,
+dictionaries, reference books, and textbooks. Tertiary sources are a
+great starting point for background information when you’re first
+learning about a topic or clarifying key concepts.
+
+The arrow at the bottom of the slide, represents how we often move
+between these three types of sources during research. We might start
+with tertiary sources to get a broad understanding, move on to secondary
+sources for analysis and summaries, and then go to primary sources to
+look at the original evidence in detail. Understanding how these
+different sources fit together helps you locate, evaluate, and use
+information more effectively in your research.
+:::
+
+## Selecting a Source (Cont.) {.smaller}
+
+![](images/5.png){fig-align="center"}
+
+::: notes
+When we’re choosing information sources for research, it’s important to
+understand that each type — tertiary, secondary, and primary — comes
+with its own strengths and weaknesses. Knowing these helps us decide
+which source to use depending on what stage of research we’re in and
+what kind of information we need.
+
+Let’s start with tertiary sources. These include things like
+encyclopedias, dictionaries, and textbooks. The big advantage of
+tertiary sources is that they’re easy to access and use, they provide
+concise summaries, and they’re often relatively inexpensive. They’re
+great when you need a quick overview or background on a topic. However,
+their main disadvantages are that there’s often a lag time — meaning the
+information may not be up to date — and they can sometimes be outdated,
+incomplete, or even incorrectly interpreted. Because tertiary sources
+summarize other materials, they can lose detail and accuracy along the
+way.
+
+Next, we have secondary sources. These are tools that help us locate and
+interpret primary research, such as databases, bibliographies, and
+review articles. Their main advantages are that they offer rapid access
+to primary literature, are usually found in high-standard journals, and
+allow for complex searches. Many databases also provide routine updates
+or alerts, which help keep your information current. On the downside,
+secondary sources also experience some lag time between when research is
+done and when it’s indexed. In addition, search commands and interfaces
+vary between systems, so using them effectively requires strong search
+skills. Finally, some of these databases or journals can be expensive to
+access, especially outside of academic institutions.
+
+Finally, we come to primary sources, which are the most original form of
+information — things like journal articles reporting new research, case
+studies, and dissertations. The biggest advantages of primary sources
+are that they provide original data and unbiased information, meaning
+you get the research straight from the source. However, these sources
+can also be time-consuming to read and analyze, and the sheer volume of
+data can be overwhelming, especially if you’re not familiar with the
+topic.
+
+Each type of source serves a unique purpose: tertiary sources are great
+for background, secondary sources help locate and interpret information,
+and primary sources provide the raw data. The key is to know when and
+how to use each effectively to support your research goals.
+:::
+
+## Which Search Tools are Needed? {.smaller}
+
+-   Gateways
+    -   node or network that serves as an entrance to another network
+    -   organize information in a structured way in general or subject
+        categories
+    -   Examples: WHO A-Z health topics list (www.who.int/topics/en/),
+        Essential Health Links (www.healthnet.org/essential-links/)\
+-   Databases
+    -   collection of information organized in such a way that a
+        computer can quickly select desired pieces of data\
+    -   electronic filing system\
+    -   traditional databases are organized by fields, records and files
+    -   Example: PubMed, ProQuest
+-   Search Engines
+    -   program that searches documents for specified keywords and
+        returns a list of documents where the keywords were found
+    -   on the WWW, utilizes automated robotics to gather and index
+        information
+    -   Examples: Google, Internet Explorer
+
+::: notes
+There are four major tools for finding information on the web:
+
+-   Browsers
+-   Directories
+-   Search Engines
+-   Meta Search Engines
+-   Invisible Web or Deep Web
+
+Generally, a gateway is a webpage designed to attract visitors and
+search engines to a particular website on a specific topic(s). Often
+used interchangeably with the term gateway, a web portal is mega website
+or service providing search engines, e-mail, chat rooms, forums, etc as
+it attempts to provide multiple functions via a single web page or site.
+When you leave OU library webpage and access a Partner Publisher’s
+website, you are going from a gateway to a publisher’s portal.
+
+In a search engine, there is no criteria for selection like in a
+gateway. A search engine consists of three parts:
+
+-   Spider or Crawler: a computer program that crawls through the web
+    from link to link identifying and reading pages.
+-   Index: a database that contains a copy of each web page gathered by
+    the crawler.
+-   Search engine mechanism: software that allows search and retrieval
+    of information that usually returns the results in some ranked order
+    based on relevance.
+:::
+
+## Google's Search Operators
+
+Special commands and characters that extend the capabilities of standard
+text searches
+
+1.  Phrase Search ("...") finds the exact phrase
+    -   Example: "climate change"
+2.  Site (:) searches for content on a specific domain
+    -   Example: site:wikipedia.org "climate change"
+3.  Filetype (:) limits results to specific file types
+    -   Example: "early retirement" filetype:pdf
+
+::: notes
+So, what are these search operators? You can think of them like special
+instructions, or maybe even cheat codes, that you give directly to the
+search engine. Instead of just handing it a bunch of keywords, you're
+telling it exactly how to search, forcing it to be way more specific.
+
+First and the most important one, is using quotation marks for a
+`phrase` search. So, if you just type in climate change, Google looks
+for pages that have those two words on them somewhere. But if you put it
+in quotes, it will only show you results where those two words appear
+together in that exact order. This one trick alone will make your
+results so much better.
+
+Next is the `site` operator. It tells Google to only look for results
+within one specific website. So, let's say you really trust a source,
+like Wikipedia for some background, or maybe a government site for
+official data. You can use this to completely ignore the rest of the
+internet and just search that one single place.
+
+The last one is `filetype` operator. This lets you hunt for specific
+kinds of documents. So, if you are looking for say an official report or
+journal article, use filetype pdf. But if you want to find a
+presentation, use filetype ppt. It's an amazing way to cut through all
+the blog posts and find those primary documents.
+:::
+
+## Database Searching {.smaller}
+
+1.  Boolean Logic (AND, OR, NOT): Use operators like AND, OR, and NOT to
+    define relationships between search terms
+2.  Truncation/Wildcards (\*): Finds variations of a word. Ex: therap\*
+3.  Alternate Spellings (?): Finds alternate spellings. Ex: behavio?r
+4.  Phrase ("...") or Proximity (...): Search for exact phrase. Ex:
+    "information literacy", prevention and (malaria parasite)
+
+{{< video https://youtu.be/x-OaX6bq-Rs?si=kU9lEBGp-16e0S9i width="700" height="300">}}
+
+::: notes
+So when you want to query a massive complex database instead of
+searching for a casual question, you need to know the language that all
+databases speak, it's called Boolean logic.
+
+We have already discussed Boolean operators by now. But to give you a
+quick recap, it is a simple way to combine your keywords using three
+little magic words: "and," "or," and "not":
+
+-   Think of "and" like a filter as it narrows your search, because any
+    result has to contain both of your terms
+-   "Or" is like casting a wider net. It'll find results that have
+    either one of your terms, which is great for synonyms
+-   "Not" is like a bouncer at a club. It just kicks out any results
+    that have a word you don't want to see
+
+If you are interested to learn more about it, watch the video on the
+slide on "Smooth Operator" by OU Libraries.
+
+Next is Truncation or Wildcard where you use an asterisk to find all the
+different versions of a word's root. In contrast, you can use question
+mark to catch words with different spellings.
+
+Finally, you can use quotation marks and brackets to search for exact
+phrases.
+:::
+
+## Keyword vs. Subject Search {.smaller}
+
+![](images/3.png){fig-align="center" width="600"}
+
+| Keyword Search | Subject Search |
+|------------------------------------|------------------------------------|
+| Searches for exact words entered | Searches with pre-defined vocabulary |
+| You can enter your own terms | You need to know the exact controlled term |
+| Database looks for keywords anywhere | Database looks only in the subject field |
+| Yields too many or too few results. Many irrelevant. | Yields more specific results most of which are relevant |
+
+::: notes
+When you begin searching in a database, it’s important to understand the
+difference between a keyword search and a subject search, because the
+type of search you choose can really affect your results. A keyword
+search looks for the exact words you type anywhere in the record -- this
+could include the title, abstract, or even the full text. It’s flexible
+because you can enter your own terms, but it can also be inconsistent.
+For example, if you search using keywords, the database doesn’t
+understand the meaning behind the words -- it simply matches what you’ve
+typed. This often results in too many or too few results, and sometimes
+many of them are irrelevant.
+
+In contrast, a subject search uses a pre-defined or controlled
+vocabulary created by the database, often called subject headings or
+descriptors. This means the database has already categorized items under
+specific, standardized terms. To do a subject search, you need to know
+the exact term used in that system, but once you do, your results are
+usually much more precise and relevant. Subject searches tend to filter
+out unrelated material and focus only on sources that truly deal with
+your topic.
+
+Keyword searches are great when you’re starting out and exploring a
+topic, but once you know the correct subject terms, using a subject
+search can give you higher-quality, more focused results.
+:::
+
+## Social Media Searching {.smaller}
+
+1.  Hashtags Search (#)
+
+2.  Keyword search
+
+3.  User/Account Search
+
+4.  Location Based Search
+
+5.  Trend/Topic Search
+
+6.  Advanced Filters
+
+7.  Sound/Music Search
+
+8.  Explore/Discover Pages
+
+9.  Mention/Reply Search
+
+10. Saved/Bookmarked Search
+
+::: notes
+Finally, lets talk about social media searching.
+
+When we think about searching on social media, it’s important to realize
+that there are many different ways to discover content and each method
+serves a unique purpose. Let’s walk through the main ones.
+
+First, we have **hashtag search**, which is perhaps the most versatile
+and universal method across platforms. When you search by a hashtag, you
+can see all posts tagged with that specific keyword — for example,
+**#TravelPhotography**, **#FitnessMotivation**, or **#CodingTips**. This
+is especially useful for finding communities or trends centered around
+particular interests.
+
+Next is **keyword search**, which is a more general search method. Here,
+you’re typing plain text words rather than hashtags like *“best coffee
+shops”* or *“Python tutorial.”* This type of search looks through
+captions, titles, descriptions, and even comments to match your
+keywords. It’s great for discovering content where users might not have
+used hashtags.
+
+Then there’s **user or account search**, which allows you to look up
+specific people, creators, or brands. For example, you could search
+@elonmusk or *“Taylor Swift”* to find their official profiles.
+
+We also have **location-based search**, where you can search by a city,
+venue, or specific place — such as *“Eiffel Tower”* or *“Central Park.”*
+This is useful for finding posts geotagged at that location, and it’s
+commonly used on platforms like Instagram.
+
+Another key method is **trend or topic search**. This is how users
+explore what’s currently viral — trending challenges, hashtags, or
+sounds.
+
+Then we have **advanced filters**, which allow you to narrow your search
+by date, engagement level, media type, language, or verified status. For
+example, Twitter lets you filter between “latest” and “top” tweets,
+YouTube can filter by upload date, and Instagram can sort by engagement.
+These filters are powerful tools for refining your results.
+
+Platforms like TikTok and Instagram Reels also offer **sound or music
+search**. You can search by song name or audio clip to find all videos
+that use that track — and by clicking *“Use This Sound,”* you can see
+every related post.
+
+Next, there are **Explore or Discovery pages**, which are
+algorithm-driven rather than search-driven. These pages curate content
+based on your viewing history and engagement. Examples include
+Instagram’s Explore page, TikTok’s *For You Page (FYP)*, and YouTube’s
+recommendations feed.
+
+Another layer of search is **mention or reply search**, where you can
+explore comments, replies, and mentions to track conversations about a
+particular topic or user. This is common on platforms like Twitter,
+where you can see threads of replies and @mentions related to a post or
+account.
+
+And finally, we have **saved or bookmarked searches**, which allow you
+to revisit previous searches, saved posts, or watchlists quickly. This
+helps you keep track of content you want to come back to later — whether
+that’s a tutorial, an idea, or a conversation thread.
+
+So, social media search isn’t just about typing in a word or hashtag —
+it’s a combination of tools, filters, and algorithms that together shape
+how we discover information, people, and trends online.
+:::
+
+## How Social Media Searching Works?
+
+-   Indexing: Platforms scan and catalog all posts, photos, and profiles
+-   Matching: Your search query is matched against the massive index
+-   Ranking: Results are ranked by relevance, popularity, and recency
+-   Personalization: Results are customized based on your history and
+    behavior
+-   Delivery: Top results appear instantly on your screen
+
+::: notes
+When we examine how social media searching works, it helps to break the process down into five key steps. 
+
+The first step is **indexing**. In this stage, the platform scans and catalogs all posts, photos, videos, hashtags, profiles, and other content. This creates a massive, organized database that can be quickly searched. 
+
+Next is **matching**. When you enter a search query, whether it’s a hashtag, keyword, or username, the system compares it against its index to find all relevant content. 
+
+Once matching content is identified, the platform moves to **ranking**. Here, results are sorted based on factors like relevance, popularity, and recency — for instance, newer or highly engaged posts are likely to appear higher in your results. 
+
+The fourth step is **personalization**. Social media platforms tailor the search results to you, taking into account your history, behavior, location, and the accounts you interact with, so two people searching the same term may see different results. 
+
+Finally, there’s **delivery**, where the top-ranked and personalized results are presented instantly on your screen. This process happens within milliseconds, giving the appearance of real-time discovery, but it’s actually the result of a highly complex and efficient system working behind the scenes.
+:::
+
+## Platform Examples
+
+::::: columns
+::: {.column width="50%"}
+![](images/6.png){fig-align="center" width="500"}
+:::
+
+::: {.column width="50%"}
+![](images/7.png){fig-align="center" width="500"}
+:::
+:::::
+
+:::notes
+This slide gives examples of popular social media platforms and include their searching strategies with examples.
+:::
