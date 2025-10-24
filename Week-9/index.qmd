@@ -1,0 +1,355 @@
+---
+title: "Controlled Vocabulary Searching"
+subtitle: "LIS 4/5523: Online Information Retrieval"
+author: 
+  - Dr. Manika Lamba
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      theme: whiteboard
+      buttons: true
+    preview-links: true
+    controls: true
+    progress: true
+    show-notes: separate-page
+    logo: images/ou.png
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## What Search terms Should I Use? {.smaller}
+
+*There are no wrong answers here*
+
+::::::::::: columns
+:::::: {.column width="50%"}
+::::: increment
+::: {.fragment .fade-in-then-semi-out}
+1.  Use the word "tear" in a short sentence
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+2.  Were you thinking
+
+    ![](images/1.png){width="344"}
+
+Interesting. Okay, let's go on to the next question.
+:::
+:::::
+::::::
+
+:::::: {.column width="50%"}
+::::: increment
+::: {.fragment .fade-in-then-semi-out}
+3.  Use ONE (and only one) word to describe this picture.
+
+![](images/2.png){width="224"}
+
+Ready, Good!
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+4.  Were you thinking
+
+![](images/3.png){width="200"}
+:::
+:::::
+::::::
+:::::::::::
+
+::: notes
+:::
+
+# Language is Complicated
+
+::: notes
+Do you see the pattern in the previous questions? What might seem like a
+simple word or an easy name can actually be quite complicated. This
+makes searching, especially in a library database, just a little more
+challenging. The good news is that if you learn a bit about the way a
+database works, you will be able to find useful information much more
+quickly.
+:::
+
+## Find It
+
+![](images/4.png){fig-align="center" width="1000"}
+
+::: notes
+Have you ever used the "find" option in a document? Let's say you want
+to find the word "zombie" but a few times you decided to spell it
+"zomby" and once you misspelled it "zmbie". Will it "find" either of
+these? No, because you told it to look for "zombie".
+
+But **why cannot you find anything helpful?**
+
+A database is like a more complicated version of that "find" option. A
+database just uses the input you give in the search boxes to "find"
+items that match. Most databases can search for multiple terms at once
+or cross-reference to narrow or broaden the results. But it can only do
+that based on the information YOU give it.
+:::
+
+# Databases Cannot Think
+
+::: notes
+If you are looking for an article on the world, but the database uses
+the word "earth" you may not get many results. Or you might even get
+zero results. This might make you think the database has nothing useful
+to offer. Or say you need to write a paper on the Greek god Mercury. You
+search for the word "mercury" but get results mostly about the element
+mercury and the planet mercury. There might be a lot of results, but
+they might not be useful ones. **This is where controlled vocabulary can
+help!**
+:::
+
+# Why Do We Need to Control the Vocabulary?
+
+::: notes
+Controlled vocabulary is what sets a database apart from a general
+"find" search or a general web search. Every article, essay, or item in
+a database has been "tagged" with terms that let you know what it is
+about.
+:::
+
+# ![](images/5.png){fig-align="center" width="500"}
+
+::: notes
+Think of a picture you post on your Instagram. You can tag a picture
+with anybody's name and there would be no one who could stop you.
+
+In fact, any of your friends could, depending on your privacy settigns,
+tag anyone they wanted in one of your pictures.
+:::
+
+# Tag, You're It!
+
+::: notes
+With the library databases, the tagging for subject terms is controlled.
+People such as librarians, authors, and publishers have taken time and
+effort to match articles and books to accurate "tags" or "SUBJECT
+TERMS".
+
+These terms are not perfect -- after all, librarians are people too --
+but they are designed tp gather information in a more specific way.
+:::
+
+# Choices, Choices
+
+::: notes
+There are different ways you can use subject terms. We will review two
+ways that you might find most helpful. The first is doing a broad search
+and selecting a subject term or terms from the results. The second is to
+use the database's Thesaurus to find subject terms.
+
+In next few slides, I will be using EBSCOhost Academic Search Complete
+for my examples. Every database has its own quirks and differences, but
+these broader principles can be applied to many if not most of them.
+:::
+
+## You Have to Start Somewhere
+
+![](images/6.png){fig-align="center" width="550" height="550"}
+![](images/7.png){fig-align="center" width="500" height="100"}
+
+::: notes
+In AE#4, you had the experience understanding the different
+functionalities of the database assigned to you. You tried doing a
+search using the limits that are available. Try it again with some
+different database. Use more than one search term and limiting it to
+peer review only, for example, you can make your result list a little
+more manageable.
+
+Do not be afraid to try something. The worst that could happen is that
+you have to try a new search.
+
+Even though this search only brought up 4 results, there might be
+something useful here. Even if none of these articles are useful, their
+subject terms might help us find what we need. The subject terms are
+located under the description of the articles.
+:::
+
+## Hyperlinked!
+
+![](images/8.png){fig-align="center"}
+
+::: notes
+If you click on results to get the full description, a lot of databases
+offer subject terms as **hyperlinks**. Clicking on a subject term will
+bring up all the other articles that are also tagged with that subject
+term.
+:::
+
+## Special Designators
+
+![](images/9.png){fig-align="center"}
+
+::: notes
+By clicking on the hyperlink, the database will use a code to let the
+search know you are looking for a subject term. For Academic Search
+Complete this designator is **DE**. It will be different for different
+databases. Now that we know what it is, we can use it to combine
+multiple subject terms.
+:::
+
+## Mix and Match
+
+![](images/10.png){fig-align="center"}
+
+::: notes
+If the subject term contains more than one word, using quotation marks
+will tell the database to look for phrase instead of 2 individual words.
+We can pull subject terms from different articles to get more precise
+results. See what happens when we use the subject term "ILLEGAL aliens"
+from our first result and "IMMIGRANTS" from our second results.
+
+You may have to mix and match different subject terms to get the results
+you really want. Or to narrow the list down so it won't take you 14
+hours to sort through! And if your first search does not bring your
+articles that have useful subject terms you will have to try other
+general searches to try find some.
+
+`It's called REsearch because you have to search and search again!!`
+
+All this is good, but maybe you want to just start with the subject
+terms. Is there a way to do that? I am glad you asked!
+:::
+
+## Thesaurus
+
+![](images/11.png){fig-align="center"}
+
+::: notes
+A lot of databases (though not all) offer a thesaurus or list of subject
+terms. These differ based on the database, but if there is one it can
+save you some time. Academic Search Complete simply says
+`"Subject Terms"` at the top. And clicking on it will bring up a new
+kind of search screen.
+
+This search is designed to help you find specific subject terms, so be
+as simple and straightforward as possible. There are two options:
+`"Terms begin with"` and `"Term contains"`
+
+Start with `"Terms begin with"` but if few to no results come up, try
+`"Term contains"` to broaden the results.
+:::
+
+## Term Begins With
+
+![](images/14.png){fig-align="center" width="700"}
+
+::: notes
+See on the slide how `"Terms begin with"` differentiates between the
+different kinds of mercury? It will help you focus in on just the type
+that you need.
+
+When you click on a term, it will give you more information:
+
+-   `"Scope Note"` will let you know what that subject term is used for
+
+-   `"Broader Terms"` are subject terms that will open your search up
+    further
+
+-   `"Related Terms"` are other subject terms that are very similar or
+    synonyms
+
+-   `"Used For"` shows terms that are not subject terms in the database.
+    This lets you know that you should use the official subject term
+    instead
+:::
+
+## Step by Step
+
+::: r-stack
+![](images/15.png){.fragment width="550" height="250"}
+![](images/16.png){.fragment width="400" height="100"}
+![](images/17.png){.fragment width="400" height="100"}
+:::
+
+::: notes
+*\[`Click Next` to view the pictures\]*
+
+If you have found the subject terms you need, the thesaurus usually
+makes it pretty easy to add them to your search. Select the check box of
+the term(s) you want to use.
+
+If you are selecting more than one term and you want to expand your
+search to results that contain either or both subject term, use the "OR"
+connector to expand your search.
+
+If you are selecting more than one term and you want to limit your
+search to ONLY results that have BOTH terms use the "AND" connector.
+
+For more on "OR" and "AND" connectors watch last week's lecture on
+searching techniques and strategies.
+
+Clicking the "Add" button will automatically put the search terms into
+the search box. You can then look for more subject terms or perform your
+search.
+:::
+
+## Compare and Contrast
+
+![](images/18.png){fig-align="center"}
+
+::: notes
+So here’s a great example of why using subject terms can make your
+searching so much easier.
+
+On the left, I just typed “mercury” as a keyword. The database gave me
+over 32,000 results — way too many! And as you can see, most of them are
+about mercury the chemical element — pollution, water studies,
+toxicology — nothing to do with the Greek god Mercury that I was
+actually looking for.
+
+Now, on the right, I used subject terms instead. That means I told the
+database exactly what concept I wanted — in this case, Mercury or
+Hermes, the Greek or Roman god. And look at the difference: only 41
+results, all much more focused on my topic.
+
+Keywords just look for words anywhere in the record, but subject terms
+capture meaning. Using them helps you move from thousands of random hits
+to a manageable set of relevant ones.
+:::
+
+## Another Quick Note About Thesaurus
+
+![](images/19.png){fig-align="center" width="700"} 
+
+:::notes 
+
+Here’s another quick note about using the thesaurus in databases.
+
+If I search for the term “attorney,” I get a message saying that term
+isn’t found. But the database helps me out by offering suggestions — and
+notice what it shows: most of the recommended terms use “lawyer” instead
+of “attorney.”
+
+That tells me that in this database, “lawyer” is the preferred term. So,
+if I want to find all the relevant results, I should use “lawyer” when
+building my search.
+
+You can also click on any of these suggestions to explore related
+subjects or run a new search with “lawyer” to see even more options.
+
+So, when your search term doesn’t show up, don’t panic! The thesaurus
+can guide you to the right subject term that the database actually uses.
+:::
+
+# Putting it Together
+
+::: notes
+Subject Terms are like "tags" that have been attached to items in a
+database to make them easier to find. You can find them attached to an
+article or item and use those subject terms to find other similar items.
+Or you can use a thesaurus or subject term list to find subject terms to
+focus your search.
+
+Now, you know a little bit more about the way Subject Terms work in a
+database. Playing around with them can help save you time when you are
+doing research for a project. The more familiar you are with the way a
+database works, the easier it will be to find items that are useful.
+:::
