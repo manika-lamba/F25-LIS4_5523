@@ -20,7 +20,26 @@ editor:
     wrap: 72
 ---
 
-## Document Retrieval
+
+## Introduction
+
+- Free text searching = flexiblity + complexity
+- NLP is essential for modern IR
+- Conversational interfaces are shaping the future in library search
+
+
+:::notes
+In this lecture, we are going to discuss natural language search and its role in modern information retrieval.
+
+First, we will discuss how free text searching represents both an opportunity and a challenge. Its flexibility allows users to articulate queries in their own words, fostering inclusivity and accessibility. Yet this same flexibility introduces complexity, requiring sophisticated processing to manage linguistic ambiguity, synonymy, and varying query structures. The effectiveness of free text search therefore depends on the strength of the underlying linguistic and computational models.
+
+Second, we will see how Natural Language Processing has become indispensable for contemporary information retrieval. From tokenization and indexing to intent detection and semantic modeling, NLP techniques enable systems to move beyond surface-level keyword matching toward genuine understanding of user queries and document meaning. NLP thus serves as the foundation upon which intelligent, adaptive, and context-aware retrieval systems are built.
+
+Finally, we will discuss how conversational interfaces—including voice-based assistants and chatbots—are reshaping the landscape of library search and discovery. By facilitating dialogue-like interactions, these systems make information retrieval more natural, accessible, and responsive. They extend the mission of libraries by offering scalable, human-centered engagement, and they signal the ongoing convergence of librarianship, computational linguistics, and artificial intelligence.
+:::
+
+
+## Document Indexing and Retrieval
 
 -   Methods include
     -   Boolean
@@ -33,23 +52,9 @@ editor:
     -   information may be "hidden"
 
 ::: notes
-Now, let’s connect what we’ve learned about **information retrieval** to
-**document retrieval**, and then how **free-text** or **natural language
-searching** works today.
-
 In earlier modules, we covered the three core **document retrieval
 strategies**: (i) **Boolean**, (ii) **Vector Space**, and (iii)
-**Probabilistic** models. To quickly recap:
-
--   The **Boolean model** retrieves documents using exact matches and
-    logical operators like *AND*, *OR*, and *NOT*. It’s straightforward
-    but rigid — you only get what exactly matches the query.
--   The **Vector Space model** improves on that by representing
-    documents and queries as **vectors** in a multi-dimensional space,
-    ranking them by similarity, often through cosine similarity.
--   The **Probabilistic model** goes further by estimating the
-    **likelihood of relevance**, based on how probable it is that a
-    document satisfies the user’s intent.
+**Probabilistic** models.
 
 All of these models depend on **index terms**, which are the keywords or
 tokens that represent the main ideas in a document. This is often
@@ -84,6 +89,7 @@ understanding expanded that foundation into **natural, conversational
 searching** — the kind of search experience we now expect on platforms
 like Google, YouTube, and social media.
 :::
+
 
 ## Problems with Text {.smaller}
 
@@ -253,6 +259,21 @@ in everyday language and “information retrieval” in research.
 
 # Role of Natural Language Processing in Information Retrieval
 
+# Natural Language Searching
+
+:::notes
+In recent years, there has been an unprecedented growth in unstructured text data across digital environments. Scholarly publications, institutional reports, social media content, and various forms of grey literature now constitute an immense corpus of textual information that is not easily represented within structured databases. This proliferation of unstructured text has created a pressing need for search systems that can effectively interpret and retrieve relevant information from natural language sources.
+
+Historically, information retrieval systems have relied on Boolean search models, which require users to construct queries using logical operators such as AND, OR, and NOT. While Boolean searching offers precision and control, it also imposes a steep learning curve and often results in inefficiencies for non-expert users. In contrast, contemporary search interfaces increasingly emphasize natural language querying, allowing users to articulate information needs in the same way they would express them conversationally — for example, by typing or speaking full questions rather than isolated keywords.
+
+This preference for natural queries reflects a broader transformation in user expectations, influenced by advances in natural language processing (NLP) and the ubiquity of intelligent search assistants. Users now anticipate that systems will interpret intent, context, and semantics, rather than rely solely on keyword matching.
+
+Within libraries and digital repositories, these developments have significant implications. As curators of extensive collections of unstructured text — including research papers, theses, and archival documents — such institutions are increasingly integrating natural language search capabilities to enhance information accessibility and discovery. These systems not only support more intuitive interaction but also align with broader efforts to democratize access to scholarly knowledge.
+
+The shift toward natural language searching represents a critical evolution in information retrieval, one that bridges the gap between human linguistic expression and computational understanding.
+:::
+
+
 ## Natural Langauge Indexing 
 
 - Based on existing vocabulary of documents
@@ -328,6 +349,20 @@ Any term or concept that is present in the object may be deemed important and th
 
 ![](images/13.png){fig-align="center"}
 
+# Free Text Searching
+
+:::notes
+Free text searching refers to a retrieval approach in which users enter search terms directly, without relying on a predefined indexing structure or controlled vocabulary. In this model, the search engine scans the text of documents—such as titles, abstracts, and full content—for matches to the words or phrases supplied by the user. This method leverages the actual language used within the corpus, allowing for flexible and dynamic searching.
+
+In contrast, a controlled vocabulary system, such as the Library of Congress Subject Headings or MeSH (Medical Subject Headings), employs a standardized set of terms that describe concepts consistently across documents. Controlled vocabularies promote precision and interoperability by ensuring that related materials are indexed under the same authorized terms. However, they also require users to understand the specific terminology of the indexing schema, which can be restrictive or unintuitive for those unfamiliar with it.
+
+Free text searching, by comparison, enables users to express their queries in their own words. For example, a user interested in research on renewable energy might use a keyword query such as “solar energy policy”. A natural language query, on the other hand, might take the form of “How are governments supporting the adoption of solar energy?”
+
+While both approaches rely on textual input, natural language queries introduce linguistic variation, context, and intent, which can be better interpreted through natural language processing techniques. Controlled vocabularies offer precision and consistency, whereas free text searching offers accessibility and expressiveness.
+
+Understanding this distinction provides the foundation for exploring how modern search systems combine these methods to achieve both semantic depth and user-centered flexibility in information retrieval.
+:::
+
 
 
 ## Free Text Searching in Databases
@@ -368,6 +403,54 @@ To date it is being used to “tag” images, web pages, blogs, library catalogs
 More research needs to be conducted into whether or not we can use these terms as a source for subject representation, or even as a means to develop more user-centered controlled vocabularies.
 
 
+:::
+
+## Coversational Search
+
+:::notes
+Conversational search represents an important evolution in information retrieval, moving beyond traditional keyword or Boolean querying toward interactive, dialogue-based engagement between users and search systems. This mode of search is often characterized by the use of voice-based queries, where users articulate information needs verbally rather than through typed input.
+
+Prominent examples include Google Assistant and Amazon Alexa, which employ advanced natural language understanding to interpret queries such as “What are the latest articles on renewable energy policy?” or “Find me books on digital archiving.” Increasingly, similar conversational interfaces are being explored within library and digital repository systems, enabling users to locate materials, check availability, or receive research guidance through spoken or text-based interaction.
+
+The benefits of conversational search are especially significant in terms of accessibility and inclusivity. Voice and natural language interfaces lower barriers for users who may have limited technical expertise, motor impairments, or visual disabilities. They also align with evolving expectations shaped by ubiquitous consumer technologies—where interacting with systems through natural language feels intuitive and human-like.
+
+From an information science perspective, conversational search highlights the convergence of speech recognition, natural language processing, and contextual understanding, marking a shift from static query-response models to dynamic, user-centered dialogue systems.
+
+Building upon the concept of conversational search, chatbots have emerged as practical implementations of natural language processing within the library context. These systems function as virtual reference services, designed to assist users in navigating library resources, answering common questions, and providing real-time guidance without direct human intervention.
+:::
+
+## Applications in LIS
+
+The principles of natural language search have numerous and growing applications within Library and Information Science field, fundamentally transforming how users interact with information systems.
+
+First, within digital libraries and institutional repositories, natural language search enables more intuitive exploration of scholarly content. Instead of requiring users to navigate complex metadata schemas or controlled vocabularies, systems can now interpret queries expressed in everyday language—facilitating discovery across articles, theses, datasets, and multimedia resources. For librarians, this enhances accessibility and aligns with open access and knowledge dissemination goals.
+
+Second, discovery systems and OPACs increasingly incorporate natural language interfaces. Modern discovery layers, such as Primo, Summon, and EBSCO Discovery Service, are integrating NLP-driven ranking and query expansion capabilities. These allow users to formulate broad or conversational queries and still retrieve relevant materials without exact keyword matching. This evolution transforms the OPAC from a static catalog into a dynamic, user-centered search environment.
+
+Finally, natural language understanding also supports personalized recommendation systems within LIS platforms. By analyzing user queries, search behavior, and reading patterns, these systems can suggest related materials or anticipate research needs. Such personalization extends beyond convenience, it supports scholarly serendipity, enhances learning outcomes, and fosters engagement with institutional collections.
+
+Therefore, the application of natural language search in LIS reflects a shift from system-driven retrieval toward user-centered discovery, integrating linguistic intelligence into the core functions of information organization and access.
+:::
+
+## Future Directions
+
+- Multimodal Searching
+- Intelligent Research Assistants
+- Knowledge Graphs Integration
+- Multilingual and Cross-Lingual Search
+- More!!
+
+
+:::notes
+Looking ahead, there are several emerging directions shaping the future of natural language search in scholarly and library contexts.
+
+One key area is multimodal search, which integrates text, image, and voice inputs within a unified retrieval framework. This approach enables users to express information needs through multiple channels—for example, submitting an image of a manuscript page, describing it verbally, or typing a related phrase. Such multimodal systems hold promise for archives, museums, and digital humanities projects where non-textual artifacts are central.
+
+A second direction involves the development of intelligent research assistants for scholarly environments. Building upon chatbot and dialogue technologies, these systems aim to support complex, iterative research interactions. Rather than retrieving a single result set, conversational AIs could guide users through literature review processes, suggest relevant methodologies, or identify citation networks -- all within a sustained, context-aware dialogue. This represents a paradigm shift from search as a one-time transaction to search as an ongoing, collaborative process.
+
+Finally, the integration of knowledge graphs offers a powerful means of connecting disparate data sources and enhancing semantic understanding. By representing entities—such as authors, institutions, topics, and publications—and their relationships, knowledge graphs allow search systems to infer deeper connections and provide richer, more explainable results. When combined with neural retrieval models, these structures enable contextualized, reasoning-based discovery across large scholarly ecosystems.
+
+Collectively, these directions signal a future in which search systems evolve from passive retrieval tools into intelligent research partners, capable of understanding, reasoning, and assisting within complex academic and informational contexts.
 :::
 
 
