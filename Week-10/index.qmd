@@ -1,0 +1,373 @@
+---
+title: "Natural Language Searching"
+subtitle: "LIS 4/5523: Online Information Retrieval"
+author: 
+  - Dr. Manika Lamba
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      theme: whiteboard
+      buttons: true
+    preview-links: true
+    controls: true
+    progress: true
+    show-notes: separate-page
+    logo: images/ou.png
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Document Retrieval
+
+-   Methods include
+    -   Boolean
+    -   Vector Space
+    -   Probabilistic
+-   Rely on *index terms*
+    -   *"bag of words"*
+    -   stoplist + stemming
+-   But text is "unstructured"
+    -   information may be "hidden"
+
+::: notes
+Now, let’s connect what we’ve learned about **information retrieval** to
+**document retrieval**, and then how **free-text** or **natural language
+searching** works today.
+
+In earlier modules, we covered the three core **document retrieval
+strategies**: (i) **Boolean**, (ii) **Vector Space**, and (iii)
+**Probabilistic** models. To quickly recap:
+
+-   The **Boolean model** retrieves documents using exact matches and
+    logical operators like *AND*, *OR*, and *NOT*. It’s straightforward
+    but rigid — you only get what exactly matches the query.
+-   The **Vector Space model** improves on that by representing
+    documents and queries as **vectors** in a multi-dimensional space,
+    ranking them by similarity, often through cosine similarity.
+-   The **Probabilistic model** goes further by estimating the
+    **likelihood of relevance**, based on how probable it is that a
+    document satisfies the user’s intent.
+
+All of these models depend on **index terms**, which are the keywords or
+tokens that represent the main ideas in a document. This is often
+referred to as the **“bag of words”** approach where the information
+system treats each document as an unordered collection of words,
+ignoring sentence structure or grammar. To make this more efficient, we
+use **stoplists** to filter out common, low-value words (like “the,”
+“is,” or “and”) and **stemming** to reduce words to their root forms,
+such as turning “learning,” “learns,” and “learned” into “learn.”
+
+However, the limitation here is that **text is unstructured**. It
+doesn’t follow a fixed schema like a database, that is, meaning,
+context, and relationships between words are often **hidden**. A keyword
+match might miss the nuance of how terms are actually used.
+
+This challenge led to the evolution toward **free-text** and **natural
+language searching**. Instead of relying only on index terms or Boolean
+logic, these approaches allow users to search using **everyday
+language**, such as typing “What are the best ways to learn machine
+learning?” rather than just “machine learning AND tutorial.”
+
+Here’s where Natural Language Processing comes in —- it builds on these
+traditional retrieval models by helping computers interpret meaning,
+context, and intent behind a query. NLP-enhanced search systems can
+understand synonyms, recognize entities, and analyze sentiment — turning
+unstructured text into structured, meaningful data that can be retrieved
+intelligently.
+
+So, in essence, Boolean, vector, and probabilistic models gave us the
+foundation for **structured retrieval**, while NLP and semantic
+understanding expanded that foundation into **natural, conversational
+searching** — the kind of search experience we now expect on platforms
+like Google, YouTube, and social media.
+:::
+
+## Problems with Text {.smaller}
+
+-   `Polysemy`: one word maps to many concept such as bat
+-   `Synonymy`: one concept maps to many words such as happy or joyful,
+    car or automobile
+-   `Word order`
+-   `Language is generative`
+    -   *Starbucks coffee is the best*
+
+    -   *The place I like most when I need to feed my caffeine addiction
+        is the company from Seattle with branches everywhere*
+-   `Many different ways to express given idea`
+    -   synonymy, paraphrase, metaphor, etc
+-   `Frege's principle`: *The meaning of a sentence is completely
+    determined by the meaning of its symbols and the syntax used to
+    combine them*
+
+::: notes
+**Speaker Notes:**
+
+When we work with text data, one of the biggest challenges is that
+**human language isn’t straightforward**. There are many ways to say the
+same thing, and words often mean different things depending on context —
+which makes text processing far more complex than working with
+structured data like numbers or categories.
+
+Let’s look at a few of the main **problems with text**.
+
+First, there’s **polysemy**, which means a single word can have
+**multiple meanings**. For example, the word *“bat”* can refer to an
+animal or a piece of sports equipment. Humans can easily infer which
+meaning is intended from context, but a computer can’t do that without
+additional processing or training.
+
+Next, we have **synonymy**, which is the opposite issue -— one concept
+can be expressed using **many different words**. For example, *“happy”*
+and *“joyful”*, or *“car”* and *“automobile”*, all convey the same idea.
+For a computer that relies on exact word matching, these differences can
+cause it to miss relevant information.
+
+Then there’s **word order**. In English and many other languages, the
+order of words changes meaning. For example, *“The cat chased the dog”*
+versus *“The dog chased the cat”* -— same words, completely different
+meaning. So, computers need to understand syntax and structure, not just
+individual words.
+
+Another key feature of language is that it’s **generative** —- we can
+express the same thought in countless ways. For instance, consider the
+simple statement: *“Starbucks coffee is the best.”* You could also say,
+*“The place I like most when I need to feed my caffeine addiction is the
+company from Seattle with branches everywhere.”* Both sentences
+communicate the same core idea, but with very different wording, tone,
+and structure.
+
+This flexibility through **synonymy, paraphrase, metaphor, and other
+linguistic devices** is what makes human communication rich and
+creative, but also what makes text so challenging for machines to
+process.
+
+Finally, **Frege’s Principle** helps explain why meaning in language can
+be complex. It states that *the meaning of a sentence is completely
+determined by the meaning of its symbols and the syntax used to combine
+them.* In theory, this means if we understand each word and how they fit
+together, we should understand the sentence. In practice, though, human
+language often violates this principle through context, idioms, and
+implied meaning which is exactly why Natural Language Processing is so
+essential for text understanding and information retrieval.
+:::
+
+## Problems with Text (Cont.) {.smaller}
+
+-   `Language is a form of communication`
+    -   All communication has a \*context\*
+        -   ***time*** and ***place*** of utterance, the writer, the
+            reader, their **background knowledge**, **intentions**,
+            **assumptions** and the reader's knowledge/intentions, etc.
+-   `Language is changing`
+-   `Ill-formed input`
+-   `Co-ordination, negation, etc`
+-   `Multi-linguity`
+-   `Sarcasm, irony, slang, jargon, etc`
+
+::: notes
+**Speaker Notes:**
+
+Continuing our discussion on the **problems with text**, we now move
+beyond just word meaning and structure to look at some deeper challenges
+that come from the nature of **language as communication**.
+
+First and foremost, **language is a form of communication**, and all
+communication happens within a **context**. This means that
+understanding language requires knowing the **time and place** of the
+utterance, who the **writer or speaker** is, who the **reader or
+listener** is, and what **background knowledge**, **intentions**, and
+**assumptions** each person brings. For example, a tweet made during a
+political event or a comment on a breaking news story may carry meaning
+that’s only clear when you know when and where it was posted. Without
+context, computers can easily misinterpret meaning.
+
+Second, **language is constantly changing**. New words, slang, and
+expressions emerge all the time, especially online. Think about how
+quickly terms like “ghosting,” “FOMO,” or “AI” entered common use. NLP
+systems must continually adapt to stay current with these shifts in
+language and culture.
+
+Next, we have **ill-formed input**, which refers to the fact that people
+often type or speak in ways that are incomplete, ungrammatical, or
+filled with typos, abbreviations, and emojis. On social media
+especially, posts rarely follow perfect grammar rules, so NLP models
+need to handle noisy, messy data.
+
+Another issue is **coordination and negation**, things like *“Mary got
+home late, and she missed her dinner”* or *“I don’t dislike this
+movie.”* These constructions can be tricky because meaning changes
+depending on how clauses are linked or negated. Understanding such
+nuances requires more than simple word-level analysis.
+
+Then there’s **multilinguality**, or the use of multiple languages. Many
+users mix languages, for example, switching between English and Spanish
+in the same sentence. This poses a major challenge for NLP systems that
+rely on monolingual training data.
+
+Finally, **sarcasm, irony, slang, and jargon** are particularly
+difficult for computers to interpret. When someone says, *“Oh great,
+another meeting,”* they might mean the opposite of what the words
+literally say. Humans detect tone and social cues naturally, but for
+machines, this kind of subtlety often leads to misunderstanding.
+
+So, these challenges highlight why **language understanding is far more
+than pattern matching** -- it requires grasping context, culture, tone,
+and evolution. And that’s exactly why NLP research continues to evolve
+-— to make computers better at interpreting human communication in all
+its complexity.
+:::
+
+## Enter NLP/Text Analytics
+
+-   `Text Analytics`: a set of **linguistic, analytical**, and
+    **predictive** technique to extract **structure** and **meaning**
+    from unstructured documents
+
+-   `NLP`: academic term for Text Analytics
+
+    -   analogous to "search" vs. "IR"
+    -   Text Analytics ≈ NLP ≈ Text Mining
+
+![](images/2.png){fig-align="center"}
+
+::: notes
+As you can see from the previous slides, language is incredibly complex.
+Words can have multiple meanings. All of these make text data messy and
+hard for machines to interpret. So, how do we deal with this complexity?
+That’s where Text Analytics or Natural Language Processing (NLP) come
+in. These techniques give us tools to extract structure and meaning from
+unstructured text, helping us turn language into something computers can
+analyze and learn from.
+
+When we talk about Text Analytics, we’re referring to a set of
+techniques -- linguistic, analytical, and predictive --- that allow us
+to extract structure and meaning from unstructured text data. You’ll
+often hear the term Natural Language Processing, or NLP, in academic
+contexts. Essentially, NLP is the scholarly term for what industry often
+calls Text Analytics. It’s similar to the distinction between “search”
+in everyday language and “information retrieval” in research.
+:::
+
+# Role of Natural Language Processing in Information Retrieval
+
+## Natural Langauge Indexing 
+
+- Based on existing vocabulary of documents
+
+- Terms are extracted or derived from titles, abstracts, full text
+
+- Terms are in title, abstract, descriptor, full-text fields
+
+- Searcher inputs any term likely to occur in free text
+
+:::notes
+Natural Language Indexing is the form of indexing language which is used to represent subjects of object in a database. It does not use a controlled vocabulary as the source for indexing terms. Instead it is based on the existing vocabulary of the object being represented. Terms are extracted from the body of the object text or derived from titles or abstracts of the object.
+
+Any term or concept that is present in the object may be deemed important and therefore can be represented in the record describing the object. 
+:::
+
+## NLP Applications in Searching {.smaller}
+
+1.  Word Prediction
+    -   Assistive technologies (TextHelp)
+    -   Google, Bing, Yahoo query suggestions
+
+![](images/7.png){fig-align="center" width="402"}
+
+## NLP Applications in Searching {.smaller}
+
+2.  Spelling Correction
+    -   Autocorrect ![](images/3.png)
+
+    -   Did you Mean ![](images/4.png)
+
+## NLP Applications in Searching {.smaller}
+
+3.  Text Categorization
+
+    -   News agencies: classifying incoming news stories
+    -   Search engines: classifying queries
+    -   Identifying spam emails
+    -   Routing email or documents to appropriate people
+
+4.  Terminology Extraction
+
+    -   Differentiate between useful index terms and 'noise'
+    -   Help lexicographers identify new terminology
+    -   Term extraction systems process scientific papers to identify
+        terminology, possibly comparing it with a known list
+
+5.  Speech Recognition
+
+    -   Spoken Dialogue System
+    -   iPhone Voice Search
+
+## NLP Applications in Searching {.smaller}
+
+6.  Named Entity Recognition
+
+    -   Identification of key concepts (eg. people, places,
+        organizations)
+    -   Increase precision of IR (New companies in New York vs.
+        Companies in New York)
+    -   Support navigation
+    -   Improve machine translation
+    -   Speech synthesis, auto-summarization, etc.
+
+![](images/10.png){fig-align="center"}
+
+## NLP Applications in Searching {.smaller}
+
+7.  Information Extraction
+    -   Identification of entities + relationships
+    -   Based on pre-defined structures
+    -  Can be used for metadata retrieval or store in database and query against it
+
+![](images/13.png){fig-align="center"}
+
+
+
+## Free Text Searching in Databases
+
+- Terms added at the discretion of the cataloger
+- Do not come from a controlled vocabulary or from the words of the document
+- Cataloger tries to match user’s terms (user warrant)
+- Not a frequent practice
+- Can be used in combination with controlled vocabulary or natural language indexing
+
+:::notes
+If a cataloger is providing free text terms, the terms are not coming from either a controlled vocabulary or from the object’s text. The cataloger decides to add terms that they believe match the user’s own search terms or that are closer to the everyday use of the term.
+
+This is not a frequent practice in cataloging but if a term is very new to a language, it may not be represented in a controlled vocabulary yet, or the controlled vocabulary may use an alternate term than the one used by users or within the literature of the discipline. The cataloger would then decide to use a more commonly used term instead of one from the controlled vocabulary or the object.
+
+Free text can also be used in combination with controlled vocabulary and/or natural language indexing.
+:::
+
+
+## User-Defined Tagging {.smaller}
+
+- Has many labels such as `user-supplied, folksonomy, tagging, social classification`
+- It is really not a new practice but one that has recently become the buzz on the Web with the emergence of blogs and media sharing sites like Blogger, Flickr, YouTube, etc.
+    - researchers in image retrieval have explored this idea
+    - researchers in organization of information, thesauri development, indexing, subject representation have also explored this idea
+- To date is being used to tag images, web pages, blogs, library catalogs, etc.
+
+
+:::notes
+Currently we have seen a large amount of professional and research literature discussing an emerging form of indexing language, User-defined or User-Supplied terms. While I say it is emerging, this concept is really not a new idea to LIS. Myself and others have been conducting research into this area since the 1990s. It has recently become the buzz on the Web with the emergence of blogs and media sharing sites like Blogger, Flickr, YouTube, etc.
+
+This concept has many labels (user-supplied, folksonomy, tagging, social classification). It has yet to be decided which term will prevail, or whether or not LIS and cataloging will use these terms as a source for additional subject cataloging or not.
+
+Researchers in image retrieval have explored this idea since the 1990s, and even earlier in specific image-related contexts, such as journalism or newspaper archives. Researchers in organization of information, thesauri development, indexing, subject representation have also explored this idea as a source of more user-centered subject terms or to learn more about how users naturally organize and describe subjects of objects.
+
+To date it is being used to “tag” images, web pages, blogs, library catalogs, etc.
+
+More research needs to be conducted into whether or not we can use these terms as a source for subject representation, or even as a means to develop more user-centered controlled vocabularies.
+
+
+:::
+
+
