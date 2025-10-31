@@ -109,7 +109,6 @@ like Google, YouTube, and social media.
     combine them*
 
 ::: notes
-**Speaker Notes:**
 
 When we work with text data, one of the biggest challenges is that
 **human language isn’t straightforward**. There are many ways to say the
@@ -174,8 +173,6 @@ essential for text understanding and information retrieval.
 -   `Sarcasm, irony, slang, jargon, etc`
 
 ::: notes
-**Speaker Notes:**
-
 Continuing our discussion on the **problems with text**, we now move
 beyond just word meaning and structure to look at some deeper challenges
 that come from the nature of **language as communication**.
@@ -407,8 +404,11 @@ More research needs to be conducted into whether or not we can use these terms a
 
 ## Coversational Search
 
+- Voice-based queries
+- Chatbots in Libraries
+
 :::notes
-Conversational search represents an important evolution in information retrieval, moving beyond traditional keyword or Boolean querying toward interactive, dialogue-based engagement between users and search systems. This mode of search is often characterized by the use of voice-based queries, where users articulate information needs verbally rather than through typed input.
+Conversational search represents an important evolution in information retrieval, moving beyond traditional keyword or Boolean querying toward interactive, dialogue-based engagement bfetween users and search systems. This mode of search is often characterized by the use of voice-based queries, where users articulate information needs verbally rather than through typed input.
 
 Prominent examples include Google Assistant and Amazon Alexa, which employ advanced natural language understanding to interpret queries such as “What are the latest articles on renewable energy policy?” or “Find me books on digital archiving.” Increasingly, similar conversational interfaces are being explored within library and digital repository systems, enabling users to locate materials, check availability, or receive research guidance through spoken or text-based interaction.
 
@@ -420,6 +420,12 @@ Building upon the concept of conversational search, chatbots have emerged as pra
 :::
 
 ## Applications in LIS
+
+- Digital libraries and institutional repositories
+- Discovery systems and OPACs
+- Personalized recommendations
+
+:::notes
 
 The principles of natural language search have numerous and growing applications within Library and Information Science field, fundamentally transforming how users interact with information systems.
 
