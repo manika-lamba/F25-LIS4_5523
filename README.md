@@ -15,3 +15,5 @@
   - [10 Steps of Database Searching](https://manika-lamba.github.io/F25-LIS4_5523/Week-8_part2/#/title-slide)
 - [Week 9: Controlled Vocabulary Searching](https://manika-lamba.github.io/F25-LIS4_5523/Week-9/#/title-slide)
 - [Week 10: Natural Language Searching](https://manika-lamba.github.io/F25-LIS4_5523/Week-10/#/title-slide)
+- [Week 12: Personalization and Recommendation](https://manika-lamba.github.io/F25-LIS4_5523/Week-12/#/title-slide)
+
