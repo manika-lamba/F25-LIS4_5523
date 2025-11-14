@@ -1,0 +1,906 @@
+---
+title: "Personalization and Recommendation"
+subtitle: "LIS 4/5523: Online Information Retrieval"
+author: 
+  - Dr. Manika Lamba
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      theme: whiteboard
+      buttons: true
+    preview-links: true
+    controls: true
+    progress: true
+    show-notes: separate-page
+    logo: images/ou.png
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Recommendation Systems are Everywhere!
+
+![](images/1-01.png)
+
+::: notes
+Recommendation systems have become ubiquitous in our digital lives.
+Nearly every major platform we interact with relies on some form of
+algorithmic recommendation to personalize our experience. On this slide,
+you see several familiar examples that illustrate how these systems
+shape what we see, purchase, listen to, or even who we connect with.
+
+When you browse Amazon or any e-commerce site, you will encounter
+recommended products—items “similar to what you viewed” or “frequently
+bought together.” These recommendations are generated based on your
+browsing history, past purchases, and the behavior of similar users.
+
+In the entertainment domain, platforms like Netflix personalize your
+homepage with categories such as “Top Picks for You” or “Because You
+Watched…”. These recommendations are derived from your viewing history,
+interactions (such as likes or watch duration), and aggregated patterns
+across users with similar tastes.
+
+LinkedIn uses recommendation models to support job discovery. It
+suggests positions that align with your profile, search behavior, and
+engagement history. Similarly, companies use these systems to identify
+potential candidates based on their professional attributes.
+
+In the music domain, Spotify’s “Made for You” section curates daily
+playlists tailored to your listening patterns. These recommendations are
+constructed from your historical preferences and the listening behavior
+of users with overlapping musical tastes.
+
+Platforms like Airbnb rely on recommendation systems to suggest
+accommodations that match your past stays, search filters, or inferred
+preferences.
+
+Even dating applications such as Tinder employ recommendation
+algorithms. They match users to potential profiles by drawing on stated
+preferences, behavioral signals, and patterns inferred from previous
+swipe activity.
+
+Across all these platforms, the underlying goal is consistent: to
+personalize the user experience by predicting what content, product, or
+connection a user is most likely to value. These systems significantly
+influence how we discover information, make decisions, and interact with
+digital environments. For information retrieval and searching,
+understanding how these systems operate is therefore essential.
+:::
+
+## What is Recommendation System? {.smaller}
+
+`Type of information filtering system designed to predict and suggest items or content that a user is likely to be interested in or prefer`
+
+![](images/2.png){fig-align="center"}
+
+::: notes
+A recommendation system, at its core, is a type of information filtering
+system designed to predict or suggest items, content, or interactions
+that a user is likely to find relevant or engaging. These systems
+analyze patterns in user behavior and item characteristics to
+personalize the experience on a given platform.
+
+We can think of a recommendation system as being composed of three key
+components. The first component is the input data, which captures user
+preferences. This data can take two main forms: explicit and implicit.
+
+Explicit data refers to direct user input—such as ratings, written
+reviews, or likes. These signals clearly indicate how a user feels about
+an item.
+
+Implicit data, on the other hand, is derived from observed behavior.
+This includes actions like clicks, viewing duration, browsing patterns,
+or watch history. Implicit signals are extremely valuable because they
+are continually generated without requiring any effort from the user;
+however, they must be interpreted carefully, since behavior does not
+always perfectly reflect preference.
+
+We will explore these distinctions further in the lecture, but for now,
+it is important to recognize that both explicit and implicit feedback
+form the foundation upon which recommendation systems learn and generate
+predictions.
+:::
+
+## Why Do We Need Recommendation Systems?
+
+![](images/3-01.png)
+
+::: notes
+This brings us to an important question: Why do we need recommendation
+systems in the first place?
+
+Many of you are already aware of their significance—after all,
+recommendation systems influence the products we purchase, the media we
+consume, and even the decisions we make online. But to deepen this
+understanding, I want to introduce two influential hypotheses and
+related studies that illustrate why these systems have become essential.
+
+The first idea is known as the Long Tail hypothesis. It highlights how
+our consumption patterns have fundamentally changed over the past one to
+two decades. Historically, we relied on brick-and-mortar stores for
+buying books, DVDs, and other media. These stores had limited shelf
+space, meaning they could only stock a small number of items. As a
+result, they focused on mainstream, high-demand products—the ones
+guaranteed to sell quickly and generate profit.
+
+Niche or highly specialized items, which appealed to smaller audiences,
+were often excluded because they were not profitable enough and took up
+valuable physical space. In other words, traditional retail naturally
+filtered out the “long tail” of rare or less popular items.
+
+However, with the rise of online platforms and digital distribution,
+this constraint has disappeared. Websites and streaming services are not
+limited by physical shelf space; they can theoretically hold unlimited
+inventory. This shift allows platforms to offer both popular mainstream
+products and niche items that appeal to very specific interests.
+
+But this abundance creates a new challenge: How do users navigate such a
+vast catalog of choices?
+
+This is where recommendation systems become essential. They help users
+discover items within this expanded inventory—especially those long-tail
+products they may never have found on their own. Recommendation
+algorithms allow online platforms to surface niche content, match it to
+users with relevant interests, and make the long tail economically
+viable.
+
+Thus, recommendation systems play a critical role in helping users make
+sense of overwhelming choice, while enabling platforms to fully
+capitalize on the diversity of their digital inventories.
+:::
+
+## The Long Tail {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+The Long Tail refers to the less popular, niche products that
+collectively can drive significant business when aggregated.
+
+![](images/4-01.png)
+:::
+
+::: {.column width="50%"}
+-   `Recommendation system facilitates discovery of long-tail items` by
+    providing personalized suggestions based on user preferences,
+    behavior, or collaborative filtering
+
+-   `They help users navigate` through the vast array of choices, making
+    niche products more visible and accessible
+:::
+:::::
+
+::: notes
+Let’s talk about the Long Tail concept. If you look at this chart, which
+plots items by their popularity, you’ll see two main regions.
+
+First, there’s the head: a small number of products that are extremely
+popular and high-impact. These are the mainstream items that traditional
+brick-and-mortar stores typically stocked because they were profitable
+and fit within limited shelf space.
+
+But then we have the long tail: a very large number of niche, low-demand
+items that appeal to smaller or more specialized audiences. These items
+were often impossible to carry in physical stores simply because there
+wasn’t enough space, and they didn’t guarantee high sales.
+
+Now, with the shift from physical stores to online distribution, that
+limitation disappears. Online platforms can store and deliver virtually
+unlimited inventory, which means they can offer these niche items as
+well.
+
+This is where recommendation systems play a crucial role. They make
+long-tail items discoverable. Instead of only surfacing the most popular
+content, recommender systems help users find niche products they would
+never stumble upon through traditional browsing.
+
+This creates value on both sides:
+
+Consumers get personalized, diverse options that match their unique
+interests.
+
+Content creators and businesses benefit because niche products—when
+aggregated—can drive substantial revenue.
+
+So, the Long Tail study illustrates how recommendation systems unlock
+hidden value by connecting people with the right niche content.
+:::
+
+## The Tasting Booth Experiment: Setup {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+-   The Tasting Booth Experiment also known as the "Jam Experiment", was
+    a study conducted by psychologists Sheena Iyengar and Mark Lepper to
+    investigate the `effect of choice on consumer behavior`
+
+-   The experiment took place in a gourmet shop near the Stanford
+    University campus in Menlo Park, California
+:::
+
+::: {.column width="50%"}
+![](images/5.png){fig-align="center"}
+:::
+:::::
+
+::: notes
+The second study that’s highly relevant to recommendation systems is the
+well-known tasting booth experiment. This experiment was conducted by
+two Stanford researchers, Iyengar and Lepper, who wanted to understand
+how the amount of choice affects customer behavior.
+
+The study took place in an upscale gourmet grocery store near the
+Stanford campus. The researchers set up two tasting booths—let’s call
+them Booth 1 and Booth 2.
+
+Booth 1 offered 24 varieties of jam.
+
+Booth 2 offered only 6 varieties.
+
+Everything else was kept constant: the booths were placed in similar
+locations with comparable foot traffic, and the setup and presentation
+were kept the same. The only variable they manipulated was the number of
+choices available.
+
+Their goal was to see how the size of the choice set influenced
+customers’ engagement and purchasing decisions, that is: Do people
+behave differently when they’re given many options versus just a few?
+:::
+
+## The Tasting Booth Experiment: Findings {.smaller}
+
+![](images/7.png){fig-align="center"}
+
+::: notes
+The findings from this study were actually quite surprising. At first
+glance, it looked like the booth with more choices was performing
+better. About 60% of shoppers stopped at Booth 1, the one with 24 jam
+varieties. In contrast, only 40% stopped at Booth 2, which had just six
+varieties. So, the larger display attracted more attention and more foot
+traffic.
+
+But when the researchers looked at purchases, the story flipped
+completely.
+
+In Booth 1, even though many people stopped to sample the jams, only 3%
+of them actually bought a jar. In Booth 2, with far fewer choices, the
+conversion rate was dramatically higher -- about 30% of the shoppers who
+stopped ended up making a purchase.
+
+So, despite attracting fewer people overall, the booth with the limited
+choice set led to significantly more buying behavior.
+:::
+
+## The Tasting Booth Experiment: Implications {.smaller}
+
+`For Online Business`
+
+::::: columns
+::: {.column width="50%"}
+-   Recommendation systems can improve customer satisfaction and
+    increase conversion rates by simplifying the decision-making process
+-   By recommending a limited set of items based on user preferences or
+    previous behavior, these systems can guide users towards a decision
+    more effectively
+:::
+
+::: {.column width="50%"}
+![](images/8.png){fig-align="center"}
+:::
+:::::
+
+::: notes
+The key insight from this study is that having too many choices can
+actually paralyze customers. Instead of feeling empowered, people often
+feel overwhelmed, which leads to indecision and lower satisfaction.
+
+The chart on the slide illustrates this really well. It plots customer
+happiness against the number of choices available. As you increase the
+number of options, satisfaction goes up but only to a point. After that
+threshold, adding more choices causes satisfaction to drop. Customers
+begin to feel stressed, confused, and less confident about making a
+selection.
+
+And this is exactly where recommendation systems become important.
+
+In the online world, the number of available items is practically
+unlimited. Without some kind of filtering or guidance, users can easily
+get lost in the abundance of options. Recommendation systems address
+this by narrowing down the choices and presenting a small, curated set
+of items that are relevant to each user. This not only simplifies
+decision-making but also increases customer satisfaction and boosts
+conversion rates.
+
+So in essence, recommendation systems help overcome the ‘paradox of
+choice’ by reducing overwhelm and guiding users toward the best options.
+:::
+
+## Brief History of Recommendation System
+
+![](images/9.png){fig-align="center"}
+
+::: notes
+So, we’ve now covered why recommendation systems matter, using both the
+Long-Tail Theory and the Tasting Booth experiment as motivation. Now, I
+want to briefly walk through the history of recommendation systems and
+how they evolved into the tools we use today.
+
+The origins of recommendation systems trace back to the late 1970s. One
+of the earliest known systems was developed by Elaine Rich at the
+University of Texas at Austin. Her system, called Grundy, acted as a
+computerized librarian that recommended books to students. It worked in
+a very simple way: it asked users a series of questions, assigned them
+to certain ‘stereotypes,’ and then recommended books based on the
+category they fell into. So, everyone within a category received
+essentially the same recommendations.
+
+A major shift happened in the early 1990s when researchers at Xerox PARC
+introduced the idea of collaborative filtering through a system called
+Tapestry. Tapestry allowed users to rate documents, annotate them, and
+share opinions with coworkers. Even though it relied on manual input, it
+introduced the core idea behind modern collaborative filtering:
+leveraging the preferences of similar users. This work laid the
+foundation for the automated collaborative filtering algorithms we still
+use today.
+
+By the late 1990s, Amazon became one of the first major companies to
+deploy collaborative filtering at scale. Their recommendation engine
+analyzed user behavior and suggested items purchased by similar users.
+This significantly boosted sales and demonstrated the commercial value
+of personalization, leading many other e-commerce platforms to adopt
+recommendation systems.
+
+In the 2000s, Netflix pushed the field even further. They became widely
+known for the Netflix Prize, launched in 2006, which offered a \$1
+million award to any team that could improve their recommendation
+accuracy by 10%. The winning solution used a hybrid ensemble of over 100
+different algorithms, showcasing how blending multiple approaches can
+dramatically improve performance. This competition sparked a wave of
+research and innovation in recommender algorithms.
+
+From 2010 onward, recommendation systems have become deeply embedded in
+our daily digital experiences — from YouTube and Spotify to Facebook,
+TikTok, and e-commerce platforms of every kind. With the rise of deep
+learning, neural network–based recommenders such as deep collaborative
+models, embeddings, and sequence-based models (like those used for
+“next-item prediction”) have become mainstream. These systems now power
+everything from content feeds to product suggestions to personalized
+search.
+
+So, this brief history shows how recommendation systems have evolved
+from simple rule-based tools in the 1970s to sophisticated, large-scale
+machine learning systems that shape how we discover information,
+entertainment, and products online today.
+:::
+
+## Recommendation System Approaches
+
+1.  `Heuristic-based`: Uses predefined rules and business logic to make
+    straightforward recommendations based
+
+2.  `Content-based`: Recommends items similar to what users previously
+    liked by analyzing item features and characteristics
+
+3.  `Collaborative Filtering`: Suggests items based on preferences of
+    users with similar taste patterns and behaviors
+
+4.  `Hybrid recommenders`: Combines multiple recommendation approaches
+    to leverage the strengths of each method
+
+::: notes
+Now, we’re going to cover four major types of recommendation approaches.
+
+We’ll begin with rule-based or heuristic-based methods, which rely on
+predefined rules and business logic. These systems are simple and
+interpretable. For example, recommending ‘top sellers’ or ‘new
+arrivals.’ They’re limited, but they form the historical basis of how
+many early recommenders worked.
+
+Second is the content-based recommendation. This approach suggests items
+that are similar to those a user has already interacted with. It relies
+on item features, such as metadata, keywords, genres, or descriptions,
+to find matches. The core idea is: if you liked this item, you’ll
+probably like others with similar characteristics.
+
+Third is the collaborative filtering, one of the most widely used and
+influential methods in modern recommender systems. Instead of focusing
+on item features, collaborative filtering looks at patterns across
+users. The system identifies users with similar tastes and predicts what
+you might like based on what those similar users have enjoyed. This idea
+of “people like you also liked…” is central to many popular platforms.
+
+The last one is the hybrid recommendation systems, which combine two or
+more of the approaches above. Hybrids are powerful because they leverage
+the strengths of each method and help overcome weaknesses such as cold
+start, sparsity, or limited item metadata. Many hybrid systems,
+especially deep learning–based architectures, are quite sophisticated.
+:::
+
+## Input Data
+
+| Explicit Data | Implicit Data |
+|------------------------------------|------------------------------------|
+| Data where we have `some sort of rating`, like the 1 to 5 ratings from the MovieLens or Netflix dataset | Data we gather from the users behavior, with no ratings or specific actions needed as how many times they played a song or watched a movie |
+| The `data is hard to come by` as users might not spend the time to rate items or it might not be applicable | It is `lot more available` compared to explicit data, but `tends to be more noisy` |
+
+::: notes
+Before we dive into more advanced recommendation techniques, it’s
+important to understand the types of input data that recommendation
+systems rely on. We briefly mentioned this earlier, but now we’ll look
+at it more systematically.
+
+There are two main categories of input data: explicit data and implicit
+data.
+
+A. Explicit Feedback
+
+Explicit data refers to direct user-provided feedback. This is when a
+user intentionally tells the system how they feel about an item.
+Examples include:
+
+-   Netflix: giving a thumbs up or thumbs down, or rating a movie from 1
+    to 5
+-   Amazon: providing star ratings or written reviews
+-   Any platform that allows users to manually indicate preference
+
+Explicit feedback is extremely valuable because it reflects clear user
+intent. However, it has two major challenges:
+
+1.  It’s hard to collect — users often don’t take the time to rate
+    items.
+
+2.  It may not be available — not all platforms support explicit
+    ratings.
+
+So explicit data is high-quality, but scarce.
+
+B. Implicit Feedback
+
+Implicit data is derived from observed user behavior, not direct
+ratings.Here, the system infers preferences from actions such as:
+
+-   Number of times a user plays a song on Spotify
+
+-   Movies or shows a user clicks on or watches on Netflix
+
+-   Items a user views, clicks, or adds to a cart on Amazon
+
+-   Time spent on a page or scrolling patterns
+
+Implicit data is:
+
+-   Much more abundant — because every user action generates data
+
+-   Automatically collected — requiring no effort from the user
+
+But it also comes with trade-offs:
+
+-   It’s noisier — clicking on something doesn’t always mean you liked
+    it
+
+-   It requires more interpretation and preprocessing
+
+-   It may mix preference with other factors (e.g., curiosity, mistakes)
+
+In practice, most modern recommendation systems rely heavily on implicit
+data because it’s available at scale, but they treat it carefully to
+avoid misinterpreting user behavior.
+
+Understanding the difference between these two data types is critical,
+because it influences which algorithms we can apply and how we evaluate
+them.
+:::
+
+## Heuristic-Based {.smaller}
+
+`Uses predefined rules and business logic to make straightforward recommendations based on user behavior patterns`
+
+::::: columns
+::: {.column width="50%"}
+![](images/10.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+-   `Popularity-based`: Recommed the most popular items to the user
+
+-   `Pros`: Simple to set-up, requiring only basic metrics like sales or
+    views, making them quick to deploy
+
+-   `Cons`: Recommendations do not reflect individual preferences,
+    potentially leading to irrelevant suggestions
+:::
+:::::
+
+::: notes
+Lets examine the heuristic-based recommendation systems, which represent
+the most basic and rule-oriented class of recommenders. Unlike
+data-driven or model-based approaches, heuristic systems operate
+entirely on predefined rules and simple business logic to generate
+suggestions.
+
+You have likely encountered these in practice: for instance,
+popularity-based or recency-based lists where items are ranked using
+straightforward metrics such as total views, clicks, ratings, or sales
+counts. A familiar example is IMDb’s Top 250 Movies list, which
+functions as a global popularity recommender—every user sees the same
+set of items because the system relies solely on aggregated statistics
+rather than personal preferences.
+
+These systems have several practical advantages. They are extremely easy
+to build, require minimal infrastructure, and can be deployed rapidly,
+making them especially useful when user-level data is unavailable or
+when a system needs to handle new users immediately. Because they do not
+rely on individualized histories, they naturally avoid the classic
+cold-start problem: even a first-time user can be shown trending or
+high-performing content.
+
+However, heuristic methods also come with certain limitations. Their
+biggest drawback is the absence of personalization. Since all users
+receive the same or nearly the same recommendations, these systems
+cannot capture the diversity or nuance of individual tastes.
+
+They also tend to reinforce popularity bias, amplifying already popular
+items while reducing the visibility of niche or long-tail content. For
+these reasons, heuristic-based recommenders are rarely used as
+standalone solutions in modern systems. Instead, they commonly serve as
+baselines for evaluation, as fallback strategies for new users, or as
+complementary components within more sophisticated recommendation
+pipelines.
+:::
+
+## Popularity-Based {.smaller}
+
+`How do we account for the # of reviews?`
+
+![](images/11.png){fig-align="center"}
+
+::: notes
+When we look at popularity-based recommendation systems, it’s important
+to understand that we cannot simply rank items by their average rating
+alone. Ratings without enough reviews can be misleading because small
+sample sizes are unreliable.
+
+Imagine we’re building an e-commerce recommendation engine with three
+items:
+
+Item A: 5.0 stars, but only 10 reviews
+
+Item B: 4.8 stars with 100 reviews
+
+Item C: 4.2 stars but with 1,000 reviews
+
+At first glance, Item A looks like the best product because it has a
+perfect 5-star rating. But with only 10 reviews, that score is not
+trustworthy. Item C, despite having the lowest rating, has far more
+evidence behind it —- meaning its average is likely a much more stable
+reflection of customer opinion.
+
+So the question is: Should we rank items purely by their rating? And the
+answer is no.
+
+To address this, industry systems often use a technique called the
+Bayesian Average, which is the same approach behind IMDb’s “Top 250”
+movie ranking. The idea is to correct for items with very few reviews by
+pulling their rating toward the overall average of all items until
+enough reviews accumulate.
+
+The Bayesian approach uses three key components:
+
+-   C – the global average rating across all items
+
+-   m – the minimum number of ratings needed before we trust an item
+
+-   R – the average rating for the item
+
+-   v – the number of reviews the item actually has
+
+The formula computes a weighted average between the global average and
+the item’s own rating. Items with few reviews get pulled heavily toward
+the global average, and items with many reviews keep more of their true
+rating.
+
+What does this mean for our example?
+
+Item A, with only 10 reviews, gets pulled strongly toward the overall
+average and drops lower in the ranking.
+
+Items B and C, with 100 and 1,000 reviews, remain ranked much higher
+because their ratings are supported by more data.
+
+This result makes intuitive sense. We don’t want to recommend items that
+have been rated only a handful of times — those could be biased,
+manipulated, or simply unrepresentative.
+
+So when you’re developing a popularity-based recommendation system,
+applying the Bayesian Average is a best practice. It avoids overvaluing
+items with very small review counts and gives users more trustworthy,
+stable recommendations. This approach is widely used in industry,
+including platforms like IMDb.
+:::
+
+## Content-Based Filtering {.smaller}
+
+`Uses item features to recommend other items similar to what the users likes, based on their previous actions or explicit feedback`
+
+::::: columns
+::: {.column width="50%"}
+![](images/12.png)
+:::
+
+::: {.column width="50%"}
+-   Places items on a n-dimensional space based on certain features. If
+    a user has a high interaction with on item, recommends the 'nearest'
+    item
+
+**Major Limitations**
+
+-   Feature Representations near to be hand-engineered which is often
+    difficult
+
+-   The model can only make recommendations based on existing interests
+    of the user. In other words, the model has limited ability to expand
+    on the users' existing interests
+:::
+:::::
+
+::: notes
+The next type of recommendation system we’re going to look at is
+content-based filtering, which builds on the ideas we saw in
+popularity-based systems but adds an important layer: user preferences.
+Instead of recommending what is globally popular, a content-based system
+recommends items that are similar to what a specific user has already
+liked.
+
+The core idea is simple: we analyze the **features of items** a user has
+interacted with—things like genre, category, style, ingredients,
+attributes—and then recommend other items that share those same
+characteristics.
+
+Let’s walk through a concrete example using a movie recommendation
+system. Suppose we have a set of films—*Shrek*, *Harry Potter*, *The
+Dark Knight Rises*, *Memento*, and *Triplets*. We can map these movies
+into a **feature space**. For simplicity, imagine a 2-dimensional space:
+
+-   One axis represents **genre** (children’s vs. adult-oriented films)
+-   The other axis represents **blockbuster status** (mainstream vs.
+    niche/indie)
+
+Because we know the content of the movies—their plots, themes,
+audiences, and popularity—we can place them in this 2D space. For
+instance, *Shrek* and *Harry Potter* are both children-friendly and
+blockbuster-level films.
+
+So if a user watches *Shrek* and gives it a 5-star rating, a
+content-based system would naturally recommend *Harry Potter* because it
+is **nearby in feature space**—it shares many characteristics with
+*Shrek*.
+
+This is the essence of content-based filtering: we position items in an
+**N-dimensional feature space**, and then recommend items that are
+**closest to those a user already likes**.
+
+However, this approach comes with some important limitations:
+
+1.  **Features must be hand-engineered.** We need to decide which
+    attributes matter—genre, target audience, budget, theme, etc.
+    Without meaningful features, the system cannot learn similarity.
+
+2.  **It can only recommend items similar to past preferences.** This
+    means the system does **not** help broaden user interests. It can’t
+    introduce diverse or surprising items because it stays within the
+    user’s existing taste profile.
+
+3.  **No collaborative insight.** It doesn’t consider what *other* users
+    with similar tastes enjoyed. It only focuses on the **individual
+    user’s own history**.
+
+Despite these limitations, content-based filtering is widely used
+because of its simplicity and transparency. You see it on platforms like
+Amazon under sections such as *“Customers who bought this item also
+bought…”*, where the system analyzes product attributes and suggests
+similar items.
+
+To summarize, content-based filtering is a straightforward and effective
+recommendation strategy that relies on item features and user
+preferences—but it is limited by the features we define and by its
+narrow focus on a user’s existing tastes.
+:::
+
+## Collaborative Filtering {.smaller}
+
+`Collaborative filtering uses similarities between users and items simultaneously to provide recommendations`
+
+::::: columns
+::: {.column width="50%"}
+![](images/13.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+-   Collaborative filtering models can recommend item to user A based on
+    interests of a similar user B
+
+**Advantages**
+
+-   Embeddings can be learned automatically, without relying on
+    hand-engineering of features
+
+-   Training data consists of a feedback matrix
+
+    -   Each row represents a user
+
+    -   Each column represents an item (a movie)
+:::
+:::::
+
+::: notes
+Now we move on to collaborative filtering, which is arguably the *most
+widely used* recommendation approach in modern systems. Unlike
+content-based methods—which rely on hand-crafted item
+features—collaborative filtering learns patterns directly from **user
+behavior**. It makes recommendations by identifying **similarities among
+users and items simultaneously**.
+
+The foundation of this approach is what we call the **user–item
+interaction matrix**. You can think of this as a large grid where:
+
+-   Each **row** represents a user
+-   Each **column** represents an item (or a movie, product, song, etc.)
+-   Each **cell** contains the user’s interaction with that item—such as
+    a star rating, number of listens, clicks, or purchases
+
+If we’re building a movie recommendation system using explicit feedback,
+the values might be 1–5 star ratings. But the key point is that it
+reflects real user behavior.
+
+One of the first things to notice is that this matrix is **extremely
+sparse**. Users may have thousands of items available to them, but they
+only interact with a tiny fraction. This sparsity is central to the
+challenge of recommendation.
+
+Collaborative filtering works by analyzing this sparse matrix to infer
+**similar users** or **similar items**. For example, suppose User 1 and
+User N both rate *Shrek* very highly and both dislike *Memento*. The
+system recognizes a pattern: these two users behave similarly.
+
+Now, if User 1 also rated *Harry Potter* highly—but User N has never
+watched it—collaborative filtering will recommend *Harry Potter* to User
+N. The logic is: *people who behave like you also liked this item*.
+
+This makes collaborative filtering extremely powerful because it doesn't
+need any knowledge about the **content** of the items. It doesn’t need
+to know whether Shrek is a children’s movie, or whether Harry Potter is
+a blockbuster. The system doesn’t need handcrafted features at all.
+Instead, it **learns latent features automatically** from user
+interactions.
+
+These latent features often capture surprisingly rich patterns—things
+like genre preferences, style preferences, or popularity trends—without
+ever being explicitly defined. That’s one of the biggest advantages over
+content-based methods.
+
+Collaborative filtering excels because it:
+
+-   Leverages collective user behavior
+-   Learns item and user embeddings automatically
+-   Captures complex patterns without needing domain-specific features
+-   Works extremely well at scale
+
+This is why it forms the backbone of many large-scale recommender
+systems today, including those used by Netflix, Amazon, Spotify, and
+many others.
+:::
+
+## How Collaborative Filtering Works?
+
+`Matrix Factorization Algorithm`
+
+![](images/16.png){fig-align="center"}
+
+::: notes
+To understand how collaborative filtering actually works under the hood,
+we need to talk about **matrix factorization**, which is the key
+technique used in modern recommender systems. Recall the user–item
+matrix we looked at in the previous slide -- this large, sparse grid of
+user ratings or interactions. Matrix factorization takes this large
+matrix and **decomposes it into two much smaller matrices**:
+
+1.  A **User × Latent Feature** matrix
+2.  An **Item (Movie) × Latent Feature** matrix
+
+These “latent features” represent hidden patterns in the data—things
+like genre preferences, content style, or complexity but the important
+part is that *we don’t define them manually*. The model **learns** these
+features automatically based solely on how users interact with the
+items.
+
+There are multiple ways to perform this factorization, including methods
+like **Singular Value Decomposition (SVD)** and **Non-Negative Matrix
+Factorization (NMF)**. Where the key idea is the same across all
+methods:
+`reduce a huge sparse matrix into dense, lower-dimensional representations that capture meaningful behavioral patterns`.
+
+Once the matrix is factorized, these latent vectors become incredibly
+powerful. You can now compute:
+
+-   **Similarities between movies** based on their latent feature
+    vectors
+-   **Similarities between users** with shared preference patterns
+-   **Predicted ratings** by taking the dot product between a user’s
+    latent vector and an item’s latent vector
+
+This allows the system to uncover and model relationships that were
+never explicitly encoded. For example, it might learn a “fantasy
+preference” feature or “dark, complex movie” feature purely from rating
+patterns—even if we never told it anything about genres.
+
+In short, matrix factorization enables collaborative filtering to
+**discover hidden structure**, **learn preferences automatically**, and
+**generate highly personalized recommendations** without relying on
+manually engineered features.
+:::
+
+## Hybrid Recommenders  {.smaller}
+
+`Two-tower neural networks`
+
+::::: columns
+::: {.column width="50%"}
+![](images/17.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+-   Two-tower neural networks are one of the most popular forms of
+    hybrid recommenders
+
+-   `Query Tower`: Encodes search queries and user profiles into query
+    embeddings
+
+-   `Candidate Tower`: Encodes the item, store, location, and other
+    relevant features into item embeddings
+
+-   The final prediction is the dot product of the outputs of user and
+    item towers
+:::
+:::::
+
+:::notes
+The final approach we’ll look at is **hybrid recommender systems**, and specifically the **two-tower neural network architecture**, which is one of the most widely adopted hybrid methods in industry today. The reason this approach is so powerful is that it combines the strengths of both **content-based filtering** and **collaborative filtering**, while overcoming their individual limitations.
+
+Recall the limitations we discussed:
+
+* Collaborative filtering captures user–item interactions very well, but it does *not* directly incorporate rich metadata about users or items.
+* Content-based filtering, on the other hand, uses item and user features effectively, but it lacks the ability to leverage collective behavioral patterns across similar users.
+
+A hybrid model—specifically the **two-tower neural network**, lets us capture *both* forms of information simultaneously.
+
+As the name suggests, this model has **two separate neural “towers”**:
+
+1. **The Query Tower** (or *User Tower*)
+
+   * Takes in user features or user metadata (e.g., demographics, preferences, behavior history)
+   * Processes these through a neural network to produce a **user embedding**
+
+2. **The Candidate Tower** (or *Item Tower*)
+
+   * Takes in item features or item metadata (e.g., genre, price, tags, textual description)
+   * Processes these through a neural network to produce an **item embedding**
+
+During training, the model learns embeddings that capture both:
+
+* The **behavioral signals** from user–item interactions (like collaborative filtering), and
+* The **explicit descriptive information** about users and items (like content-based filtering)
+
+Once both towers produce embeddings, the model computes a **similarity score**, typically using the dot product -- to estimate how likely a user is to engage with or prefer a given item. This makes it a supervised learning approach, where the ground truth is actual user interactions.
+
+The advantage is that we are no longer forced to choose between behavior only signals or feature-only signals. Instead, we can integrate everything:
+
+* Rich user metadata
+* Detailed item metadata
+* Historical engagement patterns
+* Latent preferences learned automatically
+
+This flexibility makes two-tower neural networks extremely powerful and scalable, which is why they are widely used in large production recommendation systems such as Google, YouTube, TikTok, Netflix, and many others use variations of this architecture.
+
+Thus, hybrid recommenders, and especially two-tower neural networks, give us the **best of both worlds**, enabling highly personalized, metadata-aware, and behavior-driven recommendations.
+:::
